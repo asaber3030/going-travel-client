@@ -1,6 +1,9 @@
-import api from "@/lib/axios";
+import LandingPage from "./_components/landing-page";
 
 export default async function page() {
-  const res = api.get("/products");
-  return <div>Home</div>;
+  return (
+    <main>
+      <LandingPage />
+    </main>
+  );
 }
