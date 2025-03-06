@@ -41,8 +41,8 @@ export default function TourDetails() {
       {/* Hero Section */}
       <div className="relative h-[50vh] md:h-[60vh] lg:h-[70vh]">
         <Image
-          src="/zermatt-matterhorn-best-view-1.jpg?height=1080&width=1920"
-          alt="Beautiful mountain landscape with lake"
+          src="/Cairo.jpg?height=1080&width=1920"
+          alt="Cairo, Egypt"
           fill
           className="object-cover"
           priority
@@ -53,11 +53,11 @@ export default function TourDetails() {
               7 Days Tour
             </Badge>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
-              Swiss Alps Adventure Tour
+              Pyramids of Giza Adventure Tour
             </h1>
             <div className="flex items-center gap-2 text-white/90 mb-4">
               <MapPin className="h-4 w-4" />
-              <span>Switzerland, Europe</span>
+              <span>Egypt, Giza</span>
             </div>
             <div className="flex flex-wrap gap-4 text-white/90">
               <div className="flex items-center gap-1">
@@ -66,7 +66,7 @@ export default function TourDetails() {
               </div>
               <div className="flex items-center gap-1">
                 <Clock className="h-4 w-4" />
-                <span>7 Days / 6 Nights</span>
+                <span>5 Days / 4 Nights</span>
               </div>
               <div className="flex items-center gap-1">
                 <Users className="h-4 w-4" />
@@ -87,7 +87,9 @@ export default function TourDetails() {
       >
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <div>
-            <h2 className="font-bold text-lg">Swiss Alps Adventure Tour</h2>
+            <h2 className="font-bold text-lg">
+              Pyramids of Giza Adventure Tour
+            </h2>
             <p className="text-primary font-bold">
               $1,299{" "}
               <span className="text-muted-foreground font-normal text-sm">
@@ -131,17 +133,18 @@ export default function TourDetails() {
                   <section>
                     <h2 className="text-2xl font-bold mb-4">Tour Overview</h2>
                     <p className="text-muted-foreground mb-4">
-                      Experience the breathtaking beauty of the Swiss Alps on
-                      this unforgettable 7-day adventure tour. From snow-capped
-                      peaks to crystal-clear lakes, you'll discover the natural
-                      wonders of Switzerland while enjoying comfortable
-                      accommodations and expert-guided excursions.
+                      Embark on an unforgettable journey through the land of the
+                      Pharaohs on this 5-day adventure tour. From the iconic
+                      Pyramids of Giza to the bustling streets of Cairo, you'll
+                      explore the rich history and culture of Egypt while
+                      enjoying comfortable accommodations and expert-guided
+                      excursions.
                     </p>
                     <p className="text-muted-foreground">
                       This carefully crafted itinerary combines thrilling
-                      outdoor activities with cultural experiences, giving you a
-                      comprehensive taste of Swiss life. Whether you're hiking
-                      through alpine meadows, visiting charming villages, or
+                      historical exploration with cultural experiences, giving
+                      you a comprehensive taste of Egyptian life. Whether you're
+                      exploring ancient pyramids, visiting bustling markets, or
                       sampling local cuisine, every day offers new and exciting
                       discoveries.
                     </p>
@@ -152,14 +155,14 @@ export default function TourDetails() {
                     <h2 className="text-2xl font-bold mb-4">Tour Highlights</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {[
-                        "Hike through stunning alpine landscapes",
-                        "Visit the picturesque town of Zermatt",
-                        "Ride the famous Glacier Express panoramic train",
-                        "Explore the vibrant city of Lucerne",
-                        "Enjoy a traditional Swiss fondue dinner",
-                        "Take a boat cruise on Lake Geneva",
-                        "Visit a local chocolate factory",
-                        "Experience Swiss hospitality in mountain lodges",
+                        "Explore the Great Pyramids of Giza",
+                        "Visit the Sphinx and learn its mysteries",
+                        "Discover the treasures of the Egyptian Museum",
+                        "Enjoy a Nile River dinner cruise",
+                        "Experience the bustling Khan El Khalili Bazaar",
+                        "Tour the ancient city of Memphis",
+                        "Visit the Step Pyramid of Djoser in Saqqara",
+                        "Relax in a traditional Egyptian tea house",
                       ].map((highlight, index) => (
                         <div key={index} className="flex items-start gap-2">
                           <div className="mt-1 bg-primary/10 rounded-full p-1">
@@ -179,14 +182,14 @@ export default function TourDetails() {
                       </h2>
                       <ul className="space-y-2">
                         {[
-                          "6 nights accommodation",
-                          "Daily breakfast and 3 dinners",
+                          "4 nights accommodation",
+                          "Daily breakfast and 2 dinners",
                           "Professional English-speaking guide",
                           "All transportation during the tour",
-                          "Glacier Express train ticket",
-                          "Lake Geneva boat cruise",
-                          "Chocolate factory tour",
-                          "All entrance fees as per itinerary",
+                          "Nile River dinner cruise",
+                          "Entrance fees to all sites as per itinerary",
+                          "Camel ride at the Pyramids",
+                          "Bottled water during excursions",
                           "Welcome drink and farewell dinner",
                         ].map((item, index) => (
                           <li key={index} className="flex items-start gap-2">
@@ -229,10 +232,10 @@ export default function TourDetails() {
                         <CardContent className="pt-6">
                           <h3 className="font-bold mb-2">Best Time to Visit</h3>
                           <p className="text-muted-foreground">
-                            June to September offers the best weather for hiking
-                            and outdoor activities. Winter months
-                            (December-March) are ideal for winter sports
-                            enthusiasts.
+                            The best time to visit Egypt and Giza is from
+                            October to April when the weather is cooler and more
+                            comfortable for sightseeing. The summer months (May
+                            to September) can be extremely hot.
                           </p>
                         </CardContent>
                       </Card>
@@ -250,8 +253,8 @@ export default function TourDetails() {
                         <CardContent className="pt-6">
                           <h3 className="font-bold mb-2">Accommodation</h3>
                           <p className="text-muted-foreground">
-                            3-4 star hotels and mountain lodges. All rooms have
-                            private bathrooms and essential amenities.
+                            4-5 star hotels with modern amenities. All rooms
+                            have private bathrooms and air conditioning.
                           </p>
                         </CardContent>
                       </Card>
@@ -259,9 +262,9 @@ export default function TourDetails() {
                         <CardContent className="pt-6">
                           <h3 className="font-bold mb-2">Transportation</h3>
                           <p className="text-muted-foreground">
-                            Private minivan, scenic train rides, and occasional
-                            public transportation for authentic local
-                            experience.
+                            Private air-conditioned minivan, comfortable coach
+                            rides, and occasional domestic flights for longer
+                            distances.
                           </p>
                         </CardContent>
                       </Card>
@@ -278,26 +281,28 @@ export default function TourDetails() {
                         <div>
                           <h3 className="font-bold mb-1">Packing Essentials</h3>
                           <p className="text-muted-foreground">
-                            Comfortable hiking boots, layered clothing, rain
-                            jacket, sunscreen, hat, daypack, water bottle, and
-                            camera. Detailed packing list will be provided after
-                            booking.
+                            Comfortable walking shoes, lightweight clothing, sun
+                            hat, sunglasses, sunscreen, reusable water bottle,
+                            travel adapter, and a camera. Detailed packing list
+                            will be provided after booking.
                           </p>
                         </div>
                         <div>
                           <h3 className="font-bold mb-1">Currency</h3>
                           <p className="text-muted-foreground">
-                            Swiss Franc (CHF) is the local currency. Credit
-                            cards are widely accepted, but it's advisable to
-                            carry some cash for small purchases.
+                            The local currency is the Egyptian Pound (EGP).
+                            Credit cards are accepted in most hotels and larger
+                            establishments, but it's advisable to carry some
+                            cash for small purchases and tips.
                           </p>
                         </div>
                         <div>
                           <h3 className="font-bold mb-1">Weather</h3>
                           <p className="text-muted-foreground">
-                            Mountain weather can change rapidly. Be prepared for
-                            sudden temperature drops and occasional rain, even
-                            in summer.
+                            Egypt has a desert climate with hot summers and mild
+                            winters. Be prepared for high temperatures,
+                            especially from May to September. Always carry water
+                            and wear sun protection.
                           </p>
                         </div>
                         <div>
@@ -305,7 +310,8 @@ export default function TourDetails() {
                           <p className="text-muted-foreground">
                             Comprehensive travel insurance is strongly
                             recommended, covering medical emergencies, trip
-                            cancellation, and adventure activities.
+                            cancellation, and activities such as camel rides and
+                            excursions to historical sites.
                           </p>
                         </div>
                       </CardContent>
@@ -326,45 +332,33 @@ export default function TourDetails() {
                   {[
                     {
                       day: "Day 1",
-                      title: "Arrival in Zurich",
+                      title: "Arrival in Cairo",
                       description:
-                        "Arrive at Zurich Airport where you'll be met by your guide. Transfer to your hotel in the city center. Enjoy a welcome dinner and briefing about the upcoming adventure.",
+                        "Arrive at Cairo International Airport where you'll be met by your guide. Transfer to your hotel in the city center. Enjoy a welcome dinner and briefing about the upcoming adventure.",
                     },
                     {
                       day: "Day 2",
-                      title: "Zurich to Lucerne",
+                      title: "Giza Pyramids and Sphinx",
                       description:
-                        "After breakfast, take a scenic drive to Lucerne. Explore the charming old town, visit the iconic Chapel Bridge, and enjoy a boat cruise on Lake Lucerne. Overnight in Lucerne.",
+                        "After breakfast, visit the iconic Pyramids of Giza and the Sphinx. Learn about the history and mysteries of these ancient wonders. Enjoy a camel ride and visit the Solar Boat Museum. Overnight in Cairo.",
                     },
                     {
                       day: "Day 3",
-                      title: "Mount Pilatus Excursion",
+                      title: "Egyptian Museum and Khan El Khalili Bazaar",
                       description:
-                        "Experience the famous Golden Round Trip to Mount Pilatus, combining a boat ride, the world's steepest cogwheel railway, and a panoramic gondola. Enjoy breathtaking views of the Swiss Alps.",
+                        "Explore the treasures of the Egyptian Museum, including the famous Tutankhamun collection. In the afternoon, visit the bustling Khan El Khalili Bazaar for shopping and cultural experiences. Overnight in Cairo.",
                     },
                     {
                       day: "Day 4",
-                      title: "Glacier Express to Zermatt",
+                      title: "Memphis and Saqqara",
                       description:
-                        "Board the legendary Glacier Express panoramic train for a spectacular journey through the heart of the Alps. Arrive in Zermatt, a car-free village at the foot of the Matterhorn.",
+                        "Take a day trip to the ancient city of Memphis and the Step Pyramid of Djoser in Saqqara. Learn about the early history of Egypt and enjoy a traditional Egyptian lunch. Return to Cairo for a Nile River dinner cruise.",
                     },
                     {
                       day: "Day 5",
-                      title: "Matterhorn Glacier Paradise",
-                      description:
-                        "Take the cable car to Matterhorn Glacier Paradise for stunning views of the iconic mountain. Optional hiking or visit to the Glacier Palace. Enjoy a traditional Swiss fondue dinner.",
-                    },
-                    {
-                      day: "Day 6",
-                      title: "Zermatt to Montreux",
-                      description:
-                        "Travel to Montreux on Lake Geneva. Visit the famous Chillon Castle and take a relaxing boat cruise on the lake. Farewell dinner featuring local specialties.",
-                    },
-                    {
-                      day: "Day 7",
                       title: "Departure Day",
                       description:
-                        "After breakfast, transfer to Geneva Airport for your departure flight. End of services.",
+                        "After breakfast, transfer to Cairo International Airport for your departure flight. End of services.",
                     },
                   ].map((day, index) => (
                     <div
@@ -435,7 +429,7 @@ export default function TourDetails() {
                     {
                       question: "Is this tour suitable for solo travelers?",
                       answer:
-                        "Many of our guests are solo travelers. It's a great way to meet like-minded people and share the experience of exploring Switzerland.",
+                        "Absolutely! Many of our guests are solo travelers. It's a great way to meet like-minded people and share the experience of exploring Egypt.",
                     },
                     {
                       question: "What is the group size?",
@@ -445,12 +439,12 @@ export default function TourDetails() {
                     {
                       question: "How physically demanding is this tour?",
                       answer:
-                        "This tour has a moderate physical rating. You should be able to walk for 3-4 hours at a relaxed pace with some elevation gain. The hikes can be adjusted based on group preferences.",
+                        "This tour has a moderate physical rating. You should be able to walk for 3-4 hours at a relaxed pace with some elevation gain. The activities can be adjusted based on group preferences.",
                     },
                     {
                       question: "What type of accommodation can I expect?",
                       answer:
-                        "We stay in a mix of comfortable 3-4 star hotels and authentic mountain lodges. All accommodations have private bathrooms and essential amenities.",
+                        "We stay in comfortable 4-5 star hotels with modern amenities. All accommodations have private bathrooms and air conditioning.",
                     },
                     {
                       question:

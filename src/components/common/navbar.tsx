@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Input } from "@/components/ui/input";
+import Image from "next/image";
 
 export default function TourismNavbar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -64,8 +65,8 @@ export default function TourismNavbar() {
                   href="#"
                   className="flex items-center gap-2 text-lg font-semibold"
                 >
-                  <MapPin className="h-5 w-5 text-teal-600" />
-                  <span>TravelEscape</span>
+                  <Image src="/logo.svg" width={30} height={30} alt="Logo" />
+                  <span className="mt-1">GoingTravel</span>
                 </Link>
                 <Link
                   href="#"
@@ -136,8 +137,8 @@ export default function TourismNavbar() {
             </SheetContent>
           </Sheet>
           <Link href="/" className="flex items-center gap-2 font-bold">
-            <MapPin className="h-6 w-6 text-teal-600" />
-            <span className="text-xl">TravelEscape</span>
+            <Image src="/logo.svg" width={30} height={30} alt="Logo" />
+            <span className="mt-1">GoingTravel</span>
           </Link>
         </div>
         <nav className="mx-6 hidden items-center space-x-4 lg:flex lg:space-x-6">

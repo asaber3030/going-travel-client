@@ -1,47 +1,76 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { ChevronLeft, ChevronRight, X } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState } from "react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 
 export default function TourGallery() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [viewerOpen, setViewerOpen] = useState(false)
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [viewerOpen, setViewerOpen] = useState(false);
 
   // Sample gallery images
   const images = [
-    { src: "/istockphoto-1405862444-612x612.jpg?height=800&width=1200", alt: "Swiss Alps mountain view" },
-    { src: "/5_private-boat-trip-on-lake-lucerne-from-lucerne.jpg?height=800&width=1200", alt: "Lake Lucerne boat cruise" },
-    { src: "/zermatt-matterhorn-best-view-1.jpg?height=800&width=1200", alt: "Zermatt village with Matterhorn" },
-    { src: "/glacier_express.jpg?height=800&width=1200", alt: "Glacier Express train" },
-    { src: "/hq720.jpg?height=800&width=1200", alt: "Traditional Swiss chalet" },
-    { src: "/moonhoneytravel_Venediger-Stage-5-2-1024x683.jpg?height=800&width=1200", alt: "Alpine hiking trail" },
-    { src: "/intro-1738015260.jpg?height=800&width=1200", alt: "Swiss chocolate and cheese" },
-    { src: "/images2.jpg?height=800&width=1200", alt: "Montreux on Lake Geneva" },
-    { src: "/istockphoto-507571728-612x612.jpg?height=800&width=1200", alt: "Chillon Castle" },
-  ]
+    {
+      src: "/Cairo.jpg?height=800&width=1200",
+      alt: "Swiss Alps mountain view",
+    },
+    {
+      src: "/Egypt2.jpg?height=800&width=1200",
+      alt: "Lake Lucerne boat cruise",
+    },
+    {
+      src: "/Egypt3.jpg?height=800&width=1200",
+      alt: "Zermatt village with Matterhorn",
+    },
+    {
+      src: "/Cairo.jpg?height=800&width=1200",
+      alt: "Glacier Express train",
+    },
+    {
+      src: "/Cairo2.jpg?height=800&width=1200",
+      alt: "Traditional Swiss chalet",
+    },
+    {
+      src: "/Egypt.jpg?height=800&width=1200",
+      alt: "Alpine hiking trail",
+    },
+    {
+      src: "/Egypt2.jpg?height=800&width=1200",
+      alt: "Swiss chocolate and cheese",
+    },
+    {
+      src: "/Cairo2.jpg?height=800&width=1200",
+      alt: "Montreux on Lake Geneva",
+    },
+    {
+      src: "/Egypt3.jpg?height=800&width=1200",
+      alt: "Chillon Castle",
+    },
+  ];
 
   const openViewer = (index: number) => {
-    setCurrentIndex(index)
-    setViewerOpen(true)
-    document.body.style.overflow = "hidden"
-  }
+    setCurrentIndex(index);
+    setViewerOpen(true);
+    document.body.style.overflow = "hidden";
+  };
 
   const closeViewer = () => {
-    setViewerOpen(false)
-    document.body.style.overflow = "auto"
-  }
+    setViewerOpen(false);
+    document.body.style.overflow = "auto";
+  };
 
   const nextImage = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-  }
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
 
   const prevImage = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
-  }
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
+  };
 
   return (
     <>
@@ -129,6 +158,5 @@ export default function TourGallery() {
         )}
       </AnimatePresence>
     </>
-  )
+  );
 }
-

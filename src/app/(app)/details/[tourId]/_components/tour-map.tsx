@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { useEffect, useRef } from "react"
-import { Card } from "@/components/ui/card"
+import { useEffect, useRef } from "react";
+import { Card } from "@/components/ui/card";
 
 export default function TourMap() {
-  const mapRef = useRef<HTMLDivElement>(null)
+  const mapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // This is a placeholder for map initialization
     // In a real application, you would use a library like Leaflet or Google Maps
 
     if (mapRef.current) {
-      const mapElement = mapRef.current
+      const mapElement = mapRef.current;
 
       // Simulate map with a colored background and some text
       mapElement.innerHTML = `
@@ -23,9 +23,9 @@ export default function TourMap() {
             </p>
           </div>
         </div>
-      `
+      `;
     }
-  }, [])
+  }, []);
 
   return (
     <div className="space-y-4">
@@ -38,7 +38,7 @@ export default function TourMap() {
           <div className="p-4">
             <h3 className="font-bold mb-2">Tour Route</h3>
             <p className="text-sm text-muted-foreground">
-              Zurich → Lucerne → Mount Pilatus → Glacier Express → Zermatt → Matterhorn → Montreux → Geneva
+              Cairo → Giza → Saqqara → Memphis → Luxor → Aswan → Abu Simbel
             </p>
           </div>
         </Card>
@@ -47,8 +47,8 @@ export default function TourMap() {
           <div className="p-4">
             <h3 className="font-bold mb-2">Distance</h3>
             <p className="text-sm text-muted-foreground">
-              Total journey of approximately 350 km through the Swiss Alps, with varied transportation methods for the
-              best experience.
+              Total journey of approximately 900 km through Egypt, with varied
+              transportation methods for the best experience.
             </p>
           </div>
         </Card>
@@ -56,12 +56,12 @@ export default function TourMap() {
 
       <div className="text-sm text-muted-foreground">
         <p>
-          This tour takes you through some of Switzerland's most iconic locations. The journey begins in Zurich and ends
-          in Geneva, covering the breathtaking landscapes of the Swiss Alps, charming villages, and pristine lakes along
-          the way.
+          This tour takes you through some of Egypt's most iconic locations. The
+          journey begins in Cairo and ends in Abu Simbel, covering the
+          breathtaking landscapes of the Nile River, ancient pyramids, and
+          historic temples along the way.
         </p>
       </div>
     </div>
-  )
+  );
 }
-

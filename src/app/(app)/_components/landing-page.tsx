@@ -19,19 +19,34 @@ export default function LandingPage() {
 
   const heroSlides = [
     {
-      image: "/country_image_Switzerland.jpg?height=1080&width=1920",
-      title: "Discover Switzerland",
-      subtitle: "Experience the breathtaking beauty of the Swiss Alps",
+      image: "/Hurghada.jpg?height=1080&width=1920",
+      title: "Discover Hurghada",
+      subtitle: "Dive into the crystal-clear waters of the Red Sea",
     },
     {
-      image: "/6390.jpg?height=1080&width=1920",
-      title: "Explore Italy",
-      subtitle: "Immerse yourself in history, culture and cuisine",
+      image: "/Aswan.jpg?height=1080&width=1920",
+      title: "Explore Aswan's Timeless Beauty",
+      subtitle: "Journey through ancient history and vibrant culture",
     },
     {
-      image: "/a-noruega-fica-no-norte.jpg?height=1080&width=1920",
-      title: "Adventure in Norway",
-      subtitle: "Witness the magic of fjords and northern lights",
+      image: "/Cairo.jpg?height=1080&width=1920",
+      title: "Cairo's Mystical Adventures",
+      subtitle: "Uncover the secrets of the pyramids and bustling bazaars",
+    },
+    {
+      image: "/HurghadaSea.jpg?height=1080&width=1920",
+      title: "Hurghada's Serene Escapes",
+      subtitle: "Sail across the serene waters of the Red Sea",
+    },
+    {
+      image: "/Cairo2.jpg?height=1080&width=1920",
+      title: "Pharaonic Village Time Travel",
+      subtitle: "Step back in time to the era of the Pharaohs",
+    },
+    {
+      image: "/Alexandria2.jpg?height=1080&width=1920",
+      title: "Alexandria's Legendary Legacy",
+      subtitle: "Explore the legendary city of Alexander the Great",
     },
   ];
 
@@ -172,7 +187,7 @@ export default function LandingPage() {
               className="relative h-[500px] rounded-xl overflow-hidden"
             >
               <Image
-                src="/q_70.jpg?height=600&width=800"
+                src="/Cairo2.jpg?height=600&width=800"
                 alt="Travel experience"
                 fill
                 className="object-cover"
@@ -205,7 +220,7 @@ export default function LandingPage() {
                 Creating Unforgettable Travel Experiences
               </h2>
               <p className="text-muted-foreground">
-                At Alpine Adventures, we believe that travel should be
+                At Going Travel, we believe that travel should be
                 transformative. Our expertly crafted tours combine breathtaking
                 destinations with authentic experiences, allowing you to truly
                 connect with the places you visit.
@@ -260,8 +275,7 @@ export default function LandingPage() {
       <section
         className="relative h-[400px] bg-fixed bg-center bg-cover"
         style={{
-          backgroundImage:
-            "url('/unesco-geirangerfjord-skagefla-waterfall-2-1_6cc6a64a-a204-432e-8753-01ef2080f24e.jpg?height=1080&width=1920')",
+          backgroundImage: "url('/Hurghada.jpg?height=1080&width=1920')",
         }}
       >
         <div className="absolute inset-0 bg-black/60">

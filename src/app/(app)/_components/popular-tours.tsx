@@ -33,70 +33,68 @@ export default function PopularTours() {
   const tours = [
     {
       id: 1,
-      title: "Swiss Alps Adventure Tour",
-      location: "Switzerland",
-      duration: "7 Days",
-      price: 1299,
+      title: "Pyramids of Giza Adventure Tour",
+      location: "Egypt",
+      duration: "5 Days",
+      price: 999,
       rating: 4.8,
       reviews: 124,
-      image: "/zermatt-matterhorn-best-view-1.jpg?height=600&width=800",
+      image: "/Cairo2.jpg",
       featured: true,
     },
     {
       id: 2,
-      title: "Italian Lakes & Alpine Adventure",
-      location: "Italy & Switzerland",
-      duration: "10 Days",
-      price: 1799,
+      title: "Nile River Cruise & Luxor Tour",
+      location: "Egypt",
+      duration: "7 Days",
+      price: 1299,
       rating: 4.7,
       reviews: 86,
-      image:
-        "/Aiguille_du_Midi_en_hiver-Fabian_Bodet-1525.JPG?height=600&width=800",
+      image: "/Luxor.jpg",
       featured: false,
     },
     {
       id: 3,
-      title: "Mont Blanc Trekking Experience",
-      location: "France & Switzerland",
-      duration: "8 Days",
-      price: 1499,
+      title: "Cairo & Alexandria Historical Tour",
+      location: "Egypt",
+      duration: "6 Days",
+      price: 1199,
       rating: 4.9,
       reviews: 112,
-      image: "/p08fq4z7.jpg?height=600&width=800",
+      image: "/Alexandria2.jpg",
       featured: false,
     },
     {
       id: 4,
-      title: "Swiss Chocolate & Cheese Tour",
-      location: "Switzerland",
-      duration: "5 Days",
-      price: 999,
+      title: "Red Sea Diving & Snorkeling Tour",
+      location: "Egypt",
+      duration: "8 Days",
+      price: 1399,
       rating: 4.8,
       reviews: 74,
-      image:
-        "/unesco-geirangerfjord-skagefla-waterfall-2-1_6cc6a64a-a204-432e-8753-01ef2080f24e.jpg?height=600&width=800",
+      image: "/Hurghada.jpg",
       featured: false,
     },
     {
       id: 5,
-      title: "Alpine Winter Wonderland",
-      location: "Switzerland & Austria",
-      duration: "7 Days",
-      price: 1399,
+      title: "Desert Safari & Bedouin Experience Tour",
+      location: "Egypt",
+      duration: "4 Days",
+      price: 899,
       rating: 4.6,
       reviews: 58,
-      image: "/q_70.jpg?height=600&width=800",
+      image: "/Safari.jpg",
       featured: false,
     },
     {
       id: 6,
-      title: "Norwegian Fjords Explorer",
-      location: "Norway",
-      duration: "9 Days",
-      price: 1699,
+      title: "Aswan & Abu Simbel Temples Tour",
+      location: "Egypt",
+      duration: "5 Days",
+      price: 1099,
       rating: 4.9,
       reviews: 92,
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/Aswan.jpg",
       featured: true,
     },
   ];
@@ -140,7 +138,7 @@ export default function PopularTours() {
                 className="object-cover"
               />
             </div>
-            <div className="p-5">
+            <div className="p-5 ">
               <div className="flex items-center text-sm text-muted-foreground mb-2">
                 <MapPin className="h-4 w-4 mr-1" />
                 {tour.location}
@@ -168,7 +166,7 @@ export default function PopularTours() {
                     ${tour.price}
                   </p>
                 </div>
-                <Link href={`/tour/${tour.id}`}>
+                <Link href={`/details/${tour.id}`}>
                   <Button>View Details</Button>
                 </Link>
               </div>

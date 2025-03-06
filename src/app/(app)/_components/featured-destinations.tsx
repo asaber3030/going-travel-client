@@ -10,47 +10,44 @@ export default function FeaturedDestinations() {
   const destinations = [
     {
       id: 1,
-      name: "Swiss Alps",
-      location: "Switzerland",
-      image: "/zermatt-matterhorn-best-view-1.jpg?height=600&width=800",
+      name: "Sainai",
+      location: "Egypt",
+      image: "/Sainai.jpg?height=600&width=800",
       tours: 12,
     },
     {
       id: 2,
-      name: "Lake Como",
-      location: "Italy",
-      image:
-        "/Lake-Como-2023-Menaggio-Shutterstock-166157990-Hybris.jpg?height=600&width=800",
+      name: "Hurghada",
+      location: "Egypt",
+      image: "/Hurghada.jpg?height=600&width=800",
       tours: 8,
     },
     {
       id: 3,
-      name: "Mont Blanc",
-      location: "France",
-      image:
-        "/Aiguille_du_Midi_en_hiver-Fabian_Bodet-1525.JPG?height=600&width=800",
+      name: "Luxor",
+      location: "Egypt",
+      image: "/Luxor.JPG?height=600&width=800",
       tours: 10,
     },
     {
       id: 4,
-      name: "Hallstatt",
-      location: "Austria",
-      image: "/p08fq4z7.jpg?height=600&width=800",
+      name: "Aswan",
+      location: "Egypt",
+      image: "/Aswan.jpg?height=600&width=800",
       tours: 6,
     },
     {
       id: 5,
-      name: "Norwegian Fjords",
-      location: "Norway",
-      image:
-        "/unesco-geirangerfjord-skagefla-waterfall-2-1_6cc6a64a-a204-432e-8753-01ef2080f24e.jpg?height=600&width=800",
+      name: "Cairo",
+      location: "Egypt",
+      image: "/Cairo.jpg?height=600&width=800",
       tours: 9,
     },
     {
       id: 6,
-      name: "Bavarian Alps",
-      location: "Germany",
-      image: "/q_70.jpg?height=600&width=800",
+      name: "Alexandria",
+      location: "Egypt",
+      image: "/Alexandria.jpg?height=600&width=800",
       tours: 7,
     },
   ];
@@ -82,13 +79,11 @@ export default function FeaturedDestinations() {
                 <MapPin className="h-4 w-4 mr-1" />
                 <span className="text-sm">{destination.location}</span>
               </div>
-              <h3 className="text-white text-xl font-bold mb-2">
-                {destination.name}
-              </h3>
+
               <div className="flex items-center justify-between">
-                <span className="text-white/90 text-sm">
-                  {destination.tours} tours
-                </span>
+                <h3 className="text-white text-xl font-bold mb-2">
+                  {destination.name}
+                </h3>
                 <Link
                   href={`#${destination.name
                     .toLowerCase()
