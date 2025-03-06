@@ -319,7 +319,7 @@ export default function ServiceShapes() {
             variant="outline"
             size="icon"
             onClick={handlePrev}
-            className="rounded-full border-white/20 text-white hover:bg-white/10 h-12 w-12"
+            className="rounded-full border-white/20  hover:bg-white/10 h-12 w-12"
           >
             <ChevronLeft className="h-5 w-5" />
           </Button>
@@ -342,7 +342,7 @@ export default function ServiceShapes() {
             variant="outline"
             size="icon"
             onClick={handleNext}
-            className="rounded-full border-white/20 text-white hover:bg-white/10 h-12 w-12"
+            className="rounded-full border-white/20  hover:bg-white/10 h-12 w-12"
           >
             <ChevronRight className="h-5 w-5" />
           </Button>
