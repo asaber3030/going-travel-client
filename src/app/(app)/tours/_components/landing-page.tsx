@@ -10,9 +10,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import FeaturedDestinations from "@/app/(app)/_components/featured-destinations";
-import PopularTours from "@/app/(app)/_components/popular-tours";
-import TestimonialSlider from "@/app/(app)/_components/testimonial-slider";
+import FeaturedDestinations from "./featured-destinations";
+import PopularTours from "./popular-tours";
+import TestimonialSlider from "./testimonial-slider";
 
 export default function LandingPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
