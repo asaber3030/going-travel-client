@@ -1,10 +1,16 @@
+"use client";
+
 import TourismNavbar from "@/components/common/navbar";
 import React from "react";
+import { usePathname } from "next/navigation";
 
-export default function layout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const showNavbar = pathname !== "/";
+
   return (
     <div>
-      <TourismNavbar />
+      {showNavbar && <TourismNavbar />}
       {children}
     </div>
   );
