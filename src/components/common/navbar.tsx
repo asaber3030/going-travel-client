@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+
+import { useState } from "react";
 import {
   Menu,
   X,
@@ -11,17 +13,15 @@ import {
   User,
   Phone,
 } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Input } from "@/components/ui/input";
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export default function TourismNavbar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
