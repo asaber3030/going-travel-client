@@ -8,12 +8,12 @@ export const responseCodes = {
   serverError: 500
 };
 
-export function loadDefaultHeaders(token?: string) {
+export function loadDefaultHeaders(token?: string, language?: string, rest?: any): any {
   return {
-    headers: {
-      Accept: "application/json",
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json"
-    }
+    Accept: "application/json",
+    Authorization: `Bearer ${token}`,
+    "Content-Type": "application/json",
+    "Accept-Language": language,
+    ...rest
   };
 }
