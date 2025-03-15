@@ -4,7 +4,8 @@ import "./globals.css";
 import { ReactQueryClientProvider, StoreProvider } from "@/providers";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster } from "@/components/ui/toaster";
+import { ToastContainer } from "react-toastify";
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const locale = await getLocale();
@@ -17,6 +18,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <ReactQueryClientProvider>
             <StoreProvider>{children}</StoreProvider>
             <Toaster />
+            <ToastContainer />
           </ReactQueryClientProvider>
         </NextIntlClientProvider>
       </body>

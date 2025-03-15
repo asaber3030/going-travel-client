@@ -33,3 +33,35 @@ export type Timestamps = {
   created_at: Date;
   updated_at: Date;
 };
+
+export type Creator = {
+  deleted_by: number;
+  created_by: number;
+  updated_by: number;
+};
+
+// Models
+
+type Category = Timestamps &
+  Creator & {
+    id: number;
+    image: string;
+    name: string;
+    translations?: CategoryTranslation[];
+  };
+
+type User = Timestamps &
+  Creator & {
+    id: number;
+    name: string;
+    email: string;
+    email_verified_at: string | null;
+  };
+
+type CategoryTranslation = Timestamps &
+  Creator & {
+    id: number;
+    locale: string;
+    name: string;
+    description: string;
+  };
