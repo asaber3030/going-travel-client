@@ -1,22 +1,17 @@
-import { UpdateCategoryForm } from "../_components/update-form";
-import { getCategory } from "../_components/actions";
-
 import { notFound } from "next/navigation";
+import { getCategory } from "../_components/actions";
+import { SingleCategoryComponent } from "../_components/single-category";
 
 type Props = {
   params: Promise<{ categoryId: string }>;
 };
 
-export default async function UpdateCategoryPage({ params }: Props) {
+export default async function SingleCategory({ params }: Props) {
   const { categoryId } = await params;
 
-  const category = await getCategory(Number(categoryId));
+  const categoryData = await getCategory(Number(categoryId));
 
-  if (!category) return notFound();
+  if (!categoryData) return notFound();
 
-  return (
-    <div>
-      <UpdateCategoryForm translations={category.translations} category={category} />
-    </div>
-  );
+  return <SingleCategoryComponent categoryData={categoryData} />;
 }

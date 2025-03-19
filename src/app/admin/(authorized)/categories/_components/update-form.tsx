@@ -4,7 +4,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
-import { createCategory } from "./actions";
+import { updateCategory } from "./actions";
 import { showResponse } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -28,38 +28,39 @@ type Data = z.infer<typeof CategorySchema.Create>;
 type Props = {
   category: Category;
   translations?: CategoryTranslation[];
+  id: number;
 };
 
-export const UpdateCategoryForm = ({ category, translations }: Props) => {
+export const UpdateCategoryForm = ({ category, translations, id }: Props) => {
   const [file, setFile] = useState<File | null>(null);
 
   const form = useForm<Data>({
     resolver: zodResolver(CategorySchema.Create),
     defaultValues: {
-      translations: translations
-    }
+      translations: translations,
+    },
   });
 
   const mutation = useMutation({
-    mutationFn: ({ file, data }: Mutation) => createCategory(file, data),
-    onSuccess: (data) => showResponse(data)
+    mutationFn: ({ file, data }: Mutation) => updateCategory(id, file, data),
+    onSuccess: (data) => showResponse(data),
   });
 
   const onSubmit = () => {
     mutation.mutate({
       file,
-      data: form.getValues()
+      data: form.getValues(),
     });
   };
 
   return (
     <div>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
-          <FileField label='Image' onChange={setFile} />
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          <FileField label="Image" onChange={setFile} />
 
           <Tabs defaultValue={Languages[0].code}>
-            <TabsList className='mb-4'>
+            <TabsList className="mb-4">
               {Languages.map((lang) => (
                 <TabsTrigger key={`tab-list-${lang.code}`} value={lang.code}>
                   {lang.name}
@@ -68,34 +69,47 @@ export const UpdateCategoryForm = ({ category, translations }: Props) => {
             </TabsList>
 
             {Languages.map((lang, index) => (
-              <TabsContent key={`tab-content-${lang.code}`} value={lang.code} className='space-y-4'>
+              <TabsContent
+                key={`tab-content-${lang.code}`}
+                value={lang.code}
+                className="space-y-4"
+              >
                 <InputField
                   disabled
                   formFieldDefaultValue={lang.code}
                   control={form.control}
                   name={`translations.${index}.locale`}
                   defaultValue={lang.name}
-                  label='Locale'
+                  label="Locale"
                 />
 
                 <InputField
                   control={form.control}
                   name={`translations.${index}.name`}
-                  value={translations?.find((t) => t.locale === lang.code)?.name}
-                  label='Name'
+                  value={
+                    translations?.find((t) => t.locale === lang.code)?.name
+                  }
+                  label="Name"
                 />
 
                 <InputField
                   control={form.control}
                   name={`translations.${index}.description`}
-                  value={translations?.find((t) => t.locale === lang.code)?.description}
-                  label='Description'
+                  value={
+                    translations?.find((t) => t.locale === lang.code)
+                      ?.description
+                  }
+                  label="Description"
                 />
               </TabsContent>
             ))}
           </Tabs>
 
-          <LoadingButton loading={mutation.isPending} type='submit' className='mt-4'>
+          <LoadingButton
+            loading={mutation.isPending}
+            type="submit"
+            className="mt-4"
+          >
             Submit
           </LoadingButton>
         </form>

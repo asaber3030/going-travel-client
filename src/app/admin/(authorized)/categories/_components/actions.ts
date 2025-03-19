@@ -9,17 +9,44 @@ import api from "@/lib/axios";
 
 import type { APIResponse, Category, PaginatedData } from "@/types";
 import { z } from "zod";
+import { revalidatePath } from "next/cache";
 
-export async function getCategories(): Promise<PaginatedData<Category>> {
+export async function getCategories(
+  page: number
+): Promise<PaginatedData<Category>> {
   try {
     const { language, token } = await getDefaultCookies();
 
-    const request = await fetch(`${API_URL}/adm2in/categories`, {
+    const request = await fetch(`${API_URL}/admin/categories?page=${page}`, {
       method: "GET",
-      headers: loadDefaultHeaders(token, language)
+      headers: loadDefaultHeaders(token, language),
     });
 
     const data: APIResponse<PaginatedData<Category>> = await request.json();
+
+    return data.data;
+  } catch (error) {
+    console.log({ error });
+    return DummyPaginationData;
+  }
+}
+
+export async function getTrashedCategories(
+  page: number
+): Promise<PaginatedData<Category>> {
+  try {
+    const { language, token } = await getDefaultCookies();
+
+    const request = await fetch(
+      `${API_URL}/admin/categories/trashed?page=${page}`,
+      {
+        method: "GET",
+        headers: loadDefaultHeaders(token, language),
+      }
+    );
+
+    const data: APIResponse<PaginatedData<Category>> = await request.json();
+
     return data.data;
   } catch (error) {
     console.log({ error });
@@ -33,13 +60,52 @@ export async function getCategory(id: number): Promise<Category | undefined> {
 
     const request = await fetch(`${API_URL}/admin/categories/${id}`, {
       method: "GET",
-      headers: loadDefaultHeaders(token, language)
+      headers: loadDefaultHeaders(token, language),
     });
 
     const data: APIResponse<Category> = await request.json();
     return data.data;
   } catch (error) {
     console.log({ error });
+  }
+}
+
+export async function deleteCategory(
+  id: number
+): Promise<APIResponse<undefined>> {
+  try {
+    const { language, token } = await getDefaultCookies();
+
+    const request = await fetch(`${API_URL}/admin/categories/${id}`, {
+      method: "DELETE",
+      headers: loadDefaultHeaders(token, language),
+    });
+
+    const data: APIResponse<undefined> = await request.json();
+    revalidatePath("/admin/categories");
+    return data;
+  } catch (error) {
+    return { status: 500, message: "Internal Server Error", data: undefined };
+  }
+}
+
+export async function restoreCategory(
+  id: number
+): Promise<APIResponse<Category | undefined>> {
+  try {
+    const { language, token } = await getDefaultCookies();
+
+    const request = await fetch(`${API_URL}/admin/categories/${id}/restore`, {
+      method: "POST",
+      headers: loadDefaultHeaders(token, language),
+    });
+
+    const data: APIResponse<Category> = await request.json();
+    revalidatePath("/admin/categories/trashed");
+
+    return data;
+  } catch (error) {
+    return { status: 500, message: "Internal Server Error", data: undefined };
   }
 }
 
@@ -57,16 +123,20 @@ export async function createCategory(
     category.translations.map((translation, index) => {
       formData.append(`translations[${index}][locale]`, translation.locale);
       formData.append(`translations[${index}][name]`, translation.name);
-      formData.append(`translations[${index}][description]`, translation.description);
+      formData.append(
+        `translations[${index}][description]`,
+        translation.description
+      );
     });
 
     const request = await api.post("/admin/categories", formData, {
       headers: {
         Accept: "application/json",
         Authorization: `Bearer ${token}`,
-        "Content-Type": "multipart/form-data"
-      }
+        "Content-Type": "multipart/form-data",
+      },
     });
+    revalidatePath("/admin/categories");
 
     const data: APIResponse<Category> = request.data;
     return data;
@@ -90,16 +160,24 @@ export async function updateCategory(
     category.translations.map((translation, index) => {
       formData.append(`translations[${index}][locale]`, translation.locale);
       formData.append(`translations[${index}][name]`, translation.name);
-      formData.append(`translations[${index}][description]`, translation.description);
+      formData.append(
+        `translations[${index}][description]`,
+        translation.description
+      );
     });
 
-    const request = await api.post(`/admin/categories/${categoryId}`, formData, {
-      headers: {
-        Accept: "application/json",
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "multipart/form-data"
+    const request = await api.post(
+      `/admin/categories/${categoryId}`,
+      formData,
+      {
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "multipart/form-data",
+        },
       }
-    });
+    );
+    revalidatePath("/admin/categories");
 
     const data: APIResponse<Category> = request.data;
     return data;

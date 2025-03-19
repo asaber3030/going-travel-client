@@ -5,8 +5,8 @@ export const Languages = [
   { code: "ar", name: "Arabic" },
   { code: "fr", name: "French" },
   { code: "pt", name: "Portuguese" },
-  { code: "it", name: "Italien" },
-  { code: "de", name: "Germany" }
+  { code: "it", name: "Italian" },
+  { code: "de", name: "Germany" },
 ];
 export const LOGO_PATH = "/images/logo/main.png";
 export const API_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -25,5 +25,5 @@ export const DummyPaginationData = {
   per_page: 0,
   prev_page_url: null,
   to: null,
-  total: 0
+  total: 0,
 };

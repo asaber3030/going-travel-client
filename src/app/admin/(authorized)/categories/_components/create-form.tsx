@@ -28,29 +28,29 @@ export const CreateCategoryForm = () => {
   const [file, setFile] = useState<File | null>(null);
 
   const form = useForm<Data>({
-    resolver: zodResolver(CategorySchema.Create)
+    resolver: zodResolver(CategorySchema.Create),
   });
 
   const mutation = useMutation({
     mutationFn: ({ file, data }: Mutation) => createCategory(file, data),
-    onSuccess: (data) => showResponse(data)
+    onSuccess: (data) => showResponse(data),
   });
 
   const onSubmit = () => {
     mutation.mutate({
       file,
-      data: form.getValues()
+      data: form.getValues(),
     });
   };
 
   return (
     <div>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
-          <FileField label='Image' onChange={setFile} />
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          <FileField label="Image" onChange={setFile} />
 
           <Tabs defaultValue={Languages[0].code}>
-            <TabsList className='mb-4'>
+            <TabsList className="mb-4">
               {Languages.map((lang) => (
                 <TabsTrigger key={`tab-list-${lang.code}`} value={lang.code}>
                   {lang.name}
@@ -59,34 +59,42 @@ export const CreateCategoryForm = () => {
             </TabsList>
 
             {Languages.map((lang, index) => (
-              <TabsContent key={`tab-content-${lang.code}`} value={lang.code} className='space-y-4'>
+              <TabsContent
+                key={`tab-content-${lang.code}`}
+                value={lang.code}
+                className="space-y-4"
+              >
                 <InputField
                   disabled
                   formFieldDefaultValue={lang.code}
                   control={form.control}
                   name={`translations.${index}.locale`}
                   defaultValue={lang.name}
-                  label='Locale'
+                  label="Locale"
                 />
 
                 <InputField
                   control={form.control}
                   name={`translations.${index}.name`}
                   defaultValue={lang.code}
-                  label='Name'
+                  label="Name"
                 />
 
                 <InputField
                   control={form.control}
                   name={`translations.${index}.description`}
                   defaultValue={lang.code}
-                  label='Description'
+                  label="Description"
                 />
               </TabsContent>
             ))}
           </Tabs>
 
-          <LoadingButton loading={mutation.isPending} type='submit' className='mt-4'>
+          <LoadingButton
+            loading={mutation.isPending}
+            type="submit"
+            className="mt-4"
+          >
             Submit
           </LoadingButton>
         </form>
