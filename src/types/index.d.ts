@@ -65,3 +65,37 @@ type CategoryTranslation = Timestamps &
     name: string;
     description: string;
   };
+
+type Location = Timestamps &
+  Creator & {
+    id: number;
+    name: string;
+    image: string;
+    map_url: string;
+  };
+
+type Tour = Creator &
+  Timestamps & {
+    id: number;
+    duration: string;
+    availability: string;
+    type: string;
+    banner: string;
+    thumbnail: string;
+    trip_information: null | string;
+    before_you_go: null | string;
+    max_people: number;
+    price_start: number;
+    has_offer: boolean;
+    offer_price: null | number;
+    category_id: number;
+    pickup_location_id: number;
+    location_id: number;
+    title: string;
+    description: string;
+    distance_description: string;
+    translations: Translation[];
+    location: Location;
+    pickup_location: Location;
+    category: Category;
+  };

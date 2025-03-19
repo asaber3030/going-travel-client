@@ -3,11 +3,22 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
   eslint: {
-    ignoreDuringBuilds: true
+    ignoreDuringBuilds: true,
   },
   typescript: {
-    ignoreBuildErrors: true
-  }
+    ignoreBuildErrors: true,
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "going-travel.laravel.cloud",
+        port: "",
+        pathname: "/uploads/**",
+        search: "",
+      },
+    ],
+  },
 };
 
 const withNextIntl = createNextIntlPlugin();

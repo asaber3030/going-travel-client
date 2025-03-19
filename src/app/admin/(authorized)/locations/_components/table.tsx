@@ -1,8 +1,7 @@
 "use client";
 import Image from "next/image";
 
-import { PaginatedData, Category } from "@/types";
-import { CategoryActions } from "./category-actions";
+import { PaginatedData, Location } from "@/types";
 
 import {
   Table,
@@ -13,14 +12,14 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { LocationActions } from "./locations-actions";
 
 type Props = {
-  data: PaginatedData<Category>;
+  data: PaginatedData<Location>;
 };
 
-export const CategoriesTable = ({ data }: Props) => {
+export const LocationsTable = ({ data }: Props) => {
   if (data?.data?.length === 0) return "Empty";
 
   return (
@@ -29,7 +28,7 @@ export const CategoriesTable = ({ data }: Props) => {
         {/* <TableCaption>A list of your recent invoices.</TableCaption> */}
         <TableHeader>
           <TableRow>
-            <TableHead className="pl-8">ID</TableHead>
+            {/* <TableHead className="pl-8">ID</TableHead> */}
             <TableHead>Image</TableHead>
             <TableHead>Name</TableHead>
 
@@ -39,38 +38,38 @@ export const CategoriesTable = ({ data }: Props) => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data?.data?.map((category) => (
-            <TableRow key={category.id}>
-              <TableCell className="font-medium pl-8">{category.id}</TableCell>
-              <TableCell>
+          {data?.data?.map((location) => (
+            <TableRow key={location.id}>
+              {/* <TableCell className="font-medium pl-8">{location.id}</TableCell> */}
+              <TableCell className="w-1/6">
                 <Image
-                  src={category.image || "/placeholder.svg"}
-                  alt={category.name || "Category Image"}
+                  src={location.image || "/placeholder.svg"}
+                  alt={location.name || "location Image"}
                   width={150}
                   height={150}
                 />
               </TableCell>
-              <TableCell>{category.name || "N/A"}</TableCell>
+              <TableCell className="w-2/6">{location.name || "N/A"}</TableCell>
 
-              <TableCell>
-                {category.created_at
-                  ? new Date(category.created_at)
+              <TableCell className="w-1/6">
+                {location.created_at
+                  ? new Date(location.created_at)
                       .toLocaleDateString("en-GB")
                       .replace(/\//g, "-")
                   : "N/A"}
               </TableCell>
 
-              <TableCell>
+              <TableCell className="w-2/6">
                 <div className="flex justify-center items-center space-x-4">
-                  {!category.deleted_at && (
+                  {!location.deleted_at && (
                     <Link
-                      href={`/admin/categories/${category.id}`}
+                      href={`/admin/categories/${location.id}`}
                       className="text-primary p-0 m-0 hover:underline"
                     >
                       View
                     </Link>
                   )}
-                  <CategoryActions data={category} />
+                  {/* <LocationActions data={location} /> */}
                 </div>
               </TableCell>
             </TableRow>
