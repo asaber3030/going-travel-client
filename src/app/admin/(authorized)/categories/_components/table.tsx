@@ -1,5 +1,6 @@
 "use client";
-import Image from "next/image";
+
+import Link from "next/link";
 
 import { PaginatedData, Category } from "@/types";
 import { CategoryActions } from "./category-actions";
@@ -11,10 +12,10 @@ import {
   TableCell,
   TableHead,
   TableHeader,
-  TableRow,
+  TableRow
 } from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { diffForHumans } from "@/lib/utils";
 
 type Props = {
   data: PaginatedData<Category>;
@@ -25,53 +26,30 @@ export const CategoriesTable = ({ data }: Props) => {
 
   return (
     <div>
-      <Table className="w-full h-full">
-        {/* <TableCaption>A list of your recent invoices.</TableCaption> */}
+      <Table className='w-full h-full'>
         <TableHeader>
           <TableRow>
-            <TableHead className="pl-8">ID</TableHead>
+            <TableHead className='pl-8'>ID</TableHead>
             <TableHead>Image</TableHead>
             <TableHead>Name</TableHead>
-
             <TableHead>Created At</TableHead>
-
-            <TableHead className="text-center">Actions</TableHead>
+            <TableHead className='text-center'>Actions</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {data?.data?.map((category) => (
             <TableRow key={category.id}>
-              <TableCell className="font-medium pl-8">{category.id}</TableCell>
+              <TableCell className='font-medium pl-8'>{category.id}</TableCell>
               <TableCell>
-                <Image
-                  src={category.image || "/placeholder.svg"}
-                  alt={category.name || "Category Image"}
-                  width={150}
-                  height={150}
-                />
+                <Avatar>
+                  <AvatarImage src={category.image || "/placeholder.svg"} />
+                  <AvatarFallback>{category.name[0] ?? "N/A"}</AvatarFallback>
+                </Avatar>
               </TableCell>
               <TableCell>{category.name || "N/A"}</TableCell>
-
+              <TableCell>{diffForHumans(category.created_at)}</TableCell>
               <TableCell>
-                {category.created_at
-                  ? new Date(category.created_at)
-                      .toLocaleDateString("en-GB")
-                      .replace(/\//g, "-")
-                  : "N/A"}
-              </TableCell>
-
-              <TableCell>
-                <div className="flex justify-center items-center space-x-4">
-                  {!category.deleted_at && (
-                    <Link
-                      href={`/admin/categories/${category.id}`}
-                      className="text-primary p-0 m-0 hover:underline"
-                    >
-                      View
-                    </Link>
-                  )}
-                  <CategoryActions data={category} />
-                </div>
+                <CategoryActions data={category} />
               </TableCell>
             </TableRow>
           ))}

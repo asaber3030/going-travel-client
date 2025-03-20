@@ -4,6 +4,20 @@ export type APIResponse<T> = {
   status: number;
 };
 
+export type ApiResponse<T> = {
+  data: T;
+  message: string;
+  status: number;
+  errors?: Record<string, string[]>;
+};
+
+export type ApiError<T> = {
+  message: string;
+  status: number;
+  data: T;
+  errors?: Record<string, string[]>;
+};
+
 type PaginationLink = {
   url: string;
   label: string;
@@ -27,6 +41,7 @@ type PaginatedData<T> = {
 };
 
 export type Language = "ar" | "en" | "fr";
+export type TourType = "private" | "public";
 
 export type Timestamps = {
   deleted_at: Date;
@@ -77,7 +92,7 @@ type Location = Timestamps &
 type Tour = Creator &
   Timestamps & {
     id: number;
-    duration: string;
+    duration: number;
     availability: string;
     type: string;
     banner: string;
@@ -99,3 +114,7 @@ type Tour = Creator &
     pickup_location: Location;
     category: Category;
   };
+
+type Itinerary = Creator & Timestamps & {
+  
+};

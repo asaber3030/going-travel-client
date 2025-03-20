@@ -1,13 +1,13 @@
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
-import { VariantProps } from "class-variance-authority"
-import { Button, buttonVariants } from "../ui/button"
-import { Loader } from "lucide-react"
+import { VariantProps } from "class-variance-authority";
+import { Button, buttonVariants } from "../ui/button";
+import { Loader } from "lucide-react";
 
 interface LoadingButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  loading?: boolean
+  loading?: boolean;
 }
 
 export const LoadingButton = ({
@@ -24,8 +24,8 @@ export const LoadingButton = ({
       className={cn(buttonVariants({ variant, size, className }))}
       disabled={loading}
     >
-      {loading && <Loader className="animate-spin size-4" />}
+      {loading && <Loader className='animate-spin size-3' />}
       {children}
     </Button>
-  )
-}
+  );
+};

@@ -12,7 +12,7 @@ import {
   ChevronDown,
   Globe,
   Compass,
-  Star,
+  Star
 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -21,7 +21,7 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
 import {
   Sidebar,
@@ -34,7 +34,7 @@ import {
   SidebarMenuButton,
   SidebarMenuSub,
   SidebarMenuSubItem,
-  SidebarMenuSubButton,
+  SidebarMenuSubButton
 } from "@/components/ui/sidebar";
 
 const navigation = [
@@ -42,7 +42,7 @@ const navigation = [
     name: "Dashboard",
     href: "/admin",
     icon: LayoutDashboard,
-    current: (pathname: string) => pathname === "/admin",
+    current: (pathname: string) => pathname === "/admin"
   },
   {
     name: "Tours",
@@ -53,66 +53,65 @@ const navigation = [
     children: [
       { name: "All Tours", href: "/admin/tours" },
       { name: "Add New Tour", href: "/admin/tours/new" },
-      { name: "Categories", href: "/admin/tours/categories" },
-    ],
+      { name: "Categories", href: "/admin/categories" }
+    ]
   },
   {
     name: "Destinations",
-    href: "/admin/destinations",
+    href: "/admin/locations",
     icon: Globe,
     current: (pathname: string) =>
-      pathname === "/admin/destinations" ||
-      pathname.startsWith("/admin/destinations/"),
+      pathname === "/admin/locations" || pathname.startsWith("/admin/locations/")
   },
   {
     name: "Galleries",
     href: "/admin/galleries",
     icon: ImageIcon,
-    current: (pathname: string) => pathname === "/admin/galleries",
+    current: (pathname: string) => pathname === "/admin/galleries"
   },
   {
     name: "Maps",
     href: "/admin/maps",
     icon: Map,
-    current: (pathname: string) => pathname === "/admin/maps",
+    current: (pathname: string) => pathname === "/admin/maps"
   },
   {
     name: "Reviews",
     href: "/admin/reviews",
     icon: MessageSquare,
-    current: (pathname: string) => pathname === "/admin/reviews",
+    current: (pathname: string) => pathname === "/admin/reviews"
   },
   {
     name: "Testimonials",
     href: "/admin/testimonials",
     icon: Star,
-    current: (pathname: string) => pathname === "/admin/testimonials",
+    current: (pathname: string) => pathname === "/admin/testimonials"
   },
   {
     name: "Users",
     href: "/admin/users",
     icon: Users,
-    current: (pathname: string) => pathname === "/admin/users",
+    current: (pathname: string) => pathname === "/admin/users"
   },
   {
     name: "Settings",
     href: "/admin/settings",
     icon: Settings,
-    current: (pathname: string) => pathname === "/admin/settings",
-  },
+    current: (pathname: string) => pathname === "/admin/settings"
+  }
 ];
 
 export default function AdminSidebar() {
   const pathname = usePathname();
 
   return (
-    <Sidebar className="hidden md:flex">
-      <SidebarHeader className="border-b border-border/40 p-4">
-        <Link href="/admin" className="flex items-center gap-2">
-          <div className="bg-primary p-1 rounded-md">
-            <Compass className="h-6 w-6 text-white" />
+    <Sidebar className='hidden md:flex'>
+      <SidebarHeader className='border-b border-border/40 p-4'>
+        <Link href='/admin' className='flex items-center gap-2'>
+          <div className='bg-primary p-1 rounded-md'>
+            <Compass className='h-6 w-6 text-white' />
           </div>
-          <span className="font-bold text-lg">Alpine Admin</span>
+          <span className='font-bold text-lg'>Alpine Admin</span>
         </Link>
       </SidebarHeader>
 
@@ -124,31 +123,28 @@ export default function AdminSidebar() {
                 <SidebarMenuItem>
                   <SidebarMenuButton asChild isActive={item.current(pathname)}>
                     <Link href={item.href}>
-                      <item.icon className="h-5 w-5" />
+                      <item.icon className='h-5 w-5' />
                       <span>{item.name}</span>
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               </SidebarMenu>
             ) : (
-              <div className="group/collapsible">
+              <div className='group/collapsible'>
                 <SidebarMenu>
                   <SidebarMenuItem>
                     <SidebarMenuButton
                       isActive={item.current(pathname)}
-                      className="group-data-[state=open]/collapsible:bg-sidebar-accent group-data-[state=open]/collapsible:text-sidebar-accent-foreground"
+                      className='group-data-[state=open]/collapsible:bg-sidebar-accent group-data-[state=open]/collapsible:text-sidebar-accent-foreground'
                     >
-                      <item.icon className="h-5 w-5" />
+                      <item.icon className='h-5 w-5' />
                       <span>{item.name}</span>
-                      <ChevronDown className="ml-auto h-4 w-4 transition-transform group-data-[state=open]/collapsible:rotate-180" />
+                      <ChevronDown className='ml-auto h-4 w-4 transition-transform group-data-[state=open]/collapsible:rotate-180' />
                     </SidebarMenuButton>
                     <SidebarMenuSub>
                       {item.children.map((subItem) => (
                         <SidebarMenuSubItem key={subItem.name}>
-                          <SidebarMenuSubButton
-                            asChild
-                            isActive={pathname === subItem.href}
-                          >
+                          <SidebarMenuSubButton asChild isActive={pathname === subItem.href}>
                             <Link href={subItem.href}>{subItem.name}</Link>
                           </SidebarMenuSubButton>
                         </SidebarMenuSubItem>
@@ -162,35 +158,32 @@ export default function AdminSidebar() {
         ))}
       </SidebarContent>
 
-      <SidebarFooter className="border-t border-border/40 p-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
+      <SidebarFooter className='border-t border-border/40 p-4'>
+        <div className='flex items-center justify-between'>
+          <div className='flex items-center gap-3'>
             <Avatar>
-              <AvatarImage
-                src="/placeholder.svg?height=40&width=40"
-                alt="Admin User"
-              />
+              <AvatarImage src='/placeholder.svg?height=40&width=40' alt='Admin User' />
               <AvatarFallback>AD</AvatarFallback>
             </Avatar>
             <div>
-              <p className="text-sm font-medium">Admin User</p>
-              <p className="text-xs text-muted-foreground">admin@example.com</p>
+              <p className='text-sm font-medium'>Admin User</p>
+              <p className='text-xs text-muted-foreground'>admin@example.com</p>
             </div>
           </div>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className="rounded-full p-2">
-                <ChevronDown className="h-4 w-4" />
+              <button className='rounded-full p-2'>
+                <ChevronDown className='h-4 w-4' />
               </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
+            <DropdownMenuContent align='end'>
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem>Profile</DropdownMenuItem>
               <DropdownMenuItem>Settings</DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
-                <LogOut className="mr-2 h-4 w-4" />
+                <LogOut className='mr-2 h-4 w-4' />
                 <span>Log out</span>
               </DropdownMenuItem>
             </DropdownMenuContent>
