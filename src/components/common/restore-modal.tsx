@@ -5,9 +5,9 @@ import { useState } from "react";
 import { showResponse } from "@/lib/utils";
 
 import { LoadingButton } from "@/components/common/loading-button";
-
+import { ApiResponse } from "@/types";
 import { Button } from "@/components/ui/button";
-import { Redo2 } from "lucide-react";
+import { Redo2, Trash } from "lucide-react";
 import {
   Dialog,
   DialogClose,
@@ -16,9 +16,8 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
+  DialogTrigger
 } from "@/components/ui/dialog";
-import { APIResponse } from "@/types";
 
 interface Props {
   id: number;
@@ -26,7 +25,7 @@ interface Props {
   dialogDescription?: string;
   children?: React.ReactNode;
   asChild?: boolean;
-  action: (id: number) => Promise<APIResponse<any>>;
+  action: (id: number) => Promise<ApiResponse<any>>;
 }
 
 export const RestoreModal = ({
@@ -35,7 +34,7 @@ export const RestoreModal = ({
   id,
   children,
   asChild = true,
-  action,
+  action
 }: Props) => {
   const [open, setOpen] = useState(false);
 
@@ -44,7 +43,7 @@ export const RestoreModal = ({
     onSuccess: (data) =>
       showResponse(data, () => {
         setOpen(false);
-      }),
+      })
   });
 
   const handleDelete = () => {
@@ -57,13 +56,13 @@ export const RestoreModal = ({
         {children ? (
           children
         ) : (
-          <Button variant="outline-primary" size="icon">
-            <Redo2 className="size-4" />
+          <Button variant='outline-primary' size='icon'>
+            <Redo2 className='size-4' />
           </Button>
         )}
       </DialogTrigger>
 
-      <DialogContent className="bg-white">
+      <DialogContent className='bg-white'>
         <DialogHeader>
           <DialogTitle>{dialogTitle}</DialogTitle>
           <DialogDescription>{dialogDescription}</DialogDescription>
@@ -71,11 +70,11 @@ export const RestoreModal = ({
 
         <DialogFooter>
           <DialogClose asChild>
-            <Button variant="outline">Close</Button>
+            <Button variant='outline'>Close</Button>
           </DialogClose>
           <LoadingButton
             loading={restoreMutation.isPending}
-            variant="outline-primary"
+            variant='outline-primary'
             onClick={handleDelete}
           >
             Restore

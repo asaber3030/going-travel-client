@@ -1,7 +1,6 @@
 "use server";
 
 import { getLanguage, getToken } from "./app";
-import { AxiosResponse, AxiosError } from "axios";
 import { API_URL } from "@/lib/constants";
 import { APIResponse, User } from "@/types";
 import { z } from "zod";

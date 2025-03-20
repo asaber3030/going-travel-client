@@ -1,7 +1,12 @@
-import Link from "next/link";
-import { getTrashedCategories } from "../_components/actions";
+import { PaginationLinks } from "@/components/common/pagination";
+import { getTrashedCategories } from "../_helpers/actions";
 import { CategoriesTable } from "../_components/table";
-import { CategoryPagination } from "../_components/category-pagination";
+import { PageTitle } from "@/components/common/page-title";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Trashed Categories"
+};
 
 type Props = {
   searchParams: Promise<{ search?: string; page?: string }>;
@@ -9,22 +14,13 @@ type Props = {
 
 export default async function DestinationsPage({ searchParams }: Props) {
   const params = await searchParams;
-  const categories = await getTrashedCategories(
-    params.page ? parseInt(params.page) : 1
-  );
+  const categories = await getTrashedCategories(params.page ? parseInt(params.page) : 1);
 
   return (
-    <main className="space-y-6 ">
-      <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-semibold">
-          <span className="text-red-600">Trashed</span> Categories
-        </h1>
-      </div>
+    <main className='space-y-6 '>
+      <PageTitle label='Trashed Categories' />
       <CategoriesTable data={categories} />
-      <CategoryPagination
-        data={categories}
-        paginationBase="/admin/categories/trashed"
-      />
+      <PaginationLinks pagination={categories} />
     </main>
   );
 }

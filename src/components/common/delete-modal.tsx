@@ -1,9 +1,11 @@
+"use client";
+
 import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
 import { showResponse } from "@/lib/utils";
 
 import { LoadingButton } from "@/components/common/loading-button";
-import { APIResponse } from "@/types";
+import { ApiResponse } from "@/types";
 import { Button } from "@/components/ui/button";
 import { Trash } from "lucide-react";
 import {
@@ -14,9 +16,8 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
+  DialogTrigger
 } from "@/components/ui/dialog";
-
 
 interface Props {
   id: number;
@@ -24,8 +25,7 @@ interface Props {
   dialogDescription?: string;
   children?: React.ReactNode;
   asChild?: boolean;
-  redirect?: () => void;
-  action: (id: number) => Promise<APIResponse<any>>;
+  action: (id: number) => Promise<ApiResponse<any>>;
 }
 
 export const DeleteModal = ({
@@ -34,8 +34,7 @@ export const DeleteModal = ({
   id,
   children,
   asChild = true,
-  action,
-  redirect,
+  action
 }: Props) => {
   const [open, setOpen] = useState(false);
 
@@ -44,8 +43,7 @@ export const DeleteModal = ({
     onSuccess: (data) =>
       showResponse(data, () => {
         setOpen(false);
-       redirect && redirect();
-      }),
+      })
   });
 
   const handleDelete = () => {
@@ -58,13 +56,13 @@ export const DeleteModal = ({
         {children ? (
           children
         ) : (
-          <Button variant="outline-destructive" size="icon">
-            <Trash className="size-4" />
+          <Button variant='outline-destructive' size='icon'>
+            <Trash className='size-4' />
           </Button>
         )}
       </DialogTrigger>
 
-      <DialogContent className="bg-white">
+      <DialogContent className='bg-white'>
         <DialogHeader>
           <DialogTitle>{dialogTitle}</DialogTitle>
           <DialogDescription>{dialogDescription}</DialogDescription>
@@ -72,11 +70,11 @@ export const DeleteModal = ({
 
         <DialogFooter>
           <DialogClose asChild>
-            <Button variant="outline">Close</Button>
+            <Button variant='outline'>Close</Button>
           </DialogClose>
           <LoadingButton
             loading={forceDeleteMutation.isPending}
-            variant="outline-destructive"
+            variant='outline-destructive'
             onClick={handleDelete}
           >
             Delete
