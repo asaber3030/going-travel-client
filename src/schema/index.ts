@@ -35,7 +35,6 @@ export const TourSchema = {
     availability: z.string().min(2),
     max_people: z.number().int().positive(),
     price_start: z.number().int().positive(),
-    has_offer: z.enum(["yes", "no"]),
     category_id: z.number().int().positive(),
     location_id: z.number().int().positive(),
     pickup_location_id: z.number().int().positive(),
