@@ -1,11 +1,17 @@
-import { loadFont, loadPageDirection } from "@/lib/fonts";
 import "./globals.css";
+
+import { loadFont, loadPageDirection } from "@/lib/fonts";
 
 import { ReactQueryClientProvider, StoreProvider } from "@/providers";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { Toaster } from "@/components/ui/toaster";
 import { ToastContainer } from "react-toastify";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Going Travel"
+};
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const locale = await getLocale();

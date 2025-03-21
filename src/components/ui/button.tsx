@@ -50,7 +50,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props}>
         <div className='flex gap-2 items-center'>
-          {Icon && <Icon className={"size-4"} />}
+          {Icon && <Icon size={16} />}
           {children}
         </div>
       </Comp>

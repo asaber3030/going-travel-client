@@ -57,47 +57,17 @@ const navigation = [
     ]
   },
   {
-    name: "Destinations",
+    name: "Locations",
     href: "/admin/locations",
     icon: Globe,
     current: (pathname: string) =>
       pathname === "/admin/locations" || pathname.startsWith("/admin/locations/")
   },
   {
-    name: "Galleries",
-    href: "/admin/galleries",
-    icon: ImageIcon,
-    current: (pathname: string) => pathname === "/admin/galleries"
-  },
-  {
-    name: "Maps",
-    href: "/admin/maps",
-    icon: Map,
-    current: (pathname: string) => pathname === "/admin/maps"
-  },
-  {
-    name: "Reviews",
-    href: "/admin/reviews",
-    icon: MessageSquare,
-    current: (pathname: string) => pathname === "/admin/reviews"
-  },
-  {
-    name: "Testimonials",
-    href: "/admin/testimonials",
-    icon: Star,
-    current: (pathname: string) => pathname === "/admin/testimonials"
-  },
-  {
     name: "Users",
     href: "/admin/users",
     icon: Users,
     current: (pathname: string) => pathname === "/admin/users"
-  },
-  {
-    name: "Settings",
-    href: "/admin/settings",
-    icon: Settings,
-    current: (pathname: string) => pathname === "/admin/settings"
   }
 ];
 

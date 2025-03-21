@@ -14,8 +14,6 @@ export default async function UpdateTourPage({ params }: Props) {
   const { tourId } = await params;
   const tour = await getTour(+tourId);
 
-  console.log({ tour });
-
   if (!tour) return notFound();
 
   return (

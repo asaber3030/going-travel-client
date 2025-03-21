@@ -1,4 +1,3 @@
-import { TourTypeArray } from "@/lib/lists";
 import { z } from "zod";
 
 export const loginSchema = z.object({
@@ -50,3 +49,42 @@ export const TourSchema = {
     )
   })
 };
+
+export const TourItinerarySchema = z.object({
+  meals: z.string().min(2),
+  day_number: z.number().int().positive(),
+  overnight_location: z.string().min(2),
+  translations: z.array(
+    z.object({
+      title: z.string().min(2),
+      description: z.string().min(2),
+      locale: z.string().min(2)
+    })
+  )
+});
+
+export const TourHighlightSchema = z.object({
+  translations: z.array(
+    z.object({
+      title: z.string().min(2),
+      locale: z.string().min(2)
+    })
+  )
+});
+
+export const TourExclusionSchema = z.object({
+  type: z.enum(["exclusion", "inclusion"]),
+  translations: z.array(
+    z.object({
+      title: z.string().min(2),
+      locale: z.string().min(2)
+    })
+  )
+});
+
+export const TourReviewSchema = z.object({
+  client_name: z.string().min(2),
+  rating: z.number().int().min(1).max(5),
+  title: z.string().min(2),
+  description: z.string().min(2)
+});

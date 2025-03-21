@@ -12,10 +12,11 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
-import { DeleteModal } from "@/components/common/delete-modal";
+import { DeleteModal } from "@/app/admin/(authorized)/_components/delete-modal";
 import { RestoreModal } from "@/components/common/restore-modal";
-import { Settings2, Trash2, ArchiveRestore, EraserIcon, MoreHorizontal } from "lucide-react";
+import { Settings2, ArchiveRestore, EraserIcon, MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { routes } from "@/lib/route";
 
 type Props = {
   data: Category;
@@ -29,9 +30,11 @@ export const CategoryActions = ({ data }: Props) => {
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>Category Actions</DropdownMenuLabel>
+
         <DropdownMenuSeparator />
+
         {!data.deleted_at && (
-          <Link href={`/admin/categories/${data.id}/update`} className='p-0 m-0'>
+          <Link href={routes.categories.edit(data.id)} className='p-0 m-0'>
             <DropdownMenuItem className='focus:outline-none'>
               <Settings2 className='h-4 w-4' />
               Edit
@@ -40,22 +43,12 @@ export const CategoryActions = ({ data }: Props) => {
         )}
 
         {data.deleted_at ? (
-          <RestoreModal
-            action={restoreCategory}
-            id={data.id}
-            children={
-              <DropdownMenuItem
-                onSelect={(value) => {
-                  value.preventDefault();
-                  value.stopPropagation();
-                }}
-                className='focus:outline-none'
-              >
-                <ArchiveRestore className='h-4 w-4' />
-                Restore
-              </DropdownMenuItem>
-            }
-          />
+          <RestoreModal action={restoreCategory} id={data.id}>
+            <DropdownMenuItem className='focus:outline-none'>
+              <ArchiveRestore className='h-4 w-4' />
+              Restore
+            </DropdownMenuItem>
+          </RestoreModal>
         ) : (
           <DeleteModal action={deleteCategory} id={data.id}>
             <DropdownMenuItem className='text-red-500 focus:text-red-500 focus:outline-none'>

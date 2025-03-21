@@ -1,14 +1,11 @@
 "use client";
 
-import Link from "next/link";
-
 import { PaginatedData, Category } from "@/types";
 import { CategoryActions } from "./category-actions";
 
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,

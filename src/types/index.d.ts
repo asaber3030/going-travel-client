@@ -42,6 +42,13 @@ type PaginatedData<T> = {
 
 export type Language = "ar" | "en" | "fr";
 export type TourType = "private" | "public";
+export type ExclusionType = "exclusion" | "inclusion";
+export type UpdateTourFormType =
+  | "itineraries"
+  | "images"
+  | "highlights"
+  | "exclusions-inclusions"
+  | "reviews";
 
 export type Timestamps = {
   deleted_at: Date;
@@ -115,6 +122,73 @@ type Tour = Creator &
     category: Category;
   };
 
-type Itinerary = Creator & Timestamps & {
-  
-};
+type ItineraryTranslation = Timestamps &
+  Creator & {
+    id: number;
+    itinerary_id: number;
+    title: string;
+    description: string;
+    locale: string;
+  };
+
+type Itinerary = Creator &
+  Timestamps & {
+    id: number;
+    tour_id: number;
+    day_number: number;
+    meals: string;
+    overnight_location: string;
+    translations: ItineraryTranslation[];
+  };
+
+type HighlightTranslation = Timestamps &
+  Creator & {
+    id: number;
+    locale: string;
+    title: string;
+    tour_highlight_id: number;
+  };
+
+type Highlight = Timestamps &
+  Creator & {
+    id: number;
+    tour_id: number;
+    title: string;
+    image: string;
+    translations: HighlightTranslation[];
+  };
+
+type ExclusionTranslation = Timestamps &
+  Creator & {
+    id: number;
+    exclusion_id: number;
+    locale: string;
+    title: string;
+  };
+
+type Exclusion = Timestamps &
+  Creator & {
+    id: number;
+    tour_id: number;
+    title: string;
+    type: ExclusionType;
+    translations: ExclusionTranslation[];
+  };
+
+type Review = Timestamps &
+  Creator & {
+    id: number;
+    client_name: string;
+    tour_id: number;
+    rating: number;
+    title: string;
+    description: string;
+    image: string;
+  };
+
+type TourImage = Timestamps &
+  Creator & {
+    id: number;
+    tour_id: number;
+    image_url: string;
+  };

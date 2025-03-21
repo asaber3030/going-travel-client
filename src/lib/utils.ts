@@ -24,3 +24,7 @@ export function showResponse<T>(data: APIResponse<T>, execute?: () => void) {
 export function diffForHumans(date: Date) {
   return moment(date).fromNow();
 }
+
+export function randomNumber() {
+  return Math.floor(Math.random() * 10000000);
+}

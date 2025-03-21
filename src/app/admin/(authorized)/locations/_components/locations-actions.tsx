@@ -13,7 +13,7 @@ import {
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
 import { ArchiveRestore, EraserIcon, MoreHorizontal, Settings2, Trash2 } from "lucide-react";
-import { DeleteModal } from "@/components/common/delete-modal";
+import { DeleteModal } from "@/app/admin/(authorized)/_components/delete-modal";
 import { RestoreModal } from "@/components/common/restore-modal";
 import { Button } from "@/components/ui/button";
 import { routes } from "@/lib/route";

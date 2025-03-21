@@ -9,5 +9,9 @@ export const QueryKeys = {
   locations: {
     all: (search?: string) => ["locations", search],
     single: (id: number) => ["locations", id]
+  },
+  tours: {
+    all: (search?: string) => ["tours", search],
+    single: (id: number, data: string = "details") => ["tours", id, data]
   }
 };
