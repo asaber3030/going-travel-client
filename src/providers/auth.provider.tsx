@@ -1,11 +1,12 @@
 "use client";
 
-import React, { createContext } from "react";
+import { User } from "@/types";
+import { createContext } from "react";
 
-export const AdminContext = createContext<{} | null>(null);
+export const AdminContext = createContext<User | null>(null);
 
 type AuthProviderProps = {
-  value: {} | null;
+  value: User | null;
   children: React.ReactNode;
 };
 

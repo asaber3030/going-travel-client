@@ -24,7 +24,7 @@ export const LoadingButton = ({
       className={cn(buttonVariants({ variant, size, className }))}
       disabled={loading}
     >
-      {loading && <Loader className='animate-spin size-3' />}
+      {loading && <Loader className='animate-spin' size={16} />}
       {children}
     </Button>
   );

@@ -1,10 +1,16 @@
+"use client";
+
+import { AdminContext } from "@/providers";
+
 import { useMutation } from "@tanstack/react-query";
-import { login } from "@/actions/admin.login";
-import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
-import { loginSchema } from "@/schema";
-import { z } from "zod";
+import { useToast } from "@/hooks/use-toast";
+import { useContext } from "react";
+
 import { showResponse } from "@/lib/utils";
+import { loginSchema } from "@/schema";
+import { login, logout } from "@/actions/auth";
+import { z } from "zod";
 
 export function useAuth() {
   const { toast } = useToast();
@@ -33,4 +39,18 @@ export function useAuth() {
     isLoading: loginMutation.isPending,
     loginError: loginMutation.error
   };
+}
+
+export function useUser() {
+  return useContext(AdminContext);
+}
+
+export function useLogout() {
+  const router = useRouter();
+  return useMutation({
+    mutationFn: logout,
+    onSuccess: () => {
+      router.push("/admin/login");
+    }
+  });
 }

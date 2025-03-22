@@ -1,102 +1,67 @@
-import { z } from "zod";
-import { loginSchema } from "@/schema";
-import { useState } from "react";
+"use client";
+
 import { useForm } from "react-hook-form";
 import { useAuth } from "@/hooks/use-auth";
+
+import { z } from "zod";
+import { loginSchema } from "@/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage
-} from "@/components/ui/form";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Loader2 } from "lucide-react";
-import { Eye, EyeOff } from "lucide-react";
+
+import { Form } from "@/components/ui/form";
+import { InputField } from "@/components/common/input-field";
+import { LoadingButton } from "@/components/common/loading-button";
+import { CheckboxField } from "@/components/common/checkbox-field";
 
 export const LoginForm = () => {
   const { login, isLoading } = useAuth();
-  const [showPassword, setShowPassword] = useState(false);
 
   const form = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
       email: "a@a.com",
-      password: "0552320541"
+      password: "0552320541",
+      rememeberMe: false
     }
   });
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
 
   async function onSubmit(values: z.infer<typeof loginSchema>) {
     login(values);
   }
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
-        <FormField
-          control={form.control}
-          name='email'
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input placeholder='xyz@example.com' {...field} disabled={isLoading} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+    <div className='flex w-full flex-col justify-center px-4 py-12 md:w-1/2 md:px-12 lg:px-20'>
+      <div className='mx-auto w-full max-w-md space-y-8'>
+        <div className='space-y-2 text-center'>
+          <h1 className='text-4xl font-bold tracking-tight'>Welcome back</h1>
+          <p className='text-muted-foreground'>
+            Enter your credentials to access Going travel dashboard
+          </p>
+        </div>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
+            <InputField
+              control={form.control}
+              label='Email'
+              placeholder='Enter your email'
+              name='email'
+            />
 
-        <FormField
-          control={form.control}
-          name='password'
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Password</FormLabel>
-              <FormControl>
-                <div className='relative'>
-                  <Input
-                    type={showPassword ? "text" : "password"}
-                    placeholder='Enter your password'
-                    {...field}
-                    disabled={isLoading}
-                    className='pr-10'
-                  />
-                  <Button
-                    type='button'
-                    variant='ghost'
-                    size='icon'
-                    className='absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent'
-                    onClick={togglePasswordVisibility}
-                  >
-                    {showPassword ? <EyeOff className='h-4 w-4' /> : <Eye className='h-4 w-4' />}
-                    <span className='sr-only'>Toggle password visibility</span>
-                  </Button>
-                </div>
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+            <InputField
+              control={form.control}
+              label='Password'
+              placeholder='Enter your password'
+              name='password'
+              type={"password"}
+            />
 
-        <Button type='submit' className='w-full bg-primary' disabled={isLoading}>
-          {isLoading ? (
-            <>
-              <Loader2 className='mr-2 h-4 w-4 animate-spin' />
-              Logging in...
-            </>
-          ) : (
-            "Login"
-          )}
-        </Button>
-      </form>
-    </Form>
+            <CheckboxField control={form.control} label='Remember me' name='rememeberMe' />
+
+            <LoadingButton className='w-full' loading={isLoading} type='submit'>
+              Login
+            </LoadingButton>
+          </form>
+        </Form>
+      </div>
+    </div>
   );
 };
