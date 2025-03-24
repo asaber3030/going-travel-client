@@ -29,6 +29,11 @@ const nextConfig: NextConfig = {
         hostname: "via.placeholder.com"
       }
     ]
+  },
+  experimental: {
+    serverActions: {
+      bodySizeLimit: "10mb"
+    }
   }
 };
 
