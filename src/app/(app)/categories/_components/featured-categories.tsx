@@ -11,9 +11,9 @@ import { motion } from "framer-motion"
 import { MapPin, ArrowRight } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 
-import { UILocation } from "@/types/ui"
+import { UICategory } from "@/types/ui"
 
-export default function ToursFeaturedDestinations({ locations }: { locations: UILocation[] }) {
+export default function ToursFeaturedCategories({ categories }: { categories: UICategory[] }) {
   const t = useTranslations()
 
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
@@ -23,17 +23,12 @@ export default function ToursFeaturedDestinations({ locations }: { locations: UI
       <div className='container mx-auto px-4'>
         <div className='text-center mb-12'>
           <Badge className='mb-2'>{t("toursPage.featuredDestinations.exploreTheWorld")}</Badge>
-          <h2 className='text-3xl md:text-4xl font-bold mb-4'>
-            {t("toursPage.featuredDestinations.featuredDestinations")}
-          </h2>
-          <p className='text-muted-foreground max-w-2xl mx-auto'>
-            {t("toursPage.featuredDestinations.description")}
-          </p>
+          <h2 className='text-3xl md:text-4xl font-bold mb-4'>{t("categories")}</h2>
         </div>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-          {locations.map((destination, index) => (
+          {categories.map((category, index) => (
             <motion.div
-              key={`destination-${destination.id}`}
+              key={`category-${category.id}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -43,8 +38,8 @@ export default function ToursFeaturedDestinations({ locations }: { locations: UI
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <Image
-                src={destination.image || "/placeholder.svg"}
-                alt={destination.name}
+                src={category.image || "/placeholder.svg"}
+                alt={category.name}
                 fill
                 className='object-cover transition-transform duration-500 group-hover:scale-110'
               />
@@ -52,13 +47,13 @@ export default function ToursFeaturedDestinations({ locations }: { locations: UI
                 <div className='absolute bottom-0 left-0 right-0 p-6'>
                   <div className='flex items-center text-white/90 mb-2'>
                     <MapPin className='h-4 w-4 mr-1' />
-                    <span className='text-sm'>{destination.name}</span>
+                    <span className='text-sm'>{category.name}</span>
                   </div>
 
                   <div className='flex items-center justify-between'>
-                    <h3 className='text-white text-xl font-bold mb-2'>{destination.name}</h3>
+                    <h3 className='text-white text-xl font-bold mb-2'>{category.name}</h3>
                     <Link
-                      href={`#${destination.name.toLowerCase().replace(/\s+/g, "-")}`}
+                      href={`/categories/${category.id}/`}
                       className='text-white flex items-center text-sm opacity-0 group-hover:opacity-100 transition-opacity'
                     >
                       {t("toursPage.featuredDestinations.explore")}{" "}

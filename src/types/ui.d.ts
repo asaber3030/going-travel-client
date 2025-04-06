@@ -1,0 +1,124 @@
+import { Location } from "."
+
+export type UILocation = {
+  id: number
+  name: string
+  image: string
+  map_url: string
+}
+
+export type UICategory = {
+  id: number
+  name: string
+  image: string
+}
+
+export type UITour = {
+  id: number
+  title: string
+  description: string
+  distance_description: string
+  duration: string
+  availability: string
+  type: "public" | "private"
+  banner: string
+  thumbnail: string
+  trip_information: null | string
+  before_you_go: null | string
+  max_people: number
+  price_start: number
+  has_offer: boolean
+  offer_price: null | number
+  location: UILocation
+  reviews_count: number
+}
+
+export type UIReview = {
+  id: number
+  client_name: string
+  tour_id: number
+  rating: number
+  title: string
+  description: string
+  image: string
+  tour: {
+    id: number
+    title: string
+    description: string
+    distance_description: string
+  }
+}
+
+export type UIFullTour = {
+  id: number
+  duration: string
+  availability: string
+  type: "public" | string // Add other possible values if known
+  banner: string
+  thumbnail: string
+  trip_information: null | string
+  before_you_go: null | string
+  max_people: number
+  price_start: number
+  has_offer: 0 | 1
+  offer_price: null | number
+  category_id: number
+  pickup_location_id: number
+  location_id: number
+  created_by: number
+  updated_by: number
+  deleted_by: null | number
+  deleted_at: null | string
+  created_at: string
+  updated_at: string
+  title: string
+  description: string
+  distance_description: string
+  reviews_count: number
+  highlights: UIHighlight[]
+  reviews: UIReview[]
+  itineraries: UIItinerary[]
+  inclusions_exclusions: UIInclusionExclusion[]
+  images: UITourImage[]
+  category: UICategory
+  location: UILocation
+  pickup_location: UILocation
+}
+
+export type UIHighlight = {
+  id: number
+  tour_id: number
+  image: string
+  title: string
+}
+
+export type UIItinerary = {
+  id: number
+  tour_id: number
+  day_number: number
+  image: string
+  meals: string
+  overnight_location: string
+  title: string
+  description: string
+}
+
+export type UIInclusionExclusion = {
+  id: number
+  tour_id: number
+  type: "inclusion" | "exclusion"
+  title: string
+}
+
+export type UITourImage = {
+  id: number
+  tour_id: number
+  image_url: string
+}
+
+export type UICategory = {
+  id: number
+  image: string
+  name: string
+  description: string
+}

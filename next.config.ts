@@ -1,5 +1,5 @@
-import type { NextConfig } from "next";
-import createNextIntlPlugin from "next-intl/plugin";
+import type { NextConfig } from "next"
+import createNextIntlPlugin from "next-intl/plugin"
 
 const nextConfig: NextConfig = {
   eslint: {
@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
         protocol: "http",
         hostname: "localhost",
         port: "8000",
-        pathname: "/uploads/**",
+        pathname: "/**",
         search: ""
       },
       {
@@ -35,8 +35,8 @@ const nextConfig: NextConfig = {
       bodySizeLimit: "10mb"
     }
   }
-};
+}
 
-const withNextIntl = createNextIntlPlugin();
+const withNextIntl = createNextIntlPlugin()
 
-export default withNextIntl(nextConfig);
+export default withNextIntl(nextConfig)

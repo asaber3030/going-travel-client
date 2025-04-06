@@ -1,31 +1,18 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
-import { VariantProps } from "class-variance-authority";
-import { Button, buttonVariants } from "../ui/button";
-import { Loader } from "lucide-react";
+import { VariantProps } from "class-variance-authority"
+import { Button, buttonVariants } from "../ui/button"
+import { Loader } from "lucide-react"
 
-interface LoadingButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  loading?: boolean;
+interface LoadingButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
+  loading?: boolean
 }
 
-export const LoadingButton = ({
-  loading,
-  variant,
-  size,
-  className,
-  children,
-  ...props
-}: LoadingButtonProps) => {
+export const LoadingButton = ({ loading, variant, size, className, children, ...props }: LoadingButtonProps) => {
   return (
-    <Button
-      {...props}
-      className={cn(buttonVariants({ variant, size, className }))}
-      disabled={loading}
-    >
+    <Button {...props} className={cn(buttonVariants({ variant, size, className }))} disabled={loading}>
       {loading && <Loader className='animate-spin' size={16} />}
       {children}
     </Button>
-  );
-};
+  )
+}

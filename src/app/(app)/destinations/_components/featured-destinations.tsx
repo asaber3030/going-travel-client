@@ -58,7 +58,7 @@ export default function ToursFeaturedDestinations({ locations }: { locations: UI
                   <div className='flex items-center justify-between'>
                     <h3 className='text-white text-xl font-bold mb-2'>{destination.name}</h3>
                     <Link
-                      href={`#${destination.name.toLowerCase().replace(/\s+/g, "-")}`}
+                      href={`/destinations/${destination.id}/tours`}
                       className='text-white flex items-center text-sm opacity-0 group-hover:opacity-100 transition-opacity'
                     >
                       {t("toursPage.featuredDestinations.explore")}{" "}

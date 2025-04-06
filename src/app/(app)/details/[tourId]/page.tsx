@@ -1,13 +1,18 @@
-import React from "react";
-import TourDetails from "./_components/tour-details";
+import { notFound } from "next/navigation"
+import { getUITourDetails, getRelatedTours } from "./_actions/data"
+import TourDetails from "./_components/tour-details"
 
-async function page({ params }: { params: Promise<{ tourId: string }> }) {
-  const { tourId } = await params;
-  return (
-    <main>
-      <TourDetails />
-    </main>
-  );
+async function TourIdDetails({ params }: { params: Promise<{ tourId: string }> }) {
+  const { tourId } = await params
+
+  const tour = await getUITourDetails(+tourId)
+  const relatedTours = await getRelatedTours(+tourId)
+
+  console.log(relatedTours)
+
+  if (!tour) return notFound()
+
+  return <TourDetails relatedTours={relatedTours} tour={tour} />
 }
 
-export default page;
+export default TourIdDetails
