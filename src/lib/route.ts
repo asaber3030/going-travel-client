@@ -28,5 +28,13 @@ export const routes = {
     edit: (id: number) => `/admin/tours/${id}/update`,
     changeDetails: (id: number, item: string) => `/admin/tours/${id}/update/${item}`,
     show: (id: number) => `/admin/tours/${id}`
+  },
+  limousines: {
+    index: "/admin/limousines",
+    create: "/admin/limousines/create",
+    trash: "/admin/limousines/trashed",
+    edit: (id: number) => `/admin/limousines/${id}/update`,
+    changeDetails: (id: number, item: string) => `/admin/limousines/${id}/update/${item}`,
+    show: (id: number) => `/admin/limousines/${id}`
   }
-};
+}
