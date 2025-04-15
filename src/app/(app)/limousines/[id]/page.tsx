@@ -1,30 +1,30 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Calendar, ChevronLeft, Clock, MapPin, Users, Shield, Star, Wifi, Wine, Music, Tv, Check } from "lucide-react"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
-import { UILimousine } from '@/types/ui'
-import { getTranslations } from 'next-intl/server'
-import { getUILimousineById } from '../_actions/data'
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Calendar, ChevronLeft, Clock, MapPin, Users, Shield, Star, Wifi, Wine, Music, Tv, Check } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { UILimousine } from "@/types/ui";
+import { getTranslations } from "next-intl/server";
 
-import { notFound } from 'next/navigation'
-import { Avatar, AvatarFallback } from '@/components/ui/avatar'
+import { notFound } from "next/navigation";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { getUILimousineById } from "../_actions/data";
 
 type Props = {
   params: Promise<{
-    id: string
-  }>
-}
+    id: string;
+  }>;
+};
 
-export default async function LimousineDetailsPage({params}: Props) {
-  const {id} = await params
-  
-  const t = await getTranslations()
-  const limousine = await getUILimousineById(+id)
+export default async function LimousineDetailsPage({ params }: Props) {
+  const { id } = await params;
 
-  if (!limousine) return notFound()
+  const t = await getTranslations();
+  const limousine = await getUILimousineById(+id);
+
+  if (!limousine) return notFound();
 
   return (
     <div className="min-h-screen">
@@ -45,17 +45,14 @@ export default async function LimousineDetailsPage({params}: Props) {
           {/* Thumbnail Navigation */}
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
             {limousine.images.map((_: any, index: number) => (
-              <button
-                key={index}
-                className={`w-2 h-2 rounded-fulltransition-all`}
-              />
+              <button key={index} className={`w-2 h-2 rounded-fulltransition-all`} />
             ))}
           </div>
         </div>
       </div>
 
-        <div className='container mx-auto'>
-          {/* Content grid */}
+      <div className="container mx-auto">
+        {/* Content grid */}
         <div className="grid gap-8 lg:grid-cols-3">
           {/* Main info */}
           <div className="lg:col-span-2">
@@ -65,11 +62,15 @@ export default async function LimousineDetailsPage({params}: Props) {
                 <div className="flex items-center">
                   <Star className="mr-1 h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span>{limousine.reviews.length}</span>
-                  <span className="ml-1 text-muted-foreground">({limousine.reviews.length} {t("reviews")})</span>
+                  <span className="ml-1 text-muted-foreground">
+                    ({limousine.reviews.length} {t("reviews")})
+                  </span>
                 </div>
                 <div className="flex items-center text-muted-foreground">
                   <Users className="mr-1 h-5 w-5" />
-                  <span>{limousine.max_passengers} {t("passengers")}</span>
+                  <span>
+                    {limousine.max_passengers} {t("passengers")}
+                  </span>
                 </div>
               </div>
               <p className="text-muted-foreground">{limousine.description}</p>
@@ -108,9 +109,7 @@ export default async function LimousineDetailsPage({params}: Props) {
                   {Object.entries(limousine.specifications).map(([key, value]) => (
                     <Card key={key}>
                       <CardContent className="p-4">
-                        <div className="mb-1 text-sm text-muted-foreground">
-                          {key.charAt(0).toUpperCase() + key.slice(1)}
-                        </div>
+                        <div className="mb-1 text-sm text-muted-foreground">{key.charAt(0).toUpperCase() + key.slice(1)}</div>
                         <div>{value.vehicle_specifications}</div>
                       </CardContent>
                     </Card>
@@ -134,14 +133,15 @@ export default async function LimousineDetailsPage({params}: Props) {
                             </Avatar>
                             <div>
                               <h4 className="font-medium">{review.reviewer_name}</h4>
-                              
                             </div>
                           </div>
                           <div className="flex items-center">
                             {[...Array(5)].map((_, i) => (
                               <Star
                                 key={i}
-                                className={`h-4 w-4 ${i < review.rating ? "fill-yellow-400 text-yellow-400" : "fill-muted text-muted-foreground"}`}
+                                className={`h-4 w-4 ${
+                                  i < review.rating ? "fill-yellow-400 text-yellow-400" : "fill-muted text-muted-foreground"
+                                }`}
                               />
                             ))}
                           </div>
@@ -179,7 +179,7 @@ export default async function LimousineDetailsPage({params}: Props) {
             </Card>
           </div>
         </div>
-        </div>
       </div>
-  )
+    </div>
+  );
 }

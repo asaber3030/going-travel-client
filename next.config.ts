@@ -34,6 +34,12 @@ const nextConfig: NextConfig = {
         pathname: "/**",
         search: "",
       },
+      {
+        protocol: "https",
+        hostname: "gratisography.com",
+        pathname: "/**",
+        search: "",
+      },
     ],
   },
   experimental: {

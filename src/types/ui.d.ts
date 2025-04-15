@@ -124,23 +124,23 @@ export type UICategory = {
 };
 
 type UILimousine = {
-    id: number;
-    type: string;
-    price_per_hour: number;
-    max_passengers: number;
-    image: string;
-    category_id: number;
-    location_id: number;
-    name: string;
-    description: string;
-    reviews: UILimousineReview[];
-    features: UILimousineFeature[];
-    services: UILimousineService[];
-    specifications: UILimousineSpecification[];
-    images: UILimousineImage[];
-    overviews: UILimousineOverview[];
-    translations: UILimousineTranslation[];
-  };
+  id: number;
+  type: string;
+  price_per_hour: number;
+  max_passengers: number;
+  image: string;
+  category_id: number;
+  location_id: number;
+  name: string;
+  description: string;
+  reviews: UILimousineReview[];
+  features: UILimousineFeature[];
+  services: UILimousineService[];
+  specifications: UILimousineSpecification[];
+  images: UILimousineImage[];
+  overviews: UILimousineOverview[];
+  translations: UILimousineTranslation[];
+};
 
 type UILimousineReview = {
   id: number;
@@ -191,4 +191,53 @@ type UILimousineTranslation = {
   locale: string;
   name: string;
   description: string;
+};
+
+type UIHotel = {
+  id: number;
+  status: string;
+  location_id: number;
+  category_id: number;
+  stars: number;
+  thumbnail: string;
+  banner: string;
+  price: number;
+  name: string;
+  description: string;
+  amenity: UIHotelAmenity;
+  location: UILocation;
+  translations: UIHotelTranslation[];
+};
+
+type UIHotelTranslation = {
+  id: number;
+  hotel_id: number;
+  locale: string;
+  name: string;
+  description: string;
+  short_description: string;
+  address: string;
+  policy: string;
+  room_types: string;
+  slug: string;
+};
+
+type UIHotelAmenity = {
+  id: number;
+  hotel_id: number;
+  free_wifi: boolean;
+  spa_wellness_center: boolean;
+  fitness_center: boolean;
+  gourmet_restaurant: boolean;
+  indoor_outdoor_pools: boolean;
+  air_conditioning: boolean;
+  flat_screen_tv: boolean;
+  free_parking: boolean;
+  front_desk_24h: boolean;
+};
+type UIHotelLocation = {
+  id: number;
+  name: string;
+  image: string;
+  map_url: string;
 };
