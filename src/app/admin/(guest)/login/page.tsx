@@ -9,7 +9,7 @@ export default async function LoginPage() {
   if (user) return redirect("/admin/");
 
   return (
-    <div className='flex min-h-screen flex-col md:flex-row'>
+    <div className="flex min-h-screen flex-col md:flex-row">
       <LoginForm />
       <LoginImage />
     </div>
