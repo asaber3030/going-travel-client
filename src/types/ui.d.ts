@@ -53,7 +53,7 @@ export type UIFullTour = {
   id: number;
   duration: string;
   availability: string;
-  type: "public" | string; // Add other possible values if known
+  type: "public" | string;
   banner: string;
   thumbnail: string;
   trip_information: null | string;
@@ -123,8 +123,7 @@ export type UICategory = {
   description: string;
 };
 
-type UILimousine = Timestamps &
-  Creator & {
+type UILimousine = {
     id: number;
     type: string;
     price_per_hour: number;
@@ -138,6 +137,7 @@ type UILimousine = Timestamps &
     features: UILimousineFeature[];
     services: UILimousineService[];
     specifications: UILimousineSpecification[];
+    images: UILimousineImage[];
     overviews: UILimousineOverview[];
     translations: UILimousineTranslation[];
   };
@@ -177,6 +177,12 @@ type UILimousineOverview = {
   key_features: string;
   available_services: string;
   pricing: string;
+};
+
+type UILimousineImage = {
+  id: number;
+  limousine_id: number;
+  url: string;
 };
 
 type UILimousineTranslation = {

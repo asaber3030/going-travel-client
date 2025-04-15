@@ -39,7 +39,7 @@ export default function ServiceCards() {
       description: "Travel in style with our premium limousine services for airport transfers and special occasions.",
       icon: <Car className="h-8 w-8" />,
       image: "/service1.png",
-      link: "/limousine",
+      link: "/limousines",
     },
   ];
 

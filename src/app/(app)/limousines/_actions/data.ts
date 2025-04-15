@@ -16,7 +16,7 @@ export async function getUILimousines(sp: Record<string, string | number> = { ta
   }
 }
 
-export async function getUILimousineById(id: string): Promise<UILimousine> {
+export async function getUILimousineById(id: number): Promise<UILimousine> {
   try {
     const response = await getRequest<UILimousine>(`/ui/limousines/${id}`);
     return response.data;

@@ -1,10 +1,15 @@
-import { Card, CardHeader, CardTitle, CardContent, CardFooter, CardDescription } from "@/components/ui/card";
-import { TabsContent } from "@radix-ui/react-tabs";
-import { motion } from "framer-motion";
-import { Link, Check } from "lucide-react";
+"use client"
+
 import React from "react";
-import { Button } from "@/components/ui/button";
+
+import { motion } from "framer-motion";
+
+import { Card, CardHeader, CardTitle, CardContent, CardFooter, CardDescription } from "@/components/ui/card";
 import { UILimousine, UILimousineFeature, UILimousineService } from "@/types/ui";
+
+import { TabsContent } from "@radix-ui/react-tabs";
+import { Link, Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -18,10 +23,11 @@ const fadeIn = {
 type Props = {
   limousine: UILimousine;
 };
-export  function OverviewTab({ limousine }: Props) {
+
+export const OverviewTab = ({ limousine }: Props) => {
   return (
     <TabsContent value="overview">
-      <motion.div initial="hidden" animate="visible" variants={fadeIn} className="space-y-8">
+      <div className="space-y-8">
         <section>
           <h2 className="text-2xl font-bold mb-4">About This Vehicle</h2>
           <p className="text-muted-foreground mb-4">{limousine.description}</p>
@@ -151,7 +157,7 @@ export  function OverviewTab({ limousine }: Props) {
             </Card>
           </div>
         </section>
-      </motion.div>
+      </div>
     </TabsContent>
   );
 }

@@ -1,12 +1,13 @@
 export const LANGUAGE_COOKIE = "language";
-export const AvailableLanguages = ["en", "ar", "fr", "pt", "it", "de"];
+export const AvailableLanguages = ["en", "ar", "fr", "pt", "it", "de", "sp"];
 export const Languages = [
   { code: "en", name: "English" },
   { code: "ar", name: "Arabic" },
   { code: "fr", name: "French" },
+  { code: "sp", name: "Spanish" },
   { code: "pt", name: "Portuguese" },
   { code: "it", name: "Italian" },
-  { code: "de", name: "Germany" }
+  { code: "dt", name: "Germany" }
 ];
 export const LOGO_PATH = "/images/logo/main.png";
 export const API_URL = process.env.NEXT_PUBLIC_API_URL;

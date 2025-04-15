@@ -1,3 +1,5 @@
+"use client"
+
 import { Card, CardContent } from "@/components/ui/card";
 import { TabsContent } from "@radix-ui/react-tabs";
 import { motion } from "framer-motion";

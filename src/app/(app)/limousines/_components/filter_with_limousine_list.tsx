@@ -4,13 +4,12 @@ import React, { useState, useMemo } from "react";
 import { Slider } from "@/components/ui/slider";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
-import LimousinesList from "../_components/limousines_list";
 import { Button } from "@/components/ui/button";
 import { UILimousine } from "@/types/ui";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Users, Car, Shield, Check } from "lucide-react";
+import { Users, Car, Shield, Check, DollarSign } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -82,105 +81,10 @@ export default function FilterWithLimousineList({ data }: Props) {
   return (
     <section className="container mx-auto px-4 py-24">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-        {/* Filters Sidebar */}
-        <div className="lg:col-span-1 space-y-6">
-          <div className="bg-white rounded-lg shadow-sm border p-5 space-y-6">
-            <div>
-              <h3 className="font-bold text-lg mb-4">Filters</h3>
-              <div className="space-y-4">
-                {/* Price Range Filter */}
-                <div>
-                  <h4 className="font-medium mb-2">Price Range</h4>
-                  <Slider
-                    defaultValue={[100, 1000]}
-                    min={100}
-                    max={1000}
-                    step={50}
-                    value={priceRange}
-                    onValueChange={setPriceRange}
-                    className="mb-2"
-                  />
-                  <div className="flex items-center justify-between text-sm">
-                    <span>${priceRange[0]}</span>
-                    <span>${priceRange[1]}+</span>
-                  </div>
-                </div>
-
-                {/* Passenger Capacity Filter */}
-                <div>
-                  <h4 className="font-medium mb-2">Passenger Capacity</h4>
-                  <div className="space-y-2">
-                    {[3, 4, 6, 7].map((count) => (
-                      <div key={count} className="flex items-center">
-                        <Checkbox
-                          id={`passengers-${count}`}
-                          checked={passengerCount.includes(count.toString())}
-                          onCheckedChange={(checked) => {
-                            if (checked) {
-                              setPassengerCount([...passengerCount, count.toString()]);
-                            } else {
-                              setPassengerCount(passengerCount.filter((c) => c !== count.toString()));
-                            }
-                          }}
-                        />
-                        <Label htmlFor={`passengers-${count}`} className="ml-2 flex items-center">
-                          {count} passengers
-                        </Label>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Vehicle Type Filter */}
-                <div>
-                  <h4 className="font-medium mb-2">Vehicle Type</h4>
-                  <div className="space-y-2">
-                    {[
-                      { id: "sedan", label: "Sedan" },
-                      { id: "suv", label: "SUV" },
-                      { id: "van", label: "Van" },
-                      { id: "luxury", label: "Luxury" },
-                      { id: "electric", label: "Electric" },
-                    ].map((item) => (
-                      <div key={item.id} className="flex items-center">
-                        <Checkbox
-                          id={`type-${item.id}`}
-                          checked={vehicleTypes.includes(item.id)}
-                          onCheckedChange={(checked) => {
-                            if (checked) {
-                              setVehicleTypes([...vehicleTypes, item.id]);
-                            } else {
-                              setVehicleTypes(vehicleTypes.filter((t) => t !== item.id));
-                            }
-                          }}
-                        />
-                        <Label htmlFor={`type-${item.id}`} className="ml-2">
-                          {item.label}
-                        </Label>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Reset Filters Button */}
-            <Button
-              variant="outline"
-              className="w-full"
-              onClick={() => {
-                setPriceRange([100, 1000]);
-                setPassengerCount([]);
-                setVehicleTypes([]);
-              }}
-            >
-              Reset Filters
-            </Button>
-          </div>
-        </div>
+        
         {/* Limousines List */}
 
-        <div className="lg:col-span-3 space-y-6">
+        <div className="lg:col-span-4 space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <h2 className="text-2xl font-bold">Available Vehicles</h2>
@@ -236,8 +140,9 @@ export default function FilterWithLimousineList({ data }: Props) {
                 >
                   <Card className="overflow-hidden w-full">
                     <div className="flex flex-col md:flex-row">
-                      <div className="relative w-full md:w-1/2 h-[300px] md:h-auto flex-shrink-0">
-                        <Image src={limo.image_url || "/placeholder.jpg"} alt={limo.name} fill className="object-cover w-full h-full" />
+                      <div className="relative w-full md:w-1/3 h-[300px] md:h-auto flex-shrink-0">
+                        <Image src={limo.image || "/placeholder.jpg"} alt={limo.name} fill className="object-cover w-full h-full" />
+                      
                       </div>
                       <CardContent className="flex-1 p-6">
                         <div className="flex flex-col h-full justify-between">
@@ -260,17 +165,17 @@ export default function FilterWithLimousineList({ data }: Props) {
                                 <span className="text-sm font-medium">{limo.max_passengers} Passengers</span>
                               </div>
                               <div className="flex flex-col items-center text-center p-2 bg-muted/30 rounded-lg">
-                                <Car className="h-5 w-5 text-muted-foreground mb-1" />
-                                <span className="text-sm font-medium">Category ID: {limo.category_id}</span>
+                                <DollarSign className="h-5 w-5 text-muted-foreground mb-1" />
+                                <span className="text-sm font-medium">${limo.price_per_hour}</span>
                               </div>
                               <div className="flex flex-col items-center text-center p-2 bg-muted/30 rounded-lg">
                                 <Shield className="h-5 w-5 text-muted-foreground mb-1" />
-                                <span className="text-sm font-medium">Location ID: {limo.location_id}</span>
+                                <span className="text-sm font-medium">{limo.name}</span>
                               </div>
                             </div>
                             <p className="text-muted-foreground mb-4">{limo.description}</p>
                             <div className="flex flex-wrap gap-2 mb-4">
-                              {limo.features.map((feature: UILimousine) => (
+                              {limo.features.map((feature) => (
                                 <Badge key={feature.id} variant="outline" className="flex items-center gap-1">
                                   <Check className="h-3 w-3" />
                                   <span>{feature.vehicle_features}</span>
@@ -278,11 +183,10 @@ export default function FilterWithLimousineList({ data }: Props) {
                               ))}
                             </div>
                           </div>
-                          <div className="flex items-center justify-between mt-4">
+                          <div className="flex items-center justify-end mt-4">
                             <Button variant="outline" asChild>
                               <Link href={`/limousines/${limo.id}`}>View Details</Link>
                             </Button>
-                            <Button>Book Now</Button>
                           </div>
                         </div>
                       </CardContent>

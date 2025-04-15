@@ -1,8 +1,9 @@
+"use client"
+
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { TabsContent } from "@radix-ui/react-tabs";
 import { motion } from "framer-motion";
 import { Check, Info } from "lucide-react";
-import React from "react";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
