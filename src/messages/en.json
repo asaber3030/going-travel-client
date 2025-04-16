@@ -32,6 +32,11 @@
   "exploreTours": "Explore Tours",
   "viewAllTours": "View All Tours",
   "viewDetails": "View Details",
+  "pricePerHour": "Price per hour",
+  "features": "Features",
+  "specifications": "Specifications",
+  "backToLimousines": "Back to Limousines",
+  "noHotelsFound": "No hotels found",
   "from": "From",
   "locationTours": "Location Tours",
   "noToursFound": "No tours found",
@@ -53,7 +58,11 @@
   "what'sNotIncluded": "What's Not Included",
   "priceStart": "Price Start",
   "needHelp": "Need Help?",
+  "overallRating": "Overall Rating",
+  "guestReviews": "Guest Reviews",
+  "pricePerNight": "Price per night",
   "chat": "Chat",
+  "stars": "Stars",
   "callUs": "Call Us",
   "relatedTours": "Related Tours",
   "haveQuestionsAboutThisTour": "Have questions about this tour?",
@@ -130,5 +139,25 @@
     "noHotelsFound": "No hotels found",
     "viewDetails": "View Details",
     "pricePerNight": "Price per Night"
+  },
+  "homePageTitle": "Our Services",
+  "homePageDescription": "Choose from our premium travel services designed to make your journey comfortable and memorable",
+  "homePageLandingTitle": "Discover Your Perfect Journey",
+  "homePageLandingDescription": "Experience premium travel services tailored to your needs",
+  "homePageLandingButton": "Explore Now",
+  "services": {
+    "tour_packages": {
+      "title": "Tour Packages",
+      "description": "Explore our curated tour packages designed to showcase the best destinations around the world."
+    },
+    "hotel_booking": {
+      "title": "Hotel Booking",
+      "description": "Discover comfortable accommodations worldwide, from luxury resorts to cozy boutique hotels."
+    },
+    "limousine_service": {
+      "title": "Limousine Service",
+      "description": "Travel in style with our premium limousine services for airport transfers and special occasions."
+    },
+    "explore": "Explore"
   }
 }
