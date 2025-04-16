@@ -14,17 +14,12 @@ export default async function ToursPage() {
   const popularToursPromise = getUIPopularTours()
   const reviewsPromise = getUIReviews()
 
-  const [locations, popularTours, reviews] = await Promise.all([
-    locationsPromise,
-    popularToursPromise,
-    reviewsPromise
-  ])
+  const [locations, popularTours, reviews] = await Promise.all([locationsPromise, popularToursPromise, reviewsPromise])
 
   return (
     <div>
       <section className='relative h-screen'>
         <ToursHeroSlides />
-        <ToursSearchBox />
       </section>
 
       <ToursFeaturedDestinations locations={locations} />

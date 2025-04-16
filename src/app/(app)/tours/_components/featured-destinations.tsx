@@ -23,12 +23,8 @@ export default function ToursFeaturedDestinations({ locations }: { locations: UI
       <div className='container mx-auto px-4'>
         <div className='text-center mb-12'>
           <Badge className='mb-2'>{t("toursPage.featuredDestinations.exploreTheWorld")}</Badge>
-          <h2 className='text-3xl md:text-4xl font-bold mb-4'>
-            {t("toursPage.featuredDestinations.featuredDestinations")}
-          </h2>
-          <p className='text-muted-foreground max-w-2xl mx-auto'>
-            {t("toursPage.featuredDestinations.description")}
-          </p>
+          <h2 className='text-3xl md:text-4xl font-bold mb-4'>{t("toursPage.featuredDestinations.featuredDestinations")}</h2>
+          <p className='text-muted-foreground max-w-2xl mx-auto'>{t("toursPage.featuredDestinations.description")}</p>
         </div>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
           {locations.map((destination, index) => (
@@ -42,12 +38,7 @@ export default function ToursFeaturedDestinations({ locations }: { locations: UI
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <Image
-                src={destination.image || "/placeholder.svg"}
-                alt={destination.name}
-                fill
-                className='object-cover transition-transform duration-500 group-hover:scale-110'
-              />
+              <Image src={destination.image || "/placeholder.svg"} alt={destination.name} fill className='object-cover transition-transform duration-500 group-hover:scale-110' />
               <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent'>
                 <div className='absolute bottom-0 left-0 right-0 p-6'>
                   <div className='flex items-center text-white/90 mb-2'>
@@ -57,24 +48,14 @@ export default function ToursFeaturedDestinations({ locations }: { locations: UI
 
                   <div className='flex items-center justify-between'>
                     <h3 className='text-white text-xl font-bold mb-2'>{destination.name}</h3>
-                    <Link
-                      href={`#${destination.name.toLowerCase().replace(/\s+/g, "-")}`}
-                      className='text-white flex items-center text-sm opacity-0 group-hover:opacity-100 transition-opacity'
-                    >
-                      {t("toursPage.featuredDestinations.explore")}{" "}
-                      <ArrowRight className='ml-1 h-4 w-4' />
+                    <Link href={`/destinations/${destination.id}`} className='text-white flex items-center text-sm opacity-0 group-hover:opacity-100 transition-opacity'>
+                      {t("toursPage.featuredDestinations.explore")} <ArrowRight className='ml-1 h-4 w-4' />
                     </Link>
                   </div>
                 </div>
               </div>
 
-              {hoveredIndex === index && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className='absolute inset-0 border-4 border-white/30 rounded-xl pointer-events-none'
-                />
-              )}
+              {hoveredIndex === index && <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className='absolute inset-0 border-4 border-white/30 rounded-xl pointer-events-none' />}
             </motion.div>
           ))}
         </div>

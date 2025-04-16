@@ -16,12 +16,7 @@ import { Menu, MapPin, ChevronDown, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { AvailableLanguages } from "@/lib/lists"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 export default function TourismNavbar() {
   const t = useTranslations()
@@ -76,40 +71,15 @@ export default function TourismNavbar() {
                   <Image src='/logo.svg' width={30} height={30} alt='Logo' />
                   <span className='mt-1'>GoingTravel</span>
                 </Link>
-                <Link
-                  href='#'
-                  className='group flex h-10 w-full items-center rounded-md px-3 hover:bg-teal-50'
-                >
+                <Link href='#' className='group flex h-10 w-full items-center rounded-md px-3 hover:bg-teal-50'>
                   {t("home")}
                 </Link>
                 <div className='grid gap-3 pl-3'>
                   <h4 className='font-semibold text-teal-600'>{t("destinations")}</h4>
-                  <Link
-                    href='#'
-                    className='group flex h-8 w-full items-center rounded-md px-3 hover:bg-teal-50'
-                  >
+                  <Link href='#' className='group flex h-8 w-full items-center rounded-md px-3 hover:bg-teal-50'>
                     Tours
                   </Link>
                 </div>
-                <Link
-                  href='#'
-                  className='group flex h-10 w-full items-center rounded-md px-3 hover:bg-teal-50'
-                >
-                  Tour Packages
-                </Link>
-
-                <Link
-                  href='#'
-                  className='group flex h-10 w-full items-center rounded-md px-3 hover:bg-teal-50'
-                >
-                  About Us
-                </Link>
-                <Link
-                  href='#'
-                  className='group flex h-10 w-full items-center rounded-md px-3 hover:bg-teal-50'
-                >
-                  Contact
-                </Link>
               </nav>
             </SheetContent>
           </Sheet>
@@ -124,10 +94,7 @@ export default function TourismNavbar() {
           </Link>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button
-                variant='link'
-                className='flex items-center gap-1 px-0 text-sm font-medium transition-colors hover:text-teal-600'
-              >
+              <Button variant='link' className='flex items-center gap-1 px-0 text-sm font-medium transition-colors hover:text-teal-600'>
                 {t("destinations")}
                 <ChevronDown className='h-4 w-4' />
               </Button>
@@ -137,10 +104,7 @@ export default function TourismNavbar() {
                 <div className='p-2'>{t("loading")}...</div>
               ) : (
                 data?.map((location) => (
-                  <Link
-                    href={`/destinations/${location.id}`}
-                    key={`navbar-destination-${location.id}`}
-                  >
+                  <Link href={`/destinations/${location.id}`} key={`navbar-destination-${location.id}`}>
                     <DropdownMenuItem>{location.name}</DropdownMenuItem>
                   </Link>
                 ))
@@ -152,29 +116,21 @@ export default function TourismNavbar() {
             {t("tours")}
           </Link>
 
-          <Link
-            href='/categories'
-            className='text-sm font-medium transition-colors hover:text-teal-600'
-          >
+          <Link href='/categories' className='text-sm font-medium transition-colors hover:text-teal-600'>
             {t("categories")}
           </Link>
 
-          <Link href='/about' className='text-sm font-medium transition-colors hover:text-teal-600'>
-            {t("aboutUs")}
+          <Link href='/hotels' className='text-sm font-medium transition-colors hover:text-teal-600'>
+            {t("hotels")}
           </Link>
-          <Link
-            href='/contact'
-            className='text-sm font-medium transition-colors hover:text-teal-600'
-          >
-            {t("contact")}
+
+          <Link href='/limousines' className='text-sm font-medium transition-colors hover:text-teal-600'>
+            {t("limousines")}
           </Link>
         </nav>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button
-              variant='link'
-              className='flex items-center gap-1 p-0 text-sm font-medium transition-colors hover:text-teal-600'
-            >
+            <Button variant='link' className='flex items-center gap-1 p-0 text-sm font-medium transition-colors hover:text-teal-600'>
               {t("language")}
               <ChevronDown className='h-4 w-4' />
             </Button>
