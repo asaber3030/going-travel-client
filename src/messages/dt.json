@@ -97,4 +97,39 @@
       "learnMoreAboutUs": "Erfahren Sie mehr über uns"
     }
   }
+  ,
+  "hotelsPage": {
+    "backToHotels": "Zurück zu Hotels",
+    "starsHotel": "Sterne Hotel",
+    "aboutThisHotel": "Über dieses Hotel",
+    "keyAmenities": "Wichtige Annehmlichkeiten",
+    "freeWifi": "Kostenloses WLAN",
+    "spa": "Spa & Wellness Center",
+    "fitnessCenter": "Fitnesscenter",
+    "gourmetRestaurant": "Gourmet-Restaurant",
+    "pools": "Innen- und Außenpools",
+    "airConditioner": "Klimaanlage",
+    "flatTvScreen": "Flachbildfernseher",
+    "freeParking": "Kostenloses Parken",
+    "frontDesk": "24-Stunden-Rezeption",
+    "bookYourStay": "Buchen Sie Ihren Aufenthalt",
+    "bestRateGuarantied": "Bestpreisgarantie",
+    "averageRoomRate": "Durchschnittlicher Zimmerpreis",
+    "night": "Nacht",
+    "bookNow": "Jetzt buchen",
+    "noPaymentNeeded": "Keine Vorauszahlung erforderlich – Zahlung vor Ort",
+    "hotelPolicies": "Hotelrichtlinien",
+    "needHelp": "Brauchen Sie Hilfe?",
+    "ourTravel": "Unsere Reiseexperten stehen Ihnen bei Ihrer Buchung zur Verfügung.",
+    "contactUs": "Kontaktieren Sie uns",
+    "availableHotels": "Verfügbare Hotels",
+    "sortBy": "Sortieren nach:",
+    "recommended": "Empfohlen",
+    "priceLowToHigh": "Preis: Niedrig bis Hoch",
+    "priceHighToLow": "Preis: Hoch bis Niedrig",
+    "rating": "Bewertung",
+    "noHotelsFound": "Keine Hotels gefunden",
+    "viewDetails": "Details anzeigen",
+    "pricePerNight": "Preis pro Nacht"
+  }
 }

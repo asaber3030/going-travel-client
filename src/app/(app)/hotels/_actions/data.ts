@@ -6,7 +6,7 @@ import { build } from "search-params";
 import { UIHotel } from "@/types/ui";
 import { PaginatedData } from "@/types";
 
-export async function getUIHotel(sp: Record<string, string | number> = { take: 12 }): Promise<PaginatedData<UIHotel>> {
+export async function getUIHotels(sp: Record<string, string | number> = { take: 12 }): Promise<PaginatedData<UIHotel>> {
   try {
     const params = build(sp);
     const response = await getRequest<PaginatedData<UIHotel>>(`/ui/hotels?${params}`);

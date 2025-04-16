@@ -1,11 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Calendar, ChevronLeft, Clock, MapPin, Users, Shield, Star, Wifi, Wine, Music, Tv, Check } from "lucide-react";
+import { ChevronLeft, Users, Star, Check } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { UILimousine } from "@/types/ui";
 import { getTranslations } from "next-intl/server";
 
 import { notFound } from "next/navigation";

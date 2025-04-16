@@ -81,7 +81,6 @@ export default function FilterWithLimousineList({ data }: Props) {
   return (
     <section className="container mx-auto px-4 py-24">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-        
         {/* Limousines List */}
 
         <div className="lg:col-span-4 space-y-6">
@@ -89,7 +88,7 @@ export default function FilterWithLimousineList({ data }: Props) {
             <div>
               <h2 className="text-2xl font-bold">Available Vehicles</h2>
               <p className="text-muted-foreground">
-                Showing {sortedLimousines.length} of {limousines.length} vehicles
+                Showing {sortedLimousines.length} of {data.total} vehicles
               </p>
             </div>
             <div className="flex items-center gap-2">
@@ -142,7 +141,6 @@ export default function FilterWithLimousineList({ data }: Props) {
                     <div className="flex flex-col md:flex-row">
                       <div className="relative w-full md:w-1/3 h-[300px] md:h-auto flex-shrink-0">
                         <Image src={limo.image || "/placeholder.jpg"} alt={limo.name} fill className="object-cover w-full h-full" />
-                      
                       </div>
                       <CardContent className="flex-1 p-6">
                         <div className="flex flex-col h-full justify-between">
