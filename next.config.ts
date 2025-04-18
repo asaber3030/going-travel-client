@@ -1,54 +1,55 @@
-import type { NextConfig } from "next";
-import createNextIntlPlugin from "next-intl/plugin";
+import type { NextConfig } from "next"
+import createNextIntlPlugin from "next-intl/plugin"
 
 const nextConfig: NextConfig = {
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: true
   },
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: true
   },
   images: {
     remotePatterns: [
+      { hostname: "18.184.226.36" },
       {
         protocol: "https",
         hostname: "going-travel.laravel.cloud",
         port: "",
         pathname: "/uploads/**",
-        search: "",
+        search: ""
       },
       {
         protocol: "http",
         hostname: "localhost",
         port: "8000",
         pathname: "/**",
-        search: "",
+        search: ""
       },
       {
         protocol: "https",
-        hostname: "via.placeholder.com",
+        hostname: "via.placeholder.com"
       },
       {
         protocol: "https",
         hostname: "images.squarespace-cdn.com",
         pathname: "/**",
-        search: "",
+        search: ""
       },
       {
         protocol: "https",
         hostname: "gratisography.com",
         pathname: "/**",
-        search: "",
-      },
-    ],
+        search: ""
+      }
+    ]
   },
   experimental: {
     serverActions: {
-      bodySizeLimit: "10mb",
-    },
-  },
-};
+      bodySizeLimit: "10mb"
+    }
+  }
+}
 
-const withNextIntl = createNextIntlPlugin();
+const withNextIntl = createNextIntlPlugin()
 
-export default withNextIntl(nextConfig);
+export default withNextIntl(nextConfig)
