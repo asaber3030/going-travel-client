@@ -7,7 +7,7 @@ import AdminHeader from "./_components/admin-header"
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { AuthProvider } from "@/providers"
 import { getUser } from "@/actions/auth"
-import { notFound, redirect } from "next/navigation"
+import { redirect } from "next/navigation"
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const user = await getUser()
