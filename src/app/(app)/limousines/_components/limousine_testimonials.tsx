@@ -1,8 +1,8 @@
-import React from "react";
+import React from "react"
 
-import { Star } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
+import { Star } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent } from "@/components/ui/card"
 
 const testimonials = [
   {
@@ -26,9 +26,9 @@ const testimonials = [
       "The hourly charter service was perfect for our business meetings. The driver was knowledgeable about the city and very accommodating with our changing schedule. Highly recommended!",
     service: "Hourly Charter",
   },
-];
+]
 
-export default function LimousineTestimonials() {
+export function LimousineTestimonials() {
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
@@ -67,5 +67,5 @@ export default function LimousineTestimonials() {
         </div>
       </div>
     </section>
-  );
+  )
 }

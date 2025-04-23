@@ -1,48 +1,46 @@
-"use client";
-import React, { useState, useMemo } from "react";
+"use client"
+import React, { useState, useMemo } from "react"
+import Link from "next/link"
+import Image from "next/image"
+import { motion } from "framer-motion"
 
-import { Slider } from "@/components/ui/slider";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import { UILimousine } from "@/types/ui";
-import Link from "next/link";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { Users, Car, Shield, Check, DollarSign } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Card, CardContent } from "@/components/ui/card";
-import { PaginationLinks } from "@/components/common/pagination";
-import { PaginatedData } from "@/types";
+import { UILimousine } from "@/types/ui"
+import { PaginatedData } from "@/types"
+import { Users, Car, Shield, Check, DollarSign } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Badge } from "@/components/ui/badge"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Card, CardContent } from "@/components/ui/card"
+import { PaginationLinks } from "@/components/common/pagination"
 
 type Props = {
-  data: PaginatedData<UILimousine>;
-};
+  data: PaginatedData<UILimousine>
+}
 
-export default function FilterWithLimousineList({ data }: Props) {
-  const limousines = data.data;
+export function FilterWithLimousineList({ data }: Props) {
+  const limousines = data.data
 
-  const [priceRange, setPriceRange] = useState([100, 1000]);
-  const [passengerCount, setPassengerCount] = useState<string[]>([]);
-  const [vehicleTypes, setVehicleTypes] = useState<string[]>([]);
+  const [priceRange, setPriceRange] = useState([100, 1000])
+  const [passengerCount, setPassengerCount] = useState<string[]>([])
+  const [vehicleTypes, setVehicleTypes] = useState<string[]>([])
 
   // Filtered limousines based on selected filters
   const filteredLimousines = useMemo(() => {
     return limousines.filter((limousine) => {
-      const isWithinPriceRange = limousine.price_per_hour >= priceRange[0] && limousine.price_per_hour <= priceRange[1];
+      const isWithinPriceRange = limousine.price_per_hour >= priceRange[0] && limousine.price_per_hour <= priceRange[1]
 
-      const matchesPassengerCount = passengerCount.length === 0 || passengerCount.includes(limousine.max_passengers.toString());
+      const matchesPassengerCount = passengerCount.length === 0 || passengerCount.includes(limousine.max_passengers.toString())
 
-      const matchesVehicleType = vehicleTypes.length === 0 || vehicleTypes.includes(limousine.type);
+      const matchesVehicleType = vehicleTypes.length === 0 || vehicleTypes.includes(limousine.type)
 
-      return isWithinPriceRange && matchesPassengerCount && matchesVehicleType;
-    });
-  }, [limousines, priceRange, passengerCount, vehicleTypes]);
+      return isWithinPriceRange && matchesPassengerCount && matchesVehicleType
+    })
+  }, [limousines, priceRange, passengerCount, vehicleTypes])
 
-  const [searchQuery, setSearchQuery] = useState("");
-  const [sortOption, setSortOption] = useState("recommended");
+  const [searchQuery, setSearchQuery] = useState("")
+  const [sortOption, setSortOption] = useState("recommended")
 
   // Filter limousines based on search query
   const searchFilteredLimousines = limousines.filter((limo) => {
@@ -50,24 +48,24 @@ export default function FilterWithLimousineList({ data }: Props) {
       searchQuery === "" ||
       limo.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       limo.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      limo.description.toLowerCase().includes(searchQuery.toLowerCase());
+      limo.description.toLowerCase().includes(searchQuery.toLowerCase())
 
-    return matchesSearch;
-  });
+    return matchesSearch
+  })
 
   // Sort limousines based on selected option
   const sortedLimousines = [...searchFilteredLimousines].sort((a, b) => {
     switch (sortOption) {
       case "price-low":
-        return a.price_per_hour - b.price_per_hour;
+        return a.price_per_hour - b.price_per_hour
       case "price-high":
-        return b.price_per_hour - a.price_per_hour;
+        return b.price_per_hour - a.price_per_hour
       case "capacity":
-        return b.max_passengers - a.max_passengers;
+        return b.max_passengers - a.max_passengers
       default:
-        return 0; // Default sorting (no specific order)
+        return 0 // Default sorting (no specific order)
     }
-  });
+  })
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -76,7 +74,7 @@ export default function FilterWithLimousineList({ data }: Props) {
       y: 0,
       transition: { duration: 0.4 },
     },
-  };
+  }
 
   return (
     <section className="container mx-auto px-4 py-24">
@@ -119,8 +117,8 @@ export default function FilterWithLimousineList({ data }: Props) {
               <Button
                 variant="outline"
                 onClick={() => {
-                  setSearchQuery("");
-                  setSortOption("recommended");
+                  setSearchQuery("")
+                  setSortOption("recommended")
                 }}
               >
                 Reset Filters
@@ -199,5 +197,5 @@ export default function FilterWithLimousineList({ data }: Props) {
         </div>
       </div>
     </section>
-  );
+  )
 }

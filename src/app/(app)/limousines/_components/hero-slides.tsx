@@ -7,10 +7,8 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
 
-export default function LimousineHeroSlides() {
+export  function LimousineHeroSlides() {
   const t = useTranslations();
   const [currentSlide, setCurrentSlide] = useState(0);
 

@@ -255,3 +255,52 @@ type UIHotelLocation = {
   image: string
   map_url: string
 }
+
+type UIHajjPackage = {
+  id: number
+  title: string
+  description: string
+  long_description: string
+  price: string
+  banner: string
+  thumbnail: string
+  hotel: string
+  meals: string
+  transportation_type: string
+  depature_date: string
+  return_date: string
+  notes: string
+  cautions: string
+  days: UIHajjPackageDay[]
+}
+
+type UIHajjPackageDay = {
+  id: number
+  haj_id: number
+  title: string
+  description: string
+  icon: string
+}
+
+type UIServiceCard = {
+  id: number
+  image: string
+  key: string
+  enabled: number
+  url: string
+  created_at: string
+  updated_at: string
+  title: string
+  description: string
+  translations: UIServiceCardTranslation[]
+}
+
+type UIServiceCardTranslation = {
+  id: number
+  service_card_id: number
+  title: string
+  description: string
+  locale: string
+  created_at: string
+  updated_at: string
+}
