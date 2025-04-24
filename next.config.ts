@@ -11,7 +11,6 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { hostname: "18.184.226.36" },
-      { hostname: "127.0.0.1" },
       {
         protocol: "https",
         hostname: "going-travel.laravel.cloud",
