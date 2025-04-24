@@ -15,7 +15,7 @@ export default async function HajsPage({ searchParams }: Props) {
   return (
     <main className='space-y-6 '>
       <PageTitle label='Hajs'>
-        <LinkBtn href={`/admin/hajs/create`}>Create</LinkBtn>
+        <LinkBtn href={`/admin/hotels/create`}>Create</LinkBtn>
       </PageTitle>
       <HotelsTable data={hotels} />
       <PaginationLinks pagination={hotels} />
