@@ -21,6 +21,7 @@ export async function getHotels(page: number): Promise<PaginatedData<any>> {
     return data
   } catch (error) {
     const e = error as ApiError<any>
+    console.dir(e, { depth: null })
     throw new Error("failed to fetch hotels")
   }
 }
