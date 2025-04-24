@@ -15,16 +15,7 @@ type Props = {
   valueAsNumber?: boolean
 }
 
-export const SelectField = ({
-  valueAsNumber,
-  name,
-  disabled = false,
-  label,
-  control,
-  placeholder,
-  children,
-  defaultValue,
-}: Props) => {
+export const SelectField = ({ valueAsNumber, name, disabled = false, label, control, placeholder, children, defaultValue }: Props) => {
   return (
     <FormField
       control={control}
@@ -33,14 +24,9 @@ export const SelectField = ({
         <FormItem>
           <FormLabel>{label}</FormLabel>
           <FormControl>
-            <Select
-              onValueChange={
-                valueAsNumber ? (value) => field.onChange(parseInt(value)) : field.onChange
-              }
-              defaultValue={defaultValue}
-            >
+            <Select onValueChange={valueAsNumber ? (value) => field.onChange(parseInt(value)) : field.onChange} defaultValue={defaultValue}>
               <FormControl>
-                <SelectTrigger disabled={disabled} className="bg-white" defaultValue={defaultValue}>
+                <SelectTrigger disabled={disabled} className='bg-white' defaultValue={defaultValue}>
                   <SelectValue placeholder={placeholder} />
                 </SelectTrigger>
               </FormControl>
