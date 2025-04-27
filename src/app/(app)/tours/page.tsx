@@ -18,7 +18,7 @@ export default async function ToursPage() {
 
   return (
     <div>
-      <section className='relative h-screen'>
+      <section className="relative h-screen">
         <ToursHeroSlides />
       </section>
 
