@@ -1,5 +1,7 @@
 "use client"
 
+import Image from "next/image"
+
 import Link from "next/link"
 import type React from "react"
 
@@ -23,14 +25,14 @@ export default function ServiceCards({ services }: Props) {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-      },
-    },
+        staggerChildren: 0.2
+      }
+    }
   }
 
   const item = {
     hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
   }
 
   return (
@@ -59,11 +61,11 @@ export default function ServiceCards({ services }: Props) {
                 ></div>
               </div>
 
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-gray-800 mb-2 group-hover:text-teal-600 transition-colors">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
+              <div className='p-6'>
+                <h3 className='text-2xl font-bold text-gray-800 mb-2 group-hover:text-teal-600 transition-colors'>{service.title}</h3>
+                <p className='text-gray-600 mb-4'>{service.description}</p>
 
-                <div className="flex items-center text-teal-600 font-medium">
+                <div className='flex items-center text-teal-600 font-medium'>
                   {t("services.explore")}
                   {language === "ar" ? (
                     <MoveLeft className="h-5 w-5 mr-2 group-hover:-translate-x-2 transition-transform" />

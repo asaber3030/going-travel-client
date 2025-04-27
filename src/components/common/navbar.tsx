@@ -71,15 +71,42 @@ export default function TourismNavbar() {
                   <Image src='/logo.svg' width={30} height={30} alt='Logo' />
                   <span className='mt-1'>GoingTravel</span>
                 </Link>
-                <Link href='#' className='group flex h-10 w-full items-center rounded-md px-3 hover:bg-teal-50'>
+
+                <Link href='/' className='group flex h-10 w-full items-center rounded-md px-3 hover:bg-teal-50'>
                   {t("home")}
                 </Link>
-                <div className='grid gap-3 pl-3'>
-                  <h4 className='font-semibold text-teal-600'>{t("destinations")}</h4>
-                  <Link href='#' className='group flex h-8 w-full items-center rounded-md px-3 hover:bg-teal-50'>
-                    Tours
-                  </Link>
-                </div>
+
+                <Link href='/contact' className='group flex h-10 w-full items-center rounded-md px-3 hover:bg-teal-50'>
+                  {t("contact")}
+                </Link>
+
+                <Link href='/about' className='group flex h-10 w-full items-center rounded-md px-3 hover:bg-teal-50'>
+                  {t("about")}
+                </Link>
+
+                <Link href='/tours' className='group flex h-10 w-full items-center rounded-md px-3 hover:bg-teal-50'>
+                  {t("tours")}
+                </Link>
+
+                <Link href='/locations' className='group flex h-8 w-full items-center rounded-md px-3 hover:bg-teal-50'>
+                  {t("locations")}
+                </Link>
+
+                <Link href='/limousines' className='group flex h-8 w-full items-center rounded-md px-3 hover:bg-teal-50'>
+                  {t("limousines")}
+                </Link>
+
+                <Link href='/categories' className='group flex h-8 w-full items-center rounded-md px-3 hover:bg-teal-50'>
+                  {t("categories")}
+                </Link>
+
+                <Link href='/hotels' className='group flex h-8 w-full items-center rounded-md px-3 hover:bg-teal-50'>
+                  {t("hotels")}
+                </Link>
+
+                <Link href='/hajj' className='group flex h-8 w-full items-center rounded-md px-3 hover:bg-teal-50'>
+                  {t("hajj")}
+                </Link>
               </nav>
             </SheetContent>
           </Sheet>
@@ -88,10 +115,12 @@ export default function TourismNavbar() {
             <span className='mt-1'>GoingTravel</span>
           </Link>
         </div>
+
         <nav className='mx-6 hidden items-center gap-4 lg:flex lg:space-x-6'>
           <Link href='/' className='text-sm font-medium transition-colors hover:text-teal-600'>
             {t("home")}
           </Link>
+
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant='link' className='flex items-center gap-1 px-0 text-sm font-medium transition-colors hover:text-teal-600'>
@@ -120,6 +149,14 @@ export default function TourismNavbar() {
             {t("categories")}
           </Link>
 
+          <Link href='/about' className='text-sm font-medium transition-colors hover:text-teal-600'>
+            {t("about")}
+          </Link>
+
+          <Link href='/contact' className='text-sm font-medium transition-colors hover:text-teal-600'>
+            {t("contact")}
+          </Link>
+
           <Link href='/hotels' className='text-sm font-medium transition-colors hover:text-teal-600'>
             {t("hotels")}
           </Link>
@@ -127,7 +164,12 @@ export default function TourismNavbar() {
           <Link href='/limousines' className='text-sm font-medium transition-colors hover:text-teal-600'>
             {t("limousines")}
           </Link>
+
+          <Link href='/hajj' className='text-sm font-medium transition-colors hover:text-teal-600'>
+            الحج
+          </Link>
         </nav>
+
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant='link' className='flex items-center gap-1 p-0 text-sm font-medium transition-colors hover:text-teal-600'>
@@ -135,6 +177,7 @@ export default function TourismNavbar() {
               <ChevronDown className='h-4 w-4' />
             </Button>
           </DropdownMenuTrigger>
+
           <DropdownMenuContent align='center' className='w-[200px]'>
             {AvailableLanguages.map((lang) => (
               <DropdownMenuItem onClick={() => handleLanguage(lang.code)} key={`lang-${lang.code}`}>

@@ -14,12 +14,26 @@ export const routes = {
     edit: (id: number) => `/admin/categories/${id}/update`,
     show: (id: number) => `/admin/categories/${id}`
   },
+  hajs: {
+    index: "/admin/hajs",
+    create: "/admin/hajs/create",
+    trash: "/admin/hajs/trashed",
+    edit: (id: number) => `/admin/hajs/${id}/update`,
+    show: (id: number) => `/admin/hajs/${id}`
+  },
   locations: {
     index: "/admin/locations",
     create: "/admin/locations/create",
     trash: "/admin/locations/trashed",
     edit: (id: number) => `/admin/locations/${id}/update`,
     show: (id: number) => `/admin/locations/${id}`
+  },
+  hotels: {
+    index: "/admin/hotels",
+    create: "/admin/hotels/create",
+    trash: "/admin/hotels/trashed",
+    edit: (id: number) => `/admin/hotels/${id}/update`,
+    show: (id: number) => `/admin/hotels/${id}`
   },
   tours: {
     index: "/admin/tours",
