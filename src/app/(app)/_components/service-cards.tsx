@@ -6,6 +6,8 @@ import type React from "react"
 import { motion } from "framer-motion"
 import { useTranslations } from "next-intl"
 import { UIServiceCard } from "@/types/ui"
+import { MoveLeft, MoveRight } from "lucide-react"
+import Cookies from "js-cookie"
 
 type Props = {
   services: UIServiceCard[]
@@ -13,6 +15,8 @@ type Props = {
 
 export default function ServiceCards({ services }: Props) {
   const t = useTranslations()
+  const language = Cookies.get("language") || "en"
+  console.log("Language from cookies:", language)
 
   const container = {
     hidden: { opacity: 0 },
@@ -31,7 +35,7 @@ export default function ServiceCards({ services }: Props) {
 
   return (
     <motion.div
-      className="grid grid-cols-1 md:grid-cols-3 gap-8"
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
       variants={container}
       initial="hidden"
       whileInView="show"
@@ -48,7 +52,7 @@ export default function ServiceCards({ services }: Props) {
           >
             <Link href={service.url} className="block">
               <div className="h-48 bg-teal-100 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-teal-500/20 to-teal-600/60 z-10"></div>
+                <div className="absolute inset-0 "></div>
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                   style={{ backgroundImage: `url(${service.image})` }}
@@ -61,19 +65,11 @@ export default function ServiceCards({ services }: Props) {
 
                 <div className="flex items-center text-teal-600 font-medium">
                   {t("services.explore")}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 ml-2 group-hover:translate-x-2 transition-transform"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M5 12h14"></path>
-                    <path d="M12 5l7 7-7 7"></path>
-                  </svg>
+                  {language === "ar" ? (
+                    <MoveLeft className="h-5 w-5 mr-2 group-hover:-translate-x-2 transition-transform" />
+                  ) : (
+                    <MoveRight className="h-5 w-5 ml-2 group-hover:translate-x-2 transition-transform" />
+                  )}
                 </div>
               </div>
             </Link>
