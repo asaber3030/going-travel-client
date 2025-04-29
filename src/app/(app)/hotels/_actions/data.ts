@@ -2,7 +2,6 @@
 
 import { getRequest } from "@/lib/axios"
 import { build } from "search-params"
-
 import { UIHotel } from "@/types/ui"
 import { ApiError, PaginatedData } from "@/types"
 import { getDefaultCookies } from "@/actions/app"
