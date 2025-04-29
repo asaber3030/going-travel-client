@@ -14,6 +14,7 @@ import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card, CardContent } from "@/components/ui/card"
 import { PaginationLinks } from "@/components/common/pagination"
+import { useLocale } from "next-intl"
 
 type Props = {
   data: PaginatedData<UILimousine>
@@ -26,6 +27,7 @@ export function FilterWithLimousineList({ data }: Props) {
   const [passengerCount, setPassengerCount] = useState<string[]>([])
   const [vehicleTypes, setVehicleTypes] = useState<string[]>([])
 
+  const locale = useLocale()
   // Filtered limousines based on selected filters
   const filteredLimousines = useMemo(() => {
     return limousines.filter((limousine) => {
@@ -171,12 +173,14 @@ export function FilterWithLimousineList({ data }: Props) {
                             </div>
                             <p className="text-muted-foreground mb-4">{limo.description}</p>
                             <div className="flex flex-wrap gap-2 mb-4">
-                              {limo.features.map((feature) => (
-                                <Badge key={feature.id} variant="outline" className="flex items-center gap-1">
-                                  <Check className="h-3 w-3" />
-                                  <span>{feature.vehicle_features}</span>
-                                </Badge>
-                              ))}
+                              {limo.features
+                                .filter((element) => element.locale == locale)
+                                ?.map((feature) => (
+                                  <Badge key={feature.id} variant="outline" className="flex items-center gap-1">
+                                    <Check className="h-3 w-3" />
+                                    <span>{feature.vehicle_features}</span>
+                                  </Badge>
+                                ))}
                             </div>
                           </div>
                           <div className="flex items-center justify-end mt-4">

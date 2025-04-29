@@ -1,40 +1,31 @@
-"use client";
+"use client"
 
-import type React from "react";
+import type React from "react"
 
-import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence, useAnimation } from "framer-motion";
-import {
-  Plane,
-  Map,
-  Building2,
-  Car,
-  X,
-  ChevronLeft,
-  ChevronRight,
-  ArrowRight,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
+import { useState, useRef, useEffect } from "react"
+import { motion, AnimatePresence, useAnimation } from "framer-motion"
+import { Plane, Map, Building2, Car, X, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { useRouter } from "next/navigation"
 
 type Service = {
-  id: string;
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-  gradient: string;
-  hoverGradient: string;
-  shape: string;
-  features: string[];
-};
+  id: string
+  title: string
+  description: string
+  icon: React.ReactNode
+  gradient: string
+  hoverGradient: string
+  shape: string
+  features: string[]
+}
 
 export default function ServiceShapes() {
-  const [activeService, setActiveService] = useState<string | null>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const controls = useAnimation();
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [activeService, setActiveService] = useState<string | null>(null)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const controls = useAnimation()
+  const containerRef = useRef<HTMLDivElement>(null)
 
-  const router = useRouter();
+  const router = useRouter()
 
   const services: Service[] = [
     {
@@ -46,12 +37,7 @@ export default function ServiceShapes() {
       gradient: "bg-gradient-to-br from-emerald-500 to-teal-600",
       hoverGradient: "bg-gradient-to-br from-emerald-400 to-teal-500",
       shape: "rounded-tl-[60px] rounded-br-[60px]",
-      features: [
-        "Guided tours",
-        "Cultural experiences",
-        "Adventure packages",
-        "Group discounts",
-      ],
+      features: ["Guided tours", "Cultural experiences", "Adventure packages", "Group discounts"],
     },
     {
       id: "flights",
@@ -62,12 +48,7 @@ export default function ServiceShapes() {
       gradient: "bg-gradient-to-br from-blue-500 to-cyan-600",
       hoverGradient: "bg-gradient-to-br from-blue-400 to-cyan-500",
       shape: "rounded-full",
-      features: [
-        "Price comparison",
-        "Flexible dates",
-        "Premium seats",
-        "Loyalty rewards",
-      ],
+      features: ["Price comparison", "Flexible dates", "Premium seats", "Loyalty rewards"],
     },
     {
       id: "hotels",
@@ -78,12 +59,7 @@ export default function ServiceShapes() {
       gradient: "bg-gradient-to-br from-amber-500 to-orange-600",
       hoverGradient: "bg-gradient-to-br from-amber-400 to-orange-500",
       shape: "rounded-tr-[60px] rounded-bl-[60px]",
-      features: [
-        "Luxury resorts",
-        "Budget options",
-        "Last-minute deals",
-        "Extended stays",
-      ],
+      features: ["Luxury resorts", "Budget options", "Last-minute deals", "Extended stays"],
     },
     {
       id: "limo",
@@ -94,14 +70,9 @@ export default function ServiceShapes() {
       gradient: "bg-gradient-to-br from-purple-500 to-pink-600",
       hoverGradient: "bg-gradient-to-br from-purple-400 to-pink-500",
       shape: "rounded-[40px]",
-      features: [
-        "Airport transfers",
-        "Hourly rentals",
-        "Special events",
-        "Corporate services",
-      ],
+      features: ["Airport transfers", "Hourly rentals", "Special events", "Corporate services"],
     },
-  ];
+  ]
 
   useEffect(() => {
     if (containerRef.current) {
@@ -113,31 +84,31 @@ export default function ServiceShapes() {
           duration: 0.5,
           ease: "easeOut",
         },
-      }));
+      }))
     }
-  }, [controls]);
+  }, [controls])
 
   const handleServiceClick = (id: string) => {
     if (activeService === id) {
-      setActiveService(null);
+      setActiveService(null)
     } else {
-      setActiveService(id);
-      const index = services.findIndex((service) => service.id === id);
-      setCurrentIndex(index);
+      setActiveService(id)
+      const index = services.findIndex((service) => service.id === id)
+      setCurrentIndex(index)
     }
-  };
+  }
 
   const handleNext = () => {
-    const nextIndex = (currentIndex + 1) % services.length;
-    setCurrentIndex(nextIndex);
-    setActiveService(services[nextIndex].id);
-  };
+    const nextIndex = (currentIndex + 1) % services.length
+    setCurrentIndex(nextIndex)
+    setActiveService(services[nextIndex].id)
+  }
 
   const handlePrev = () => {
-    const prevIndex = (currentIndex - 1 + services.length) % services.length;
-    setCurrentIndex(prevIndex);
-    setActiveService(services[prevIndex].id);
-  };
+    const prevIndex = (currentIndex - 1 + services.length) % services.length
+    setCurrentIndex(prevIndex)
+    setActiveService(services[prevIndex].id)
+  }
 
   return (
     <div className="relative" ref={containerRef}>
@@ -157,12 +128,8 @@ export default function ServiceShapes() {
                   <div key={service.id}>
                     <div className="flex justify-between items-center mb-6">
                       <div className="flex items-center gap-3">
-                        <div className={`${service.gradient} p-3 rounded-xl`}>
-                          {service.icon}
-                        </div>
-                        <h3 className="text-2xl font-bold text-white">
-                          {service.title}
-                        </h3>
+                        <div className={`${service.gradient} p-3 rounded-xl`}>{service.icon}</div>
+                        <h3 className="text-2xl font-bold text-white">{service.title}</h3>
                       </div>
                       <Button
                         variant="ghost"
@@ -173,14 +140,10 @@ export default function ServiceShapes() {
                         <X className="h-5 w-5" />
                       </Button>
                     </div>
-                    <p className="text-white/90 mb-6 leading-relaxed">
-                      {service.description}
-                    </p>
+                    <p className="text-white/90 mb-6 leading-relaxed">{service.description}</p>
 
                     <div className="mb-6">
-                      <h4 className="text-white font-semibold mb-3">
-                        Features:
-                      </h4>
+                      <h4 className="text-white font-semibold mb-3">Features:</h4>
                       <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                         {service.features.map((feature, index) => (
                           <motion.li
@@ -190,9 +153,7 @@ export default function ServiceShapes() {
                             transition={{ delay: index * 0.1 }}
                             className="flex items-center gap-2 text-white/80"
                           >
-                            <div
-                              className={`h-2 w-2 rounded-full ${service.gradient}`}
-                            ></div>
+                            <div className={`h-2 w-2 rounded-full ${service.gradient}`}></div>
                             {feature}
                           </motion.li>
                         ))}
@@ -200,18 +161,11 @@ export default function ServiceShapes() {
                     </div>
 
                     <div className="flex justify-between items-center">
-                      <Button
-                        variant="outline"
-                        onClick={() => setActiveService(null)}
-                        className="border-white/20 hover:bg-white/10"
-                      >
+                      <Button variant="outline" onClick={() => setActiveService(null)} className="border-white/20 hover:bg-white/10">
                         Close
                       </Button>
-                      <Button
-                        onClick={() => router.push(`/${service.id}`)}
-                        className={service.gradient.replace("bg-", "")}
-                      >
-                        Book Now
+                      <Button onClick={() => router.push(`/${service.id}`)} className={service.gradient.replace("bg-", "")}>
+                        Inquire
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </div>
@@ -249,9 +203,7 @@ export default function ServiceShapes() {
                 repeatType: "reverse",
               }}
               style={{
-                background: `linear-gradient(45deg, ${service.hoverGradient
-                  .replace("bg-gradient-to-br from-", "")
-                  .replace(" to-", ", ")})`,
+                background: `linear-gradient(45deg, ${service.hoverGradient.replace("bg-gradient-to-br from-", "").replace(" to-", ", ")})`,
                 filter: "brightness(1.1)",
               }}
             />
@@ -280,11 +232,7 @@ export default function ServiceShapes() {
               ))}
             </div>
 
-            <motion.div
-              className="relative z-10 flex flex-col items-center"
-              initial={{ y: 0 }}
-              whileHover={{ y: -5 }}
-            >
+            <motion.div className="relative z-10 flex flex-col items-center" initial={{ y: 0 }} whileHover={{ y: -5 }}>
               <motion.div
                 className="mb-4 bg-white/20 p-4 rounded-full backdrop-blur-sm"
                 whileHover={{
@@ -294,9 +242,7 @@ export default function ServiceShapes() {
               >
                 {service.icon}
               </motion.div>
-              <h3 className="text-lg md:text-xl font-bold text-center">
-                {service.title}
-              </h3>
+              <h3 className="text-lg md:text-xl font-bold text-center">{service.title}</h3>
 
               <motion.div
                 className="absolute bottom-0 left-0 right-0 h-1 bg-white/40 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
@@ -315,39 +261,27 @@ export default function ServiceShapes() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={handlePrev}
-            className="rounded-full border-white/20  hover:bg-white/10 h-12 w-12"
-          >
+          <Button variant="outline" size="icon" onClick={handlePrev} className="rounded-full border-white/20  hover:bg-white/10 h-12 w-12">
             <ChevronLeft className="h-5 w-5" />
           </Button>
           <div className="flex items-center gap-2">
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                className={`h-2 w-2 rounded-full transition-colors duration-300 ${
-                  currentIndex === index ? "bg-white" : "bg-white/30"
-                }`}
+                className={`h-2 w-2 rounded-full transition-colors duration-300 ${currentIndex === index ? "bg-white" : "bg-white/30"}`}
                 whileHover={{ scale: 1.5 }}
                 onClick={() => {
-                  setCurrentIndex(index);
-                  setActiveService(services[index].id);
+                  setCurrentIndex(index)
+                  setActiveService(services[index].id)
                 }}
               />
             ))}
           </div>
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={handleNext}
-            className="rounded-full border-white/20  hover:bg-white/10 h-12 w-12"
-          >
+          <Button variant="outline" size="icon" onClick={handleNext} className="rounded-full border-white/20  hover:bg-white/10 h-12 w-12">
             <ChevronRight className="h-5 w-5" />
           </Button>
         </motion.div>
       )}
     </div>
-  );
+  )
 }

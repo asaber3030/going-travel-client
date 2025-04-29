@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { Users, Car, Shield, Check } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { UILimousine } from "@/types/ui";
-import { Card, CardContent } from "@/components/ui/card";
+import React, { useState } from "react"
+import Link from "next/link"
+import Image from "next/image"
+import { motion } from "framer-motion"
+import { Users, Car, Shield, Check } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { UILimousine, UILimousineFeature } from "@/types/ui"
+import { Card, CardContent } from "@/components/ui/card"
 
 type Props = {
-  limousines: UILimousine[];
-};
+  limousines: UILimousine[]
+}
 
 export default function LimousinesList({ limousines }: Props) {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [sortOption, setSortOption] = useState("recommended");
+  const [searchQuery, setSearchQuery] = useState("")
+  const [sortOption, setSortOption] = useState("recommended")
 
   // Filter limousines based on search query
   const filteredLimousines = limousines.filter((limo) => {
@@ -24,24 +24,24 @@ export default function LimousinesList({ limousines }: Props) {
       searchQuery === "" ||
       limo.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       limo.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      limo.description.toLowerCase().includes(searchQuery.toLowerCase());
+      limo.description.toLowerCase().includes(searchQuery.toLowerCase())
 
-    return matchesSearch;
-  });
+    return matchesSearch
+  })
 
   // Sort limousines based on selected option
   const sortedLimousines = [...filteredLimousines].sort((a, b) => {
     switch (sortOption) {
       case "price-low":
-        return a.price_per_hour - b.price_per_hour;
+        return a.price_per_hour - b.price_per_hour
       case "price-high":
-        return b.price_per_hour - a.price_per_hour;
+        return b.price_per_hour - a.price_per_hour
       case "capacity":
-        return b.max_passengers - a.max_passengers;
+        return b.max_passengers - a.max_passengers
       default:
-        return 0; // Default sorting (no specific order)
+        return 0 // Default sorting (no specific order)
     }
-  });
+  })
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -50,7 +50,7 @@ export default function LimousinesList({ limousines }: Props) {
       y: 0,
       transition: { duration: 0.4 },
     },
-  };
+  }
 
   return (
     <div>
@@ -90,8 +90,8 @@ export default function LimousinesList({ limousines }: Props) {
             <Button
               variant="outline"
               onClick={() => {
-                setSearchQuery("");
-                setSortOption("recommended");
+                setSearchQuery("")
+                setSortOption("recommended")
               }}
             >
               Reset Filters
@@ -144,7 +144,7 @@ export default function LimousinesList({ limousines }: Props) {
                           </div>
                           <p className="text-muted-foreground mb-4">{limo.description}</p>
                           <div className="flex flex-wrap gap-2 mb-4">
-                            {limo.features.map((feature: UILimousine) => (
+                            {limo.features.map((feature: UILimousineFeature) => (
                               <Badge key={feature.id} variant="outline" className="flex items-center gap-1">
                                 <Check className="h-3 w-3" />
                                 <span>{feature.vehicle_features}</span>
@@ -168,5 +168,5 @@ export default function LimousinesList({ limousines }: Props) {
         )}
       </div>
     </div>
-  );
+  )
 }
