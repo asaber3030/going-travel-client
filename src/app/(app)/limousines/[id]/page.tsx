@@ -1,36 +1,38 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { ChevronLeft, Users, Star, Check } from "lucide-react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { getTranslations } from "next-intl/server";
+import Link from "next/link"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { ChevronLeft, Users, Star, Check } from "lucide-react"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Separator } from "@/components/ui/separator"
+import { getLocale, getTranslations } from "next-intl/server"
 
-import { notFound } from "next/navigation";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { getUILimousineById } from "../_actions/data";
+import { notFound } from "next/navigation"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { getUILimousineById } from "../_actions/data"
+import { useLocale } from "next-intl"
 
 type Props = {
   params: Promise<{
-    id: string;
-  }>;
-};
+    id: string
+  }>
+}
 
 export default async function LimousineDetailsPage({ params }: Props) {
-  const { id } = await params;
+  const { id } = await params
 
-  const t = await getTranslations();
-  const limousine = await getUILimousineById(+id);
+  const t = await getTranslations()
+  const limousine = await getUILimousineById(+id)
+  const locale = await getLocale()
 
-  if (!limousine) return notFound();
+  if (!limousine) return notFound()
 
   return (
     <div className="min-h-screen">
       {/* Navigation */}
       <div className="container px-4 py-6">
         <Link href="/limousines" className="inline-flex items-center text-muted-foreground hover:text-foreground">
-          <ChevronLeft className="mr-2 h-4 w-4" />
+          <ChevronLeft className="mx-2 h-4 w-4" />
           {t("backToLimousines")}
         </Link>
       </div>
@@ -59,14 +61,14 @@ export default async function LimousineDetailsPage({ params }: Props) {
               <h1 className="mb-2 text-3xl font-bold sm:text-4xl">{limousine.name}</h1>
               <div className="mb-4 flex items-center gap-4">
                 <div className="flex items-center">
-                  <Star className="mr-1 h-5 w-5 fill-yellow-400 text-yellow-400" />
+                  <Star className="mx-1 h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span>{limousine.reviews.length}</span>
                   <span className="ml-1 text-muted-foreground">
                     ({limousine.reviews.length} {t("reviews")})
                   </span>
                 </div>
                 <div className="flex items-center text-muted-foreground">
-                  <Users className="mr-1 h-5 w-5" />
+                  <Users className="mx-1 h-5 w-5" />
                   <span>
                     {limousine.max_passengers} {t("passengers")}
                   </span>
@@ -75,7 +77,7 @@ export default async function LimousineDetailsPage({ params }: Props) {
               <p className="text-muted-foreground">{limousine.description}</p>
             </div>
 
-            <Tabs defaultValue="features" className="mb-8">
+            <Tabs defaultValue="features" className="mb-8" dir={locale == "ar" ? "rtl" : "ltr"}>
               <TabsList>
                 <TabsTrigger value="features">{t("features")}</TabsTrigger>
                 <TabsTrigger value="specifications">{t("specifications")}</TabsTrigger>
@@ -84,28 +86,32 @@ export default async function LimousineDetailsPage({ params }: Props) {
 
               <TabsContent value="features" className="mt-6">
                 <div className="grid gap-4 sm:grid-cols-2">
-                  {limousine.features.map((feature, index) => (
-                    <Card key={`feautes-x-x-x-${feature.id}`}>
-                      <CardContent className="flex items-center gap-3 p-4">
-                        <Check className="h-5 w-5 text-primary" />
-                        <span>{feature.vehicle_features}</span>
-                      </CardContent>
-                    </Card>
-                  ))}
+                  {limousine.features
+                    .filter((element) => element.locale == locale)
+                    ?.map((feature, index) => (
+                      <Card key={`feautes-x-x-x-${feature.id}`}>
+                        <CardContent className="flex items-center gap-3 p-4">
+                          <Check className="h-5 w-5 text-primary" />
+                          <span>{feature.vehicle_features}</span>
+                        </CardContent>
+                      </Card>
+                    ))}
                 </div>
                 <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-                  {limousine.features.map((feature, index) => (
-                    <li key={index} className="flex items-center">
-                      <div className="mr-2 h-1.5 w-1.5 rounded-full bg-primary" />
-                      {feature.additional_info}
-                    </li>
-                  ))}
+                  {limousine.features
+                    .filter((element) => element.locale == locale)
+                    ?.map((feature, index) => (
+                      <li key={index} className="flex items-center">
+                        <div className="mx-2 h-1.5 w-1.5 rounded-full bg-primary" />
+                        {feature.additional_info}
+                      </li>
+                    ))}
                 </ul>
               </TabsContent>
 
               <TabsContent value="specifications" className="mt-6">
                 <div className="grid gap-4 sm:grid-cols-2">
-                  {Object.entries(limousine.specifications).map(([key, value]) => (
+                  {Object.entries(limousine.specifications.filter((element) => element.locale == locale))?.map(([key, value]) => (
                     <Card key={key}>
                       <CardContent className="p-4">
                         <div className="mb-1 text-sm text-muted-foreground">{key.charAt(0).toUpperCase() + key.slice(1)}</div>
@@ -180,5 +186,5 @@ export default async function LimousineDetailsPage({ params }: Props) {
         </div>
       </div>
     </div>
-  );
+  )
 }

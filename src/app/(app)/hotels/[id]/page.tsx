@@ -13,7 +13,7 @@ export default async function HotelDetailsPage({ params }: Props) {
   if (!hotel) return notFound()
 
   return (
-    <div className='bg-gray-50'>
+    <div className="bg-gray-50">
       <HotelDetailsHeader hotel={hotel} />
       <HotelDetailsMainContent hotel={hotel} />
     </div>
