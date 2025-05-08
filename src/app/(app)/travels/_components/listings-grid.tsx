@@ -1,19 +1,13 @@
-"use client";
+"use client"
 
-import { useEffect, useState } from "react";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { Plane, Car, Bus, Star, Clock, Users, ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react"
+import Link from "next/link"
+import { motion } from "framer-motion"
+import { Plane, Car, Bus, Star, Clock, Users, ArrowRight } from "lucide-react"
 
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 
 // Mock data for listings
 const mockListings = [
@@ -95,41 +89,38 @@ const mockListings = [
     from: "Main Terminal",
     to: "Vacation Island",
   },
-];
+]
 
 interface ListingsGridProps {
-  type: "all" | "car" | "bus" | "plane";
+  type: "all" | "car" | "bus" | "plane"
 }
 
 export function ListingsGrid({ type }: ListingsGridProps) {
-  const [listings, setListings] = useState<any[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [listings, setListings] = useState<any[]>([])
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     // Simulate API call with delay
-    setIsLoading(true);
+    setIsLoading(true)
     setTimeout(() => {
-      const filteredListings =
-        type === "all"
-          ? mockListings
-          : mockListings.filter((listing) => listing.type === type);
-      setListings(filteredListings);
-      setIsLoading(false);
-    }, 1000);
-  }, [type]);
+      const filteredListings = type === "all" ? mockListings : mockListings.filter((listing) => listing.type === type)
+      setListings(filteredListings)
+      setIsLoading(false)
+    }, 1000)
+  }, [type])
 
   const getIcon = (type: string) => {
     switch (type) {
       case "car":
-        return <Car className="h-5 w-5" />;
+        return <Car className="h-5 w-5" />
       case "bus":
-        return <Bus className="h-5 w-5" />;
+        return <Bus className="h-5 w-5" />
       case "plane":
-        return <Plane className="h-5 w-5" />;
+        return <Plane className="h-5 w-5" />
       default:
-        return null;
+        return null
     }
-  };
+  }
 
   const container = {
     hidden: { opacity: 0 },
@@ -139,24 +130,19 @@ export function ListingsGrid({ type }: ListingsGridProps) {
         staggerChildren: 0.1,
       },
     },
-  };
+  }
 
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 },
-  };
+  }
 
   if (isLoading) {
-    return <ListingsSkeleton />;
+    return <ListingsSkeleton />
   }
 
   return (
-    <motion.div
-      className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-      variants={container}
-      initial="hidden"
-      animate="show"
-    >
+    <motion.div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" variants={container} initial="hidden" animate="show">
       {listings.map((listing) => (
         <motion.div key={listing.id} variants={item}>
           <Card className="overflow-hidden transition-all hover:shadow-md">
@@ -170,13 +156,9 @@ export function ListingsGrid({ type }: ListingsGridProps) {
             <CardHeader className="p-4">
               <div className="flex items-start justify-between">
                 <div>
-                  <Badge
-                    variant="outline"
-                    className="mb-2 flex w-fit items-center gap-1"
-                  >
+                  <Badge variant="outline" className="mb-2 flex w-fit items-center gap-1">
                     {getIcon(listing.type)}
-                    {listing.type.charAt(0).toUpperCase() +
-                      listing.type.slice(1)}
+                    {listing.type.charAt(0).toUpperCase() + listing.type.slice(1)}
                   </Badge>
                   <CardTitle className="text-xl">{listing.title}</CardTitle>
                 </div>
@@ -207,14 +189,14 @@ export function ListingsGrid({ type }: ListingsGridProps) {
             <CardFooter className="flex items-center justify-between p-4 pt-0">
               <div className="text-lg font-bold">${listing.price}</div>
               <Link href={`/booking/${listing.id}`}>
-                <Button>Book Now</Button>
+                <Button>Inquire</Button>
               </Link>
             </CardFooter>
           </Card>
         </motion.div>
       ))}
     </motion.div>
-  );
+  )
 }
 
 export function ListingsSkeleton() {
@@ -243,5 +225,5 @@ export function ListingsSkeleton() {
         </Card>
       ))}
     </div>
-  );
+  )
 }

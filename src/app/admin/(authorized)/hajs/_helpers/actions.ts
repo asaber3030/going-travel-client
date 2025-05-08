@@ -28,14 +28,15 @@ export async function getTrashedHajs(page: number): Promise<PaginatedData<any>> 
 
     const request = await fetch(`${API_URL}/admin/hajs/trashed?page=${page}`, {
       method: "GET",
-      headers: loadDefaultHeaders(token, language)
+      headers: loadDefaultHeaders(token, language),
     })
 
     const data: APIResponse<PaginatedData<any>> = await request.json()
 
     return data.data
   } catch (error) {
-    throw new Error("Failed to fetch trashed hajs")
+    const data = error as ApiError<any>
+    throw new Error(data?.message || "Failed to delete haj")
   }
 }
 
@@ -45,7 +46,7 @@ export async function getHaj(id: number): Promise<any | undefined> {
 
     const request = await fetch(`${API_URL}/admin/hajs/${id}`, {
       method: "GET",
-      headers: loadDefaultHeaders(token, language)
+      headers: loadDefaultHeaders(token, language),
     })
 
     const data: APIResponse<any> = await request.json()
@@ -62,14 +63,16 @@ export async function deleteHaj(id: number): Promise<APIResponse<undefined>> {
 
     const request = await fetch(`${API_URL}/admin/hajs/${id}`, {
       method: "DELETE",
-      headers: loadDefaultHeaders(token, language)
+      headers: loadDefaultHeaders(token, language),
     })
 
     const data: APIResponse<undefined> = await request.json()
     revalidatePath("/admin/hajs")
     return data
   } catch (error) {
-    return { status: 500, message: "Internal Server Error", data: undefined }
+    console.error("Error creating employee:", error)
+    const data = error as ApiError<any>
+    throw new Error(data?.message || "Failed to delete haj")
   }
 }
 
@@ -79,7 +82,7 @@ export async function restoreHaj(id: number): Promise<APIResponse<any | undefine
 
     const request = await fetch(`${API_URL}/admin/hajs/${id}/restore`, {
       method: "POST",
-      headers: loadDefaultHeaders(token, language)
+      headers: loadDefaultHeaders(token, language),
     })
 
     const data: APIResponse<any> = await request.json()
@@ -87,11 +90,16 @@ export async function restoreHaj(id: number): Promise<APIResponse<any | undefine
 
     return data
   } catch (error) {
-    return { status: 500, message: "Internal Server Error", data: undefined }
+    const data = error as ApiError<any>
+    throw new Error(data?.message || "Failed to restore haj")
   }
 }
 
-export async function createHaj(banner: File | null, thumbnail: File | null, data: z.infer<typeof HajSchema>): Promise<APIResponse<any | undefined>> {
+export async function createHaj(
+  banner: File | null,
+  thumbnail: File | null,
+  data: z.infer<typeof HajSchema>
+): Promise<APIResponse<any | undefined>> {
   try {
     const { language, token } = await getDefaultCookies()
 
@@ -115,18 +123,23 @@ export async function createHaj(banner: File | null, thumbnail: File | null, dat
       "/admin/hajs",
       formData,
       loadDefaultHeaders(token, language, {
-        "Content-Type": "multipart/form-data"
+        "Content-Type": "multipart/form-data",
       })
     )
 
     return response
   } catch (error) {
-    const err = error as ApiError<any>
-    return err
+    const data = error as ApiError<any>
+    throw new Error(data?.message || "Failed to create haj")
   }
 }
 
-export async function updateHaj(hajId: number, banner: File | null, thumbnail: File | null, data: z.infer<typeof HajSchema>): Promise<APIResponse<any | undefined>> {
+export async function updateHaj(
+  hajId: number,
+  banner: File | null,
+  thumbnail: File | null,
+  data: z.infer<typeof HajSchema>
+): Promise<APIResponse<any | undefined>> {
   try {
     const { language, token } = await getDefaultCookies()
 
@@ -151,12 +164,13 @@ export async function updateHaj(hajId: number, banner: File | null, thumbnail: F
       `/admin/hajs/${hajId}`,
       formData,
       loadDefaultHeaders(token, language, {
-        "Content-Type": "multipart/form-data"
+        "Content-Type": "multipart/form-data",
       })
     )
 
     return response
   } catch (error) {
-    return { status: 500, message: "Internal Server Error", data: undefined }
+    const data = error as ApiError<any>
+    throw new Error(data?.message || "Failed to update haj")
   }
 }
