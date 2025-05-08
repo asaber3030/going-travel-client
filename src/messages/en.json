@@ -9,6 +9,7 @@
   "destination": "Destinations",
   "phone": "Phone",
   "when": "When",
+
   "search": "Search",
   "email": "Email",
   "tour": "Tour",
@@ -229,5 +230,122 @@
   "form_message_placeholder": "Enter your message",
   "form_submit_button": "Send Message",
   "map_section_title": "Our Location",
-  "map_iframe_title": "Company Location"
+  "map_iframe_title": "Company Location",
+
+  "availableVehicles": "Available Vehicles",
+  "vehicles": "Vehicles",
+  "of": "Of",
+  "showing": "Showing",
+
+  "testimonials": {
+    "badge": "Client Testimonials",
+    "title": "What Our Clients Say",
+    "subtitle": "Read what our satisfied customers have to say about their experience with our limousine service",
+    "0": {
+      "comment": "The airport transfer service was exceptional. The driver was waiting for us despite our flight delay, and the Mercedes S-Class was immaculate. Will definitely use again!",
+      "service": "Airport Transfer"
+    },
+    "1": {
+      "comment": "We hired a limousine for our wedding day and couldn't be happier. The chauffeur was professional, the car was beautifully decorated, and it made our special day even more memorable.",
+      "service": "Wedding Service"
+    },
+    "2": {
+      "comment": "The hourly charter service was perfect for our business meetings. The driver was knowledgeable about the city and very accommodating with our changing schedule. Highly recommended!",
+      "service": "Hourly Charter"
+    }
+  },
+  "cta": {
+    "title": "Ready to Experience Luxury Transportation?",
+    "subtitle": "Book your premium limousine service today and travel in style and comfort"
+  },
+  "Recommended": "Recommended",
+  "Price: Low to High": "Price: Low to High",
+  "Price: High to Low": "Price: High to Low",
+  "Passenger Capacity": "Passenger Capacity",
+  "Reset Filters": "Reset Filters",
+
+  "No vehicles found": "No vehicles found",
+  "Try adjusting your search criteria": "Try adjusting your search criteria",
+  "Per hour": "Per hour",
+
+  "Passengers": "Passengers",
+  "View Details": "View Details",
+  "ourServices": "ourServices",
+
+  "Premium Transportation Services": "Premium Transportation Services",
+  "Discover our range of luxury transportation options for every occasion": "Discover our range of luxury transportation options for every occasion",
+
+  "hotelsHero01": "Luxury Stays in Paradise",
+  "hotelsHero02": "Urban Retreats",
+  "hotelsHero03": "Mountain Lodges",
+
+  "hotelsHero01Description": "Discover our handpicked collection of premium hotels",
+  "hotelsHero02Description": "Find your perfect city escape",
+  "hotelsHero03Description": "Wake up to breathtaking  views",
+
+  "limousineServicesHero01": "Airport Transfers",
+  "limousineServicesHero02": "Hourly Charters",
+  "limousineServicesHero03": "Special Occasions",
+
+  "limousineServicesHero01Description": "Start and end your journey in comfort with our reliable airport transfer service. Our professional chauffeurs will monitor your flight and adjust for any delays.",
+  "limousineServices02Description": "Hire a luxury vehicle with a professional chauffeur by the hour for business meetings, sightseeing, shopping, or any other occasion requiring multiple stops.",
+  "limousineServices03Description": "Make your special day even more memorable with our luxury transportation services for weddings, anniversaries, proms, and other important celebrations.",
+
+  "limousinesHero01": "Luxury Stays in Paradise",
+  "limousinesHero02": "Urban Retreats",
+  "limousinesHero03": "Mountain Lodges",
+
+  "limousinesHero01Description": "Discover our handpicked collection of premium limousines",
+  "limousinesHero02Description": "Find your perfect city escape",
+  "limousinesHero03Description": "Wake up to breathtaking  views",
+
+  "toursHeroSlides": {
+    "0": {
+      "title": "Discover Hurghada",
+      "subtitle": "Dive into the crystal-clear waters of the Red Sea"
+    },
+    "1": {
+      "title": "Explore Aswan's Timeless Beauty",
+      "subtitle": "Journey through ancient history and vibrant culture"
+    },
+    "2": {
+      "title": "Cairo's Mystical Adventures",
+      "subtitle": "Uncover the secrets of the pyramids and bustling bazaars"
+    },
+    "3": {
+      "title": "Hurghada's Serene Escapes",
+      "subtitle": "Sail across the serene waters of the Red Sea"
+    },
+    "4": {
+      "title": "Pharaonic Village Time Travel",
+      "subtitle": "Step back in time to the era of the Pharaohs"
+    },
+    "5": {
+      "title": "Alexandria's Legendary Legacy",
+      "subtitle": "Explore the legendary city of Alexander the Great"
+    }
+  },
+  "whyChooseUs": {
+    "0": {
+      "title": "Expert Local Guides",
+      "description": "Our guides are passionate locals with deep knowledge of each destination"
+    },
+    "1": {
+      "title": "Small Group Sizes",
+      "description": "Maximum of 12 travelers for a more personalized experience"
+    },
+    "2": {
+      "title": "Sustainable Travel",
+      "description": "Committed to responsible tourism practices that respect local communities"
+    },
+    "3": {
+      "title": "24/7 Support",
+      "description": "Dedicated support team available throughout your journey"
+    }
+  },
+  "type": "Type",
+  "public": "Public",
+  "private": "Private",
+  "distanceDescription": "Distance Description",
+  "pickupLocation": "Pickup Location"
 }

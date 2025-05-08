@@ -19,13 +19,7 @@ import TourItineraryTab from "./itinerary-tab"
 import TourGalleryTab from "./gallery"
 import TourReviewsTab from "./reviews"
 
-export default function TourDetails({
-  tour,
-  relatedTours
-}: {
-  tour: UIFullTour
-  relatedTours: UITour[]
-}) {
+export default function TourDetails({ tour, relatedTours }: { tour: UIFullTour; relatedTours: UITour[] }) {
   const t = useTranslations()
   return (
     <div className='relative'>
@@ -76,6 +70,14 @@ export default function TourDetails({
                       <span>{t("priceStart")}</span>
                       <span>${tour.price_start}</span>
                     </div>
+                    <div className='flex justify-between font-bold'>
+                      <span>{t("type")}</span>
+                      <span>{t(tour.type)}</span>
+                    </div>
+                    <div className='flex justify-between font-bold'>
+                      <span>{t("pickupLocation")}</span>
+                      <span>{t(tour.pickup_location.name ?? "N/A")}</span>
+                    </div>
                   </div>
 
                   <div className='space-y-3'>
@@ -93,9 +95,7 @@ export default function TourDetails({
                   <div className='space-y-4'>
                     <div>
                       <p className='text-sm font-medium'>{t("haveQuestionsAboutThisTour")}</p>
-                      <p className='text-sm text-muted-foreground'>
-                        {t("ourTravelExpertsAreHereToAssist")}
-                      </p>
+                      <p className='text-sm text-muted-foreground'>{t("ourTravelExpertsAreHereToAssist")}</p>
                     </div>
                     <div className='flex gap-2'>
                       <Button variant='outline' size='sm' className='flex-1'>

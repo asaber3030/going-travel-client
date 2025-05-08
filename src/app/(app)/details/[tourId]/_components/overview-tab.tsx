@@ -27,6 +27,8 @@ export default function TourDetailsOverviewTab({ tour }: { tour: UIFullTour }) {
         <section>
           <h2 className='text-2xl font-bold mb-4'>{t("tourOverview")}</h2>
           <p className='text-muted-foreground mb-4'>{tour.description}</p>
+          <h2 className='text-2xl font-bold mb-4'>{t("distanceDescription")}</h2>
+          <p className='text-muted-foreground mb-4'>{tour.distance_description}</p>
         </section>
 
         {/* Tour Highlights */}

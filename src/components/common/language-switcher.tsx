@@ -30,7 +30,7 @@ export default function LanguageSwitcher() {
         <DropdownMenuLabel>{t("changeLanguage")}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         {Languages.map((lang) => (
-          <DropdownMenuItem onClick={() => changeLanguage(lang.code)} key={lang.code}>
+          <DropdownMenuItem className='cursor-pointer' onClick={() => changeLanguage(lang.code)} key={lang.code}>
             {lang.name}
           </DropdownMenuItem>
         ))}

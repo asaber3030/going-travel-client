@@ -1,23 +1,24 @@
 {
-  "welcome": "Bienvenido a la aplicación",
+  "welcome": "Bienvenido/a a la aplicación",
   "changeLanguage": "Cambiar idioma",
   "exploreTheWorld": "Explora el mundo",
-  "discoverOurHandpickedDestinations": "Descubre nuestra selección exclusiva de destinos impresionantes alrededor del mundo",
+  "discoverOurHandpickedDestinations": "Descubre nuestra selección cuidadosamente elegida de destinos impresionantes alrededor del globo",
   "featuredDestinations": "Destinos destacados",
   "toursFooterTitle": "Creando experiencias de viaje inolvidables desde 2009. Nuestra misión es ayudarte a descubrir el mundo con comodidad y estilo.",
   "destinations": "Destinos",
-  "destination": "Destino",
+  "destination": "Destinos",
   "phone": "Teléfono",
   "when": "Cuándo",
+
   "search": "Buscar",
   "email": "Correo electrónico",
   "tour": "Tour",
-  "viewTour": "Ver tour",
-  "workingHours": "Horario laboral",
+  "viewTour": "Ver Tour",
+  "workingHours": "Horario de atención",
   "about": "Acerca de",
   "hajj": "Hajj",
   "locations": "Ubicaciones",
-  "contactUs": "Contáctanos",
+  "contactUs": "Contáctenos",
   "quickLinks": "Enlaces rápidos",
   "support": "Soporte",
   "home": "Inicio",
@@ -54,13 +55,13 @@
   "gallery": "Galería",
   "noDataAvailable": "No hay datos disponibles.",
   "tourOverview": "Resumen del tour",
-  "tourHighlights": "Aspectos destacados del tour",
+  "tourHighlights": "Lo más destacado del tour",
   "tourItineraries": "Itinerarios del tour",
   "tourGallery": "Galería del tour",
   "tourReviews": "Reseñas del tour",
   "what'sIncluded": "Qué está incluido",
   "what'sNotIncluded": "Qué no está incluido",
-  "priceStart": "Precio inicial",
+  "priceStart": "Precio desde",
   "needHelp": "¿Necesitas ayuda?",
   "overallRating": "Calificación general",
   "guestReviews": "Reseñas de huéspedes",
@@ -76,21 +77,21 @@
   "toursPage": {
     "cta": {
       "title": "Inspírate para tu próximo viaje",
-      "description": "Suscríbete a nuestro boletín para recibir consejos exclusivos de viaje, ofertas especiales e información sobre destinos",
+      "description": "Suscríbete a nuestro boletín para recibir consejos de viaje exclusivos, ofertas especiales e información sobre destinos",
       "subscribe": "Suscribirse",
-      "label": "Al suscribirte, aceptas nuestra Política de Privacidad y consientes recibir correos electrónicos relacionados con viajes",
-      "inputPlaceholder": "Introduce tu dirección de correo electrónico"
+      "label": "Al suscribirte, aceptas nuestra Política de Privacidad y consientes recibir correos relacionados con viajes",
+      "inputPlaceholder": "Ingresa tu dirección de correo"
     },
     "featuredDestinations": {
       "badgeTitle": "Explora el mundo",
       "exploreTheWorld": "Explora el mundo",
       "title": "Destinos destacados",
       "featuredDestinations": "Destinos destacados",
-      "description": "Descubre nuestra selección exclusiva de destinos impresionantes alrededor del mundo",
+      "description": "Descubre nuestra selección cuidadosamente elegida de destinos impresionantes alrededor del globo",
       "explore": "Explorar"
     },
     "parallexBanner": {
-      "title": "Únete a miles de viajeros satisfechos que han experimentado nuestros tours cuidadosamente diseñados",
+      "title": "Únete a miles de viajeros satisfechos que han experimentado nuestros tours cuidadosamente elaborados",
       "subtitle": "¿Listo para tu próxima aventura?",
       "button": "Comienza a planificar hoy"
     },
@@ -105,56 +106,56 @@
       "description": "Lee reseñas auténticas de viajeros que han experimentado nuestros tours"
     },
     "whyChooseUs": {
-      "10YearsExperience": "+10 años de experiencia",
+      "10YearsExperience": "+10 Años de experiencia",
       "craftUnforgettable": "Creando experiencias de viaje inolvidables desde 2009",
       "aboutUs": "Sobre nosotros",
-      "description": "En Going Travel, creemos que viajar debe ser transformador. Nuestros tours cuidadosamente diseñados combinan destinos impresionantes con experiencias auténticas, permitiéndote conectarte verdaderamente con los lugares que visitas.",
-      "learnMoreAboutUs": "Aprende más sobre nosotros"
+      "description": "En Going Travel, creemos que viajar debe ser transformador. Nuestros tours expertamente elaborados combinan destinos impresionantes con experiencias auténticas, permitiéndote conectar verdaderamente con los lugares que visitas.",
+      "learnMoreAboutUs": "Conoce más sobre nosotros"
     }
   },
   "hotelsPage": {
     "backToHotels": "Volver a hoteles",
     "starsHotel": "Hotel de estrellas",
-    "aboutThisHotel": "Sobre este hotel",
-    "keyAmenities": "Servicios clave",
+    "aboutThisHotel": "Acerca de este hotel",
+    "keyAmenities": "Comodidades clave",
     "freeWifi": "Wi-Fi gratis",
     "spa": "Spa y centro de bienestar",
     "fitnessCenter": "Gimnasio",
     "gourmetRestaurant": "Restaurante gourmet",
-    "pools": "Piscinas interiores y exteriores",
+    "pools": "Piscinas interior y exterior",
     "airConditioner": "Aire acondicionado",
-    "flatTvScreen": "Televisión de pantalla plana",
-    "freeParking": "Estacionamiento gratuito",
-    "frontDesk": "Recepción 24 horas",
-    "bookYourStay": "Reserva tu estancia",
+    "flatTvScreen": "TV pantalla plana",
+    "freeParking": "Estacionamiento gratis",
+    "frontDesk": "Recepcion 24 horas",
+    "bookYourStay": "Reserva tu estadía",
     "bestRateGuarantied": "Mejor tarifa garantizada",
     "averageRoomRate": "Tarifa promedio por habitación",
     "night": "Noche",
     "bookNow": "Reservar ahora",
-    "noPaymentNeeded": "No se necesita pago previo: paga en la propiedad",
+    "noPaymentNeeded": "No se necesita prepago - paga en el establecimiento",
     "hotelPolicies": "Políticas del hotel",
     "needHelp": "¿Necesitas ayuda?",
     "ourTravel": "Nuestros expertos en viajes están aquí para ayudarte con tu reserva.",
-    "contactUs": "Contáctanos",
+    "contactUs": "Contáctenos",
     "availableHotels": "Hoteles disponibles",
     "sortBy": "Ordenar por:",
     "recommended": "Recomendado",
-    "priceLowToHigh": "Precio: de menor a mayor",
-    "priceHighToLow": "Precio: de mayor a menor",
+    "priceLowToHigh": "Precio: Bajo a alto",
+    "priceHighToLow": "Precio: Alto a bajo",
     "rating": "Calificación",
     "noHotelsFound": "No se encontraron hoteles",
     "viewDetails": "Ver detalles",
     "pricePerNight": "Precio por noche"
   },
   "homePageTitle": "Nuestros servicios",
-  "homePageDescription": "Elige entre nuestros servicios de viaje premium diseñados para hacer tu viaje cómodo e inolvidable",
+  "homePageDescription": "Elige entre nuestros servicios premium de viaje diseñados para hacer tu viaje cómodo y memorable",
   "homePageLandingTitle": "Descubre tu viaje perfecto",
   "homePageLandingDescription": "Experimenta servicios de viaje premium adaptados a tus necesidades",
-  "homePageLandingButton": "Explorar ahora",
+  "homePageLandingButton": "Explora ahora",
   "services": {
     "tour_packages": {
       "title": "Paquetes de tours",
-      "description": "Explora nuestros paquetes de tours diseñados para mostrar los mejores destinos del mundo."
+      "description": "Explora nuestros paquetes de tours seleccionados diseñados para mostrar los mejores destinos alrededor del mundo."
     },
     "hotel_booking": {
       "title": "Reserva de hoteles",
@@ -169,19 +170,19 @@
   "about_us_title": "Sobre nosotros",
   "about_us_subtitle": "Descubre nuestra historia, nuestra misión y el equipo detrás de tus experiencias de viaje inolvidables.",
   "our_story_title": "Nuestra historia",
-  "our_story_paragraph_1": "Fundada en 2009, nuestra empresa de viajes se ha dedicado a proporcionar experiencias de viaje excepcionales a nuestros clientes. Lo que comenzó como un pequeño equipo de viajeros apasionados se ha convertido en un nombre de confianza en la industria de viajes.",
+  "our_story_paragraph_1": "Fundada en 2009, nuestra compañía de viajes se ha dedicado a proporcionar experiencias excepcionales a nuestros clientes. Lo que comenzó como un pequeño equipo de viajeros apasionados se ha convertido en un nombre confiable en la industria de viajes.",
   "our_story_paragraph_2": "Nos especializamos en crear itinerarios de viaje personalizados que se adaptan a las preferencias y necesidades únicas de nuestros clientes. Desde tours de lujo hasta aventuras económicas, nos aseguramos de que cada viaje sea memorable y sin complicaciones.",
-  "our_story_paragraph_3": "Nuestra experiencia en servicios de Hajj y Umrah nos ha convertido en una opción preferida para los peregrinos que buscan un viaje espiritual. Entendemos la importancia de estas peregrinaciones sagradas y nos esforzamos por hacerlas cómodas y significativas para nuestros clientes.",
-  "about_company_image_alt": "Sobre nuestra empresa",
+  "our_story_paragraph_3": "Nuestra experiencia en servicios de Hajj y Umrah nos ha convertido en la opción preferida para peregrinos que buscan un viaje espiritual. Entendemos la importancia de estas peregrinaciones sagradas y nos esforzamos por hacerlas cómodas y significativas para nuestros clientes.",
+  "about_company_image_alt": "Acerca de nuestra compañía",
   "our_mission_title": "Nuestra misión",
-  "our_mission_description": "Proporcionar experiencias de viaje excepcionales que creen recuerdos duraderos, asegurando los más altos niveles de servicio, seguridad y satisfacción para nuestros clientes. Nuestro objetivo es hacer que viajar sea accesible, agradable y enriquecedor para todos.",
+  "our_mission_description": "Proporcionar experiencias de viaje excepcionales que creen recuerdos duraderos, asegurando los más altos niveles de servicio, seguridad y satisfacción para nuestros clientes. Nuestro objetivo es hacer que los viajes sean accesibles, disfrutables y enriquecedores para todos.",
   "our_vision_title": "Nuestra visión",
-  "our_vision_description": "Convertirnos en la empresa de viajes líder conocida por la innovación, la excelencia y el enfoque centrado en el cliente. Imaginamos un mundo donde viajar rompa barreras, construya conexiones y promueva el entendimiento entre culturas.",
+  "our_vision_description": "Convertirnos en la compañía de viajes líder conocida por la innovación, excelencia y enfoque centrado en el cliente. Visualizamos un mundo donde los viajes rompan barreras, construyan conexiones y promuevan el entendimiento entre culturas.",
   "our_values_title": "Nuestros valores",
   "value_passion_title": "Pasión",
   "value_passion_description": "Nos apasiona viajar y estamos comprometidos a compartir ese entusiasmo con nuestros clientes.",
   "value_integrity_title": "Integridad",
-  "value_integrity_description": "Operamos con honestidad, transparencia y estándares éticos en todas nuestras acciones.",
+  "value_integrity_description": "Operamos con honestidad, transparencia y estándares éticos en todos nuestros tratos.",
   "value_excellence_title": "Excelencia",
   "value_excellence_description": "Nos esforzamos por la excelencia en cada aspecto de nuestro servicio, desde la planificación hasta la ejecución.",
   "meet_our_team_title": "Conoce a nuestro equipo",
@@ -201,9 +202,10 @@
   "testimonial": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.\"",
   "client_image_alt": "Cliente {index}",
   "client_name": "Nombre del cliente",
-  "client_description": "Peregrino de Hajj, 2023",
-  "contact_us_title": "Contáctanos",
-  "contact_us_subtitle": "Estamos aquí para ayudarte con todas tus necesidades de viaje. Comunícate con nuestro equipo para obtener asistencia.",
+  "client_description": "Peregrino del Hajj, 2023",
+
+  "contact_us_title": "Contáctenos",
+  "contact_us_subtitle": "Estamos aquí para ayudarte con todas tus necesidades de viaje. Comunícate con nuestro equipo para asistencia.",
   "get_in_touch_title": "Ponte en contacto",
   "location_title": "Nuestra ubicación",
   "location_address": "9 Rd. 257 Maadi",
@@ -213,20 +215,137 @@
   "call_us_title": "Llámanos",
   "phone_primary": "+1 (123) 456-7890",
   "phone_secondary": "+1 (987) 654-3210",
-  "working_hours_title": "Horario laboral",
+  "working_hours_title": "Horario de atención",
   "working_hours_weekdays": "Lunes - Viernes: 9:00 AM - 6:00 PM",
   "working_hours_saturday": "Sábado: 10:00 AM - 4:00 PM",
   "working_hours_sunday": "Domingo: Cerrado",
   "send_message_title": "Envíanos un mensaje",
   "form_name_label": "Tu nombre",
-  "form_name_placeholder": "Introduce tu nombre",
-  "form_email_label": "Tu correo",
-  "form_email_placeholder": "Introduce tu correo",
+  "form_name_placeholder": "Ingresa tu nombre",
+  "form_email_label": "Tu correo electrónico",
+  "form_email_placeholder": "Ingresa tu correo electrónico",
   "form_subject_label": "Asunto",
-  "form_subject_placeholder": "Introduce el asunto",
+  "form_subject_placeholder": "Ingresa el asunto",
   "form_message_label": "Mensaje",
-  "form_message_placeholder": "Introduce tu mensaje",
+  "form_message_placeholder": "Ingresa tu mensaje",
   "form_submit_button": "Enviar mensaje",
   "map_section_title": "Nuestra ubicación",
-  "map_iframe_title": "Ubicación de la empresa"
+  "map_iframe_title": "Ubicación de la compañía",
+
+  "availableVehicles": "Vehículos disponibles",
+  "vehicles": "Vehículos",
+  "of": "de",
+  "showing": "Mostrando",
+
+  "testimonials": {
+    "badge": "Testimonios de clientes",
+    "title": "Lo que dicen nuestros clientes",
+    "subtitle": "Lee lo que nuestros clientes satisfechos dicen sobre su experiencia con nuestro servicio de limusina",
+    "0": {
+      "comment": "El servicio de traslado al aeropuerto fue excepcional. El conductor nos esperó a pesar del retraso de nuestro vuelo, y el Mercedes S-Class estaba impecable. ¡Definitivamente lo usaré nuevamente!",
+      "service": "Traslado al aeropuerto"
+    },
+    "1": {
+      "comment": "Contratamos una limusina para nuestro día de boda y no podríamos estar más felices. El chófer fue profesional, el auto estaba hermosamente decorado, e hizo que nuestro día especial fuera aún más memorable.",
+      "service": "Servicio para bodas"
+    },
+    "2": {
+      "comment": "El servicio de alquiler por hora fue perfecto para nuestras reuniones de negocios. El conductor conocía bien la ciudad y fue muy complaciente con nuestro horario cambiante. ¡Altamente recomendado!",
+      "service": "Alquiler por hora"
+    }
+  },
+  "cta": {
+    "title": "¿Listo para experimentar el transporte de lujo?",
+    "subtitle": "Reserva tu servicio premium de limusina hoy y viaja con estilo y comodidad"
+  },
+  "Recommended": "Recomendado",
+  "Price: Low to High": "Precio: Bajo a alto",
+  "Price: High to Low": "Precio: Alto a bajo",
+  "Passenger Capacity": "Capacidad de pasajeros",
+  "Reset Filters": "Restablecer filtros",
+
+  "No vehicles found": "No se encontraron vehículos",
+  "Try adjusting your search criteria": "Intenta ajustar tus criterios de búsqueda",
+  "Per hour": "Por hora",
+
+  "Passengers": "Pasajeros",
+  "View Details": "Ver detalles",
+  "ourServices": "nuestrosServicios",
+
+  "Premium Transportation Services": "Servicios Premium de Transporte",
+  "Discover our range of luxury transportation options for every occasion": "Descubre nuestra gama de opciones de transporte de lujo para cada ocasión",
+
+  "hotelsHero01": "Estancias de lujo en el paraíso",
+  "hotelsHero02": "Refugios urbanos",
+  "hotelsHero03": "Albergues de montaña",
+
+  "hotelsHero01Description": "Descubre nuestra colección seleccionada de hoteles premium",
+  "hotelsHero02Description": "Encuentra tu escape urbano perfecto",
+  "hotelsHero03Description": "Despierta con vistas impresionantes",
+
+  "limousineServicesHero01": "Traslados al aeropuerto",
+  "limousineServicesHero02": "Alquiler por horas",
+  "limousineServicesHero03": "Ocasiones especiales",
+
+  "limousineServicesHero01Description": "Comienza y termina tu viaje cómodamente con nuestro confiable servicio de traslado al aeropuerto. Nuestros chóferes profesionales monitorearán tu vuelo y se ajustarán a cualquier retraso.",
+  "limousineServices02Description": "Contrata un vehículo de lujo con chófer profesional por horas para reuniones de negocios, turismo, compras o cualquier otra ocasión que requiera múltiples paradas.",
+  "limousineServices03Description": "Haz que tu día especial sea aún más memorable con nuestros servicios de transporte de lujo para bodas, aniversarios, proms y otras celebraciones importantes.",
+
+  "limousinesHero01": "Estancias de lujo en el paraíso",
+  "limousinesHero02": "Refugios urbanos",
+  "limousinesHero03": "Albergues de montaña",
+
+  "limousinesHero01Description": "Descubre nuestra colección seleccionada de limusinas premium",
+  "limousinesHero02Description": "Encuentra tu escape urbano perfecto",
+  "limousinesHero03Description": "Despierta con vistas impresionantes",
+
+  "toursHeroSlides": {
+    "0": {
+      "title": "Descubre Hurghada",
+      "subtitle": "Sumérgete en las aguas cristalinas del Mar Rojo"
+    },
+    "1": {
+      "title": "Explora la belleza atemporal de Aswan",
+      "subtitle": "Viaja a través de la historia antigua y la vibrante cultura"
+    },
+    "2": {
+      "title": "Aventuras místicas de El Cairo",
+      "subtitle": "Descubre los secretos de las pirámides y los bulliciosos bazares"
+    },
+    "3": {
+      "title": "Escapadas serenas de Hurghada",
+      "subtitle": "Navega por las serenas aguas del Mar Rojo"
+    },
+    "4": {
+      "title": "Viaje en el tiempo al Pueblo Faraónico",
+      "subtitle": "Retrocede en el tiempo a la era de los faraones"
+    },
+    "5": {
+      "title": "El legado legendario de Alejandría",
+      "subtitle": "Explora la legendaria ciudad de Alejandro Magno"
+    }
+  },
+  "whyChooseUs": {
+    "0": {
+      "title": "Guías locales expertos",
+      "description": "Nuestros guías son locales apasionados con profundo conocimiento de cada destino"
+    },
+    "1": {
+      "title": "Grupos pequeños",
+      "description": "Máximo de 12 viajeros para una experiencia más personalizada"
+    },
+    "2": {
+      "title": "Viaje sostenible",
+      "description": "Comprometidos con prácticas de turismo responsable que respetan a las comunidades locales"
+    },
+    "3": {
+      "title": "Soporte 24/7",
+      "description": "Equipo de soporte dedicado disponible durante todo tu viaje"
+    }
+  },
+  "type": "Tipo",
+  "public": "Público",
+  "private": "Privado",
+  "distanceDescription": "Descripción de la distancia",
+  "pickupLocation": "Lugar de recogida"
 }

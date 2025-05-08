@@ -1,45 +1,33 @@
-"use client";
+"use client"
 
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import { LogOut, Menu } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { SidebarTrigger } from "@/components/ui/sidebar";
+import React, { useEffect, useState } from "react"
+import Link from "next/link"
+import { LogOut, Menu } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { SidebarTrigger } from "@/components/ui/sidebar"
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu";
-import { usePathname } from "next/navigation";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { usePathname } from "next/navigation"
 
 const AdminHeader = () => {
-  const pathname = usePathname();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname()
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [pathname]);
+    setIsMobileMenuOpen(false)
+  }, [pathname])
   return (
     <div>
       {" "}
       <header className='bg-white dark:bg-gray-800 shadow-sm z-10'>
         <div className='flex items-center justify-between p-4'>
           <div className='flex items-center gap-4'>
-            <Button
-              variant='ghost'
-              size='icon'
-              className='md:hidden'
-              onClick={() => setIsMobileMenuOpen(true)}
-            >
+            <Button variant='ghost' size='icon' className='md:hidden' onClick={() => setIsMobileMenuOpen(true)}>
               <Menu className='h-6 w-6' />
             </Button>
             <SidebarTrigger className='hidden md:flex' />
-            <h1 className='text-xl font-semibold'>Alpine Admin</h1>
+            <h1 className='text-xl font-semibold'> Admin</h1>
           </div>
           <div className='flex items-center gap-2'>
             <Button variant='outline' size='sm' asChild>
@@ -72,7 +60,7 @@ const AdminHeader = () => {
         </div>
       </header>
     </div>
-  );
-};
+  )
+}
 
-export default AdminHeader;
+export default AdminHeader

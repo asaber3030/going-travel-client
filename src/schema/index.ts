@@ -20,12 +20,10 @@ export const CategorySchema = {
 
 export const LocationSchema = {
   Create: z.object({
-    name: z.string().min(2),
-    map_url: z.string().min(2)
+    name: z.string().min(2)
   }),
   Update: z.object({
-    name: z.string().min(2),
-    map_url: z.string().min(2)
+    name: z.string().min(2)
   })
 }
 
@@ -162,13 +160,13 @@ export const ServiceCardTranslationSchema = z.object({
 
 export const ServiceCardSchema = {
   Create: z.object({
-    enabled: z.string().optional(),
+    enabled: z.any(),
     title: z.string().min(1, "Title is required"),
     description: z.string().min(1, "Description is required"),
     translations: z.array(ServiceCardTranslationSchema) // Array of translations
   }),
   Update: z.object({
-    enabled: z.string().optional(),
+    enabled: z.any(),
     title: z.string().min(1, "Title is required"),
     description: z.string().min(1, "Description is required"),
     translations: z.array(ServiceCardTranslationSchema) // Array of translations

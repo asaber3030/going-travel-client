@@ -91,7 +91,7 @@ export function SortAndHotelsSection({ hotels }: Props) {
                           </div>
                           <div className='flex items-center text-muted-foreground mb-4'>
                             <MapPin className='h-4 w-4 mr-1' />
-                            <span>{hotel.location_id ?? "N/A"}</span>
+                            <span>{hotel.location?.name ?? "N/A"}</span>
                           </div>
                           <p className='text-muted-foreground mb-4'>{hotel.description}</p>
                           <div className='flex flex-wrap gap-2 mb-4'>

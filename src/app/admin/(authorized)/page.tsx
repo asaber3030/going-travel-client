@@ -1,36 +1,18 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import {
-  ArrowUpRight,
-  TrendingUp,
-  TrendingDown,
-  Users,
-  Map,
-  Star,
-  Calendar,
-  DollarSign,
-  BarChart3,
-  ArrowRight
-} from "lucide-react";
+import { useState } from "react"
+import Link from "next/link"
+import { motion } from "framer-motion"
+import { ArrowUpRight, TrendingUp, TrendingDown, Users, Map, Star, Calendar, DollarSign, BarChart3, ArrowRight } from "lucide-react"
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Badge } from "@/components/ui/badge"
+import { Progress } from "@/components/ui/progress"
 
 export default function AdminDashboard() {
-  const [timeRange, setTimeRange] = useState("week");
+  const [timeRange, setTimeRange] = useState("week")
 
   // Sample data for dashboard
   const stats = [
@@ -66,7 +48,7 @@ export default function AdminDashboard() {
       icon: Star,
       color: "bg-amber-500"
     }
-  ];
+  ]
 
   const popularTours = [
     {
@@ -78,7 +60,7 @@ export default function AdminDashboard() {
     },
     {
       id: 2,
-      name: "Italian Lakes & Alpine Adventure",
+      name: "Italian Lakes &  Adventure",
       bookings: 98,
       revenue: "$176,400",
       rating: 4.7
@@ -99,12 +81,12 @@ export default function AdminDashboard() {
     },
     {
       id: 5,
-      name: "Alpine Winter Wonderland",
+      name: " Winter Wonderland",
       bookings: 64,
       revenue: "$89,600",
       rating: 4.6
     }
-  ];
+  ]
 
   const recentBookings = [
     {
@@ -118,7 +100,7 @@ export default function AdminDashboard() {
     {
       id: "B-7830",
       customer: "Michael Chen",
-      tour: "Italian Lakes & Alpine Adventure",
+      tour: "Italian Lakes &  Adventure",
       date: "2023-11-14",
       amount: "$1,799",
       status: "pending"
@@ -142,12 +124,12 @@ export default function AdminDashboard() {
     {
       id: "B-7833",
       customer: "Lisa Thompson",
-      tour: "Alpine Winter Wonderland",
+      tour: " Winter Wonderland",
       date: "2023-11-12",
       amount: "$1,399",
       status: "cancelled"
     }
-  ];
+  ]
 
   const topDestinations = [
     { name: "Switzerland", bookings: 324, percentage: 28 },
@@ -156,7 +138,7 @@ export default function AdminDashboard() {
     { name: "Norway", bookings: 167, percentage: 14 },
     { name: "Austria", bookings: 142, percentage: 12 },
     { name: "Germany", bookings: 87, percentage: 7 }
-  ];
+  ]
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -165,7 +147,7 @@ export default function AdminDashboard() {
       y: 0,
       transition: { duration: 0.4 }
     }
-  };
+  }
 
   return (
     <div className='space-y-6'>
@@ -190,13 +172,7 @@ export default function AdminDashboard() {
       {/* Stats Cards */}
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
         {stats.map((stat, index) => (
-          <motion.div
-            key={stat.title}
-            initial='hidden'
-            animate='visible'
-            variants={fadeInUp}
-            transition={{ delay: index * 0.1 }}
-          >
+          <motion.div key={stat.title} initial='hidden' animate='visible' variants={fadeInUp} transition={{ delay: index * 0.1 }}>
             <Card>
               <CardHeader className='flex flex-row items-center justify-between pb-2'>
                 <CardTitle className='text-sm font-medium'>{stat.title}</CardTitle>
@@ -207,16 +183,8 @@ export default function AdminDashboard() {
               <CardContent>
                 <div className='text-2xl font-bold'>{stat.value}</div>
                 <div className='flex items-center pt-1 text-xs'>
-                  <span
-                    className={`flex items-center ${
-                      stat.trend === "up" ? "text-green-500" : "text-red-500"
-                    }`}
-                  >
-                    {stat.trend === "up" ? (
-                      <TrendingUp className='h-3 w-3 mr-1' />
-                    ) : (
-                      <TrendingDown className='h-3 w-3 mr-1' />
-                    )}
+                  <span className={`flex items-center ${stat.trend === "up" ? "text-green-500" : "text-red-500"}`}>
+                    {stat.trend === "up" ? <TrendingUp className='h-3 w-3 mr-1' /> : <TrendingDown className='h-3 w-3 mr-1' />}
                     {stat.change}
                   </span>
                   <span className='text-muted-foreground ml-1'>from previous {timeRange}</span>
@@ -292,9 +260,7 @@ export default function AdminDashboard() {
               {popularTours.map((tour, index) => (
                 <div key={tour.id} className='flex items-center justify-between'>
                   <div className='flex items-center gap-2'>
-                    <div className='flex h-8 w-8 items-center justify-center rounded-full bg-primary/10'>
-                      {index + 1}
-                    </div>
+                    <div className='flex h-8 w-8 items-center justify-center rounded-full bg-primary/10'>{index + 1}</div>
                     <div>
                       <p className='text-sm font-medium'>{tour.name}</p>
                       <p className='text-xs text-muted-foreground'>{tour.bookings} bookings</p>
@@ -346,17 +312,7 @@ export default function AdminDashboard() {
                       <p className='text-sm font-medium'>{booking.amount}</p>
                       <p className='text-xs text-muted-foreground'>{booking.date}</p>
                     </div>
-                    <Badge
-                      variant={
-                        booking.status === "confirmed"
-                          ? "default"
-                          : booking.status === "pending"
-                          ? "outline"
-                          : "destructive"
-                      }
-                    >
-                      {booking.status}
-                    </Badge>
+                    <Badge variant={booking.status === "confirmed" ? "default" : booking.status === "pending" ? "outline" : "destructive"}>{booking.status}</Badge>
                   </div>
                 </div>
               ))}
@@ -370,5 +326,5 @@ export default function AdminDashboard() {
         </Card>
       </div>
     </div>
-  );
+  )
 }

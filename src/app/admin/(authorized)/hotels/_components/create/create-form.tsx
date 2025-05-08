@@ -8,7 +8,6 @@ import { useRouter } from "next/navigation"
 import { showResponse } from "@/lib/utils"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { createHotel, CreateHotelData } from "../../_helpers/actions"
-import { routes } from "@/lib/route"
 
 import { LoadingButton } from "@/components/common/loading-button"
 import { HotelSchema } from "@/schema"
@@ -19,7 +18,6 @@ import { CreateDetailsForm } from "./details-form"
 import { CreateRelationsForm } from "./relations-form"
 import { FileField } from "@/components/common/file-field"
 import { CreateAmenityForm } from "./amenity-form"
-import { Button } from "@/components/ui/button"
 
 type Mutation = {
   data: CreateHotelData
@@ -48,6 +46,7 @@ export const CreateHotelForm = () => {
   })
 
   const onSubmit = () => {
+    console.log(form.getValues())
     mutation.mutate({
       data: form.getValues(),
       banner,

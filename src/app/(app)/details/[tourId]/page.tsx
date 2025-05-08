@@ -8,8 +8,6 @@ async function TourIdDetails({ params }: { params: Promise<{ tourId: string }> }
   const tour = await getUITourDetails(+tourId)
   const relatedTours = await getRelatedTours(+tourId)
 
-  console.log(relatedTours)
-
   if (!tour) return notFound()
 
   return <TourDetails relatedTours={relatedTours} tour={tour} />

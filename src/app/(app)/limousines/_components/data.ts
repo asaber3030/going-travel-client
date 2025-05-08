@@ -1,11 +1,4 @@
-export const toursFooterDestinations = [
-  "Switzerland",
-  "Italy",
-  "France",
-  "Austria",
-  "Germany",
-  "Norway"
-]
+export const toursFooterDestinations = ["Switzerland", "Italy", "France", "Austria", "Germany", "Norway"]
 
 export const toursFooterQuickLinks = [
   { name: "aboutUs", href: "#about" },
@@ -17,19 +10,19 @@ export const toursFooterQuickLinks = [
 ]
 export const whyChooseUs = [
   {
-    title: "Expert Local Guides",
-    description: "Our guides are passionate locals with deep knowledge of each destination"
+    title: "whyChooseUs.0.title",
+    description: "whyChooseUs.0.description"
   },
   {
-    title: "Small Group Sizes",
-    description: "Maximum of 12 travelers for a more personalized experience"
+    title: "whyChooseUs.1.title",
+    description: "whyChooseUs.1.description"
   },
   {
-    title: "Sustainable Travel",
-    description: "Committed to responsible tourism practices that respect local communities"
+    title: "whyChooseUs.2.title",
+    description: "whyChooseUs.2.description"
   },
   {
-    title: "24/7 Support",
-    description: "Dedicated support team available throughout your journey"
+    title: "whyChooseUs.3.title",
+    description: "whyChooseUs.3.description"
   }
 ]

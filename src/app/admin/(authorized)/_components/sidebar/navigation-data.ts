@@ -1,4 +1,4 @@
-import { LayoutDashboard, Users, Globe, Compass, CarIcon, CogIcon } from "lucide-react"
+import { LayoutDashboard, Users, Globe, Compass, CarIcon, CogIcon, CheckCheck, Building, CuboidIcon, Plane } from "lucide-react"
 
 export const navigation = [
   {
@@ -33,25 +33,19 @@ export const navigation = [
   {
     name: "Hajs",
     href: "/admin/hajs",
-    icon: Globe,
+    icon: Plane,
     current: (pathname: string) => pathname === "/admin/hajs" || pathname.startsWith("/admin/hajs")
   },
   {
     name: "Hotels",
     href: "/admin/hotels",
-    icon: Globe,
+    icon: Building,
     current: (pathname: string) => pathname === "/admin/hotels" || pathname.startsWith("/admin/hotels")
   },
   {
     name: "Service Cards",
     href: "/admin/settings/service-cards",
-    icon: Globe,
+    icon: CheckCheck,
     current: (pathname: string) => pathname === "/admin/settings/service-cards" || pathname.startsWith("/admin/settings/service-cards")
-  },
-  {
-    name: "Settings",
-    href: "/admin/settings",
-    icon: CogIcon,
-    current: (pathname: string) => pathname === "/admin/settings" || pathname.startsWith("/admin/settings")
   }
 ]

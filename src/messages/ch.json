@@ -1,0 +1,351 @@
+{
+  "welcome": "欢迎使用本应用",
+  "changeLanguage": "更改语言",
+  "exploreTheWorld": "探索世界",
+  "discoverOurHandpickedDestinations": "发现我们精心挑选的全球绝美目的地",
+  "featuredDestinations": "精选目的地",
+  "toursFooterTitle": "自2009年起创造难忘旅行体验。我们的使命是帮助您舒适优雅地探索世界。",
+  "destinations": "目的地",
+  "destination": "目的地",
+  "phone": "电话",
+  "when": "时间",
+
+  "search": "搜索",
+  "email": "邮箱",
+  "tour": "旅游",
+  "viewTour": "查看行程",
+  "workingHours": "工作时间",
+  "about": "关于",
+  "hajj": "朝觐",
+  "locations": "地点",
+  "contactUs": "联系我们",
+  "quickLinks": "快速链接",
+  "support": "支持",
+  "home": "首页",
+  "loading": "加载中",
+  "categories": "分类",
+  "language": "语言",
+  "aboutUs": "关于我们",
+  "tours": "旅游",
+  "contact": "联系",
+  "blog": "博客",
+  "faq": "常见问题",
+  "viewAll": "查看全部",
+  "privacyPolicy": "隐私政策",
+  "termsAndConditions": "条款和条件",
+  "allRightsReserved": "版权所有",
+  "exploreTours": "探索旅游",
+  "viewAllTours": "查看所有行程",
+  "viewDetails": "查看详情",
+  "pricePerHour": "每小时价格",
+  "features": "特色",
+  "specifications": "规格",
+  "backToLimousines": "返回豪华轿车",
+  "noHotelsFound": "未找到酒店",
+  "from": "起",
+  "locationTours": "当地旅游",
+  "noToursFound": "未找到行程",
+  "daysTour": "{days}天行程",
+  "days": "天",
+  "people": "人",
+  "reviews": "评价",
+  "bookNow": "立即预订",
+  "overview": "概述",
+  "itineraries": "行程安排",
+  "gallery": "图库",
+  "noDataAvailable": "无可用数据",
+  "tourOverview": "行程概述",
+  "tourHighlights": "行程亮点",
+  "tourItineraries": "行程安排",
+  "tourGallery": "行程图库",
+  "tourReviews": "行程评价",
+  "what'sIncluded": "包含内容",
+  "what'sNotIncluded": "不包含内容",
+  "priceStart": "价格从",
+  "needHelp": "需要帮助？",
+  "overallRating": "总体评分",
+  "guestReviews": "客人评价",
+  "pricePerNight": "每晚价格",
+  "chat": "聊天",
+  "stars": "星级",
+  "callUs": "联系我们",
+  "hotels": "酒店",
+  "limousines": "豪华轿车",
+  "relatedTours": "相关行程",
+  "haveQuestionsAboutThisTour": "对此行程有疑问？",
+  "ourTravelExpertsAreHereToAssist": "我们的旅行专家随时为您提供帮助。",
+  "toursPage": {
+    "cta": {
+      "title": "获取下次旅行灵感",
+      "description": "订阅我们的通讯，获取独家旅行贴士、特别优惠和目的地洞察",
+      "subscribe": "订阅",
+      "label": "订阅即表示您同意我们的隐私政策并同意接收旅行相关邮件",
+      "inputPlaceholder": "输入您的邮箱地址"
+    },
+    "featuredDestinations": {
+      "badgeTitle": "探索世界",
+      "exploreTheWorld": "探索世界",
+      "title": "精选目的地",
+      "featuredDestinations": "精选目的地",
+      "description": "发现我们精心挑选的全球绝美目的地",
+      "explore": "探索"
+    },
+    "parallexBanner": {
+      "title": "加入数千名满意旅客的行列，体验我们精心设计的行程",
+      "subtitle": "准备好下一次冒险了吗？",
+      "button": "立即开始计划"
+    },
+    "popularTours": {
+      "bestSellingTours": "最畅销行程",
+      "popularTourPackages": "热门旅游套餐",
+      "exploreOurMost": "探索我们全球旅客最喜爱的热门旅游套餐"
+    },
+    "testimonials": {
+      "title": "旅客故事",
+      "subtitle": "客户评价",
+      "description": "阅读体验过我们行程的旅客的真实评价"
+    },
+    "whyChooseUs": {
+      "10YearsExperience": "10年以上经验",
+      "craftUnforgettable": "自2009年起创造难忘旅行体验",
+      "aboutUs": "关于我们",
+      "description": "在Going Travel，我们相信旅行应该是变革性的。我们精心设计的行程将令人惊叹的目的地与真实体验相结合，让您真正与所到之处建立联系。",
+      "learnMoreAboutUs": "了解更多关于我们"
+    }
+  },
+  "hotelsPage": {
+    "backToHotels": "返回酒店",
+    "starsHotel": "{stars}星级酒店",
+    "aboutThisHotel": "关于此酒店",
+    "keyAmenities": "关键设施",
+    "freeWifi": "免费Wi-Fi",
+    "spa": "水疗健康中心",
+    "fitnessCenter": "健身中心",
+    "gourmetRestaurant": "美食餐厅",
+    "pools": "室内外泳池",
+    "airConditioner": "空调",
+    "flatTvScreen": "平板电视",
+    "freeParking": "免费停车",
+    "frontDesk": "24小时前台",
+    "bookYourStay": "预订住宿",
+    "bestRateGuarantied": "最优价格保证",
+    "averageRoomRate": "平均房价",
+    "night": "晚",
+    "bookNow": "立即预订",
+    "noPaymentNeeded": "无需预付款 - 到店支付",
+    "hotelPolicies": "酒店政策",
+    "needHelp": "需要帮助？",
+    "ourTravel": "我们的旅行专家随时协助您完成预订。",
+    "contactUs": "联系我们",
+    "availableHotels": "可用酒店",
+    "sortBy": "排序方式：",
+    "recommended": "推荐",
+    "priceLowToHigh": "价格：低到高",
+    "priceHighToLow": "价格：高到低",
+    "rating": "评分",
+    "noHotelsFound": "未找到酒店",
+    "viewDetails": "查看详情",
+    "pricePerNight": "每晚价格"
+  },
+  "homePageTitle": "我们的服务",
+  "homePageDescription": "选择我们优质的旅行服务，让您的旅程舒适难忘",
+  "homePageLandingTitle": "发现您的完美旅程",
+  "homePageLandingDescription": "体验量身定制的优质旅行服务",
+  "homePageLandingButton": "立即探索",
+  "services": {
+    "tour_packages": {
+      "title": "旅游套餐",
+      "description": "探索我们精心策划的旅游套餐，展示世界各地的最佳目的地。"
+    },
+    "hotel_booking": {
+      "title": "酒店预订",
+      "description": "发现全球舒适的住宿选择，从豪华度假村到温馨精品酒店。"
+    },
+    "limousine_service": {
+      "title": "豪华轿车服务",
+      "description": "使用我们的优质豪华轿车服务，机场接送和特殊场合出行更显格调。"
+    },
+    "explore": "探索"
+  },
+  "about_us_title": "关于我们",
+  "about_us_subtitle": "了解我们的故事、使命以及为您创造难忘旅行体验的团队。",
+  "our_story_title": "我们的故事",
+  "our_story_paragraph_1": "成立于2009年，我们的旅游公司一直致力于为客户提供卓越的旅行体验。从一小群充满热情的旅行者开始，我们已发展成为旅游业值得信赖的品牌。",
+  "our_story_paragraph_2": "我们专注于创建个性化的旅行行程，满足客户的独特偏好和需求。从豪华旅游到经济实惠的冒险，我们确保每次旅程都令人难忘且无忧无虑。",
+  "our_story_paragraph_3": "我们在朝觐和副朝服务方面的专业知识，使其成为寻求精神之旅的朝圣者的首选。我们理解这些神圣朝觐的重要性，并努力为客户提供舒适而有意义的体验。",
+  "about_company_image_alt": "关于我们公司",
+  "our_mission_title": "我们的使命",
+  "our_mission_description": "提供创造持久记忆的卓越旅行体验，同时确保为客户提供最高水平的服务、安全和满意度。我们的目标是让旅行对每个人来说都触手可及、愉快且富有意义。",
+  "our_vision_title": "我们的愿景",
+  "our_vision_description": "成为以创新、卓越和以客户为中心而闻名的领先旅游公司。我们设想一个旅行打破障碍、建立联系并促进文化间理解的世界。",
+  "our_values_title": "我们的价值观",
+  "value_passion_title": "热情",
+  "value_passion_description": "我们对旅行充满热情，并致力于与客户分享这种热情。",
+  "value_integrity_title": "诚信",
+  "value_integrity_description": "我们在所有交易中以诚实、透明和道德标准运营。",
+  "value_excellence_title": "卓越",
+  "value_excellence_description": "我们努力在从规划到执行的每个服务环节追求卓越。",
+  "meet_our_team_title": "认识我们的团队",
+  "team_member_image_alt": "团队成员{index}",
+  "team_member_name": "团队成员{index}",
+  "team_member_position": "职位名称",
+  "team_member_description": "关于团队成员及其在旅游业专业知识的简要描述。",
+  "our_achievements_title": "我们的成就",
+  "years_of_experience": "10+",
+  "years_of_experience_label": "年经验",
+  "happy_travelers": "5000+",
+  "happy_travelers_label": "满意旅客",
+  "destinations_label": "目的地",
+  "hajj_and_umrah_groups": "100+",
+  "hajj_and_umrah_groups_label": "朝觐与副朝团体",
+  "testimonials_title": "客户评价",
+  "testimonial": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.\"",
+  "client_image_alt": "客户{index}",
+  "client_name": "客户姓名",
+  "client_description": "2023年朝觐者",
+
+  "contact_us_title": "联系我们",
+  "contact_us_subtitle": "我们随时为您提供所有旅行需求帮助。联系我们的团队获取协助。",
+  "get_in_touch_title": "取得联系",
+  "location_title": "我们的位置",
+  "location_address": "9 Rd. 257 Maadi",
+  "email_us_title": "发送邮件",
+  "email_primary": "info@travelcompany.com",
+  "email_support": "support@travelcompany.com",
+  "call_us_title": "致电我们",
+  "phone_primary": "+1 (123) 456-7890",
+  "phone_secondary": "+1 (987) 654-3210",
+  "working_hours_title": "工作时间",
+  "working_hours_weekdays": "周一至周五：上午9:00 - 下午6:00",
+  "working_hours_saturday": "周六：上午10:00 - 下午4:00",
+  "working_hours_sunday": "周日：休息",
+  "send_message_title": "发送消息",
+  "form_name_label": "您的姓名",
+  "form_name_placeholder": "输入您的姓名",
+  "form_email_label": "您的邮箱",
+  "form_email_placeholder": "输入您的邮箱",
+  "form_subject_label": "主题",
+  "form_subject_placeholder": "输入主题",
+  "form_message_label": "消息",
+  "form_message_placeholder": "输入您的消息",
+  "form_submit_button": "发送消息",
+  "map_section_title": "我们的位置",
+  "map_iframe_title": "公司位置",
+
+  "availableVehicles": "可用车辆",
+  "vehicles": "车辆",
+  "of": "的",
+  "showing": "显示",
+
+  "testimonials": {
+    "badge": "客户评价",
+    "title": "客户评价",
+    "subtitle": "阅读我们满意客户对豪华轿车服务的评价",
+    "0": {
+      "comment": "机场接送服务非常出色。尽管我们的航班延误，司机仍在等待我们，而且奔驰S级轿车一尘不染。一定会再次使用！",
+      "service": "机场接送"
+    },
+    "1": {
+      "comment": "我们为婚礼日租了一辆豪华轿车，非常满意。司机专业，车辆装饰精美，让我们特殊的日子更加难忘。",
+      "service": "婚礼服务"
+    },
+    "2": {
+      "comment": "按小时租赁服务非常适合我们的商务会议。司机熟悉城市，并且对我们不断变化的日程安排非常配合。强烈推荐！",
+      "service": "按时租赁"
+    }
+  },
+  "cta": {
+    "title": "准备好体验豪华交通了吗？",
+    "subtitle": "立即预订您的优质豪华轿车服务，享受时尚舒适的出行"
+  },
+  "Recommended": "推荐",
+  "Price: Low to High": "价格：低到高",
+  "Price: High to Low": "价格：高到低",
+  "Passenger Capacity": "乘客容量",
+  "Reset Filters": "重置筛选",
+
+  "No vehicles found": "未找到车辆",
+  "Try adjusting your search criteria": "尝试调整搜索条件",
+  "Per hour": "每小时",
+
+  "Passengers": "乘客",
+  "View Details": "查看详情",
+  "ourServices": "我们的服务",
+
+  "Premium Transportation Services": "优质交通服务",
+  "Discover our range of luxury transportation options for every occasion": "发现我们为各种场合提供的豪华交通选择",
+
+  "hotelsHero01": "天堂豪华住宿",
+  "hotelsHero02": "城市度假",
+  "hotelsHero03": "山间小屋",
+
+  "hotelsHero01Description": "发现我们精心挑选的优质酒店系列",
+  "hotelsHero02Description": "找到您完美的城市逃离之所",
+  "hotelsHero03Description": "醒来欣赏令人叹为观止的景色",
+
+  "limousineServicesHero01": "机场接送",
+  "limousineServicesHero02": "按时租赁",
+  "limousineServicesHero03": "特殊场合",
+
+  "limousineServicesHero01Description": "以我们可靠的机场接送服务舒适地开始和结束您的旅程。我们的专业司机会监控您的航班并根据任何延误进行调整。",
+  "limousineServices02Description": "按小时租用带专业司机的豪华车辆，用于商务会议、观光、购物或任何需要多次停留的场合。",
+  "limousineServices03Description": "用我们的豪华交通服务让您的特殊日子更加难忘，适用于婚礼、周年纪念、毕业舞会和其他重要庆祝活动。",
+
+  "limousinesHero01": "天堂豪华住宿",
+  "limousinesHero02": "城市度假",
+  "limousinesHero03": "山间小屋",
+
+  "limousinesHero01Description": "发现我们精心挑选的优质豪华轿车系列",
+  "limousinesHero02Description": "找到您完美的城市逃离之所",
+  "limousinesHero03Description": "醒来欣赏令人叹为观止的景色",
+
+  "toursHeroSlides": {
+    "0": {
+      "title": "探索赫尔格达",
+      "subtitle": "潜入红海晶莹剔透的海水中"
+    },
+    "1": {
+      "title": "探索阿斯旺的永恒之美",
+      "subtitle": "穿越古老历史和充满活力的文化"
+    },
+    "2": {
+      "title": "开罗的神秘冒险",
+      "subtitle": "揭开金字塔和繁华集市的秘密"
+    },
+    "3": {
+      "title": "赫尔格达的宁静逃离",
+      "subtitle": "航行在红海平静的水面上"
+    },
+    "4": {
+      "title": "法老村时光之旅",
+      "subtitle": "回到法老时代"
+    },
+    "5": {
+      "title": "亚历山大的传奇遗产",
+      "subtitle": "探索亚历山大大帝的传奇城市"
+    }
+  },
+  "whyChooseUs": {
+    "0": {
+      "title": "专业当地导游",
+      "description": "我们的导游是对每个目的地有深入了解的热情当地人"
+    },
+    "1": {
+      "title": "小团规模",
+      "description": "最多12名旅行者，获得更个性化的体验"
+    },
+    "2": {
+      "title": "可持续旅行",
+      "description": "致力于尊重当地社区的负责任旅游实践"
+    },
+    "3": {
+      "title": "24/7支持",
+      "description": "专门的支援团队在您整个旅程中随时待命"
+    }
+  },
+  "type": "类型",
+  "public": "公共",
+  "private": "私人",
+  "distanceDescription": "距离描述",
+  "pickupLocation": "接载地点"
+}

@@ -1,14 +1,15 @@
 {
   "welcome": "Willkommen in der App",
   "changeLanguage": "Sprache ändern",
-  "exploreTheWorld": "Entdecke die Welt",
-  "discoverOurHandpickedDestinations": "Entdecke unsere handverlesene Auswahl atemberaubender Reiseziele auf der ganzen Welt",
-  "featuredDestinations": "Empfohlene Reiseziele",
-  "toursFooterTitle": "Unvergessliche Reiseerlebnisse seit 2009. Unsere Mission ist es, Ihnen die Welt komfortabel und stilvoll näherzubringen.",
+  "exploreTheWorld": "Erkunde die Welt",
+  "discoverOurHandpickedDestinations": "Entdecken Sie unsere handverlesene Auswahl atemberaubender Reiseziele weltweit",
+  "featuredDestinations": "Ausgewählte Reiseziele",
+  "toursFooterTitle": "Seit 2009 schaffen wir unvergessliche Reiseerlebnisse. Unsere Mission ist es, Ihnen zu helfen, die Welt komfortabel und stilvoll zu entdecken.",
   "destinations": "Reiseziele",
   "destination": "Reiseziele",
   "phone": "Telefon",
   "when": "Wann",
+
   "search": "Suchen",
   "email": "E-Mail",
   "tour": "Tour",
@@ -17,11 +18,11 @@
   "about": "Über uns",
   "hajj": "Haddsch",
   "locations": "Standorte",
-  "contactUs": "Kontaktieren Sie uns",
-  "quickLinks": "Schnellzugriff",
-  "support": "Unterstützung",
+  "contactUs": "Kontakt",
+  "quickLinks": "Schnelllinks",
+  "support": "Support",
   "home": "Startseite",
-  "loading": "Laden",
+  "loading": "Wird geladen",
   "categories": "Kategorien",
   "language": "Sprache",
   "aboutUs": "Über uns",
@@ -29,37 +30,37 @@
   "contact": "Kontakt",
   "blog": "Blog",
   "faq": "FAQ",
-  "viewAll": "Alle ansehen",
-  "privacyPolicy": "Datenschutzrichtlinie",
-  "termsAndConditions": "Allgemeine Geschäftsbedingungen",
+  "viewAll": "Alle anzeigen",
+  "privacyPolicy": "Datenschutz",
+  "termsAndConditions": "AGB",
   "allRightsReserved": "Alle Rechte vorbehalten",
   "exploreTours": "Touren entdecken",
   "viewAllTours": "Alle Touren ansehen",
-  "viewDetails": "Details ansehen",
+  "viewDetails": "Details anzeigen",
   "pricePerHour": "Preis pro Stunde",
   "features": "Merkmale",
   "specifications": "Spezifikationen",
   "backToLimousines": "Zurück zu Limousinen",
   "noHotelsFound": "Keine Hotels gefunden",
   "from": "Ab",
-  "locationTours": "Standort-Touren",
+  "locationTours": "Standorttouren",
   "noToursFound": "Keine Touren gefunden",
   "daysTour": "Tage Tour",
   "days": "Tage",
   "people": "Personen",
   "reviews": "Bewertungen",
   "bookNow": "Jetzt buchen",
-  "overview": "Überblick",
-  "itineraries": "Reisepläne",
+  "overview": "Übersicht",
+  "itineraries": "Reiseverläufe",
   "gallery": "Galerie",
   "noDataAvailable": "Keine Daten verfügbar.",
-  "tourOverview": "Tour-Überblick",
+  "tourOverview": "Tour-Übersicht",
   "tourHighlights": "Tour-Highlights",
-  "tourItineraries": "Tour-Reisepläne",
+  "tourItineraries": "Tour-Reiseverläufe",
   "tourGallery": "Tour-Galerie",
   "tourReviews": "Tour-Bewertungen",
-  "what'sIncluded": "Was ist enthalten",
-  "what'sNotIncluded": "Was ist nicht enthalten",
+  "what'sIncluded": "Inklusive",
+  "what'sNotIncluded": "Nicht inklusive",
   "priceStart": "Preis ab",
   "needHelp": "Brauchen Sie Hilfe?",
   "overallRating": "Gesamtbewertung",
@@ -70,80 +71,80 @@
   "callUs": "Rufen Sie uns an",
   "hotels": "Hotels",
   "limousines": "Limousinen",
-  "relatedTours": "Verwandte Touren",
-  "haveQuestionsAboutThisTour": "Haben Sie Fragen zu dieser Tour?",
-  "ourTravelExpertsAreHereToAssist": "Unsere Reiseexperten sind hier, um Ihnen zu helfen.",
+  "relatedTours": "Ähnliche Touren",
+  "haveQuestionsAboutThisTour": "Fragen zu dieser Tour?",
+  "ourTravelExpertsAreHereToAssist": "Unsere Reiseexperten helfen Ihnen gerne weiter.",
   "toursPage": {
     "cta": {
-      "title": "Lassen Sie sich für Ihre nächste Reise inspirieren",
-      "description": "Abonnieren Sie unseren Newsletter für exklusive Reisetipps, Sonderangebote und Einblicke in Reiseziele",
+      "title": "Inspiration für Ihre nächste Reise",
+      "description": "Abonnieren Sie unseren Newsletter für exklusive Reisetipps, Sonderangebote und Reiseziel-Insights",
       "subscribe": "Abonnieren",
-      "label": "Mit dem Abonnieren stimmen Sie unserer Datenschutzrichtlinie zu und erklären sich mit dem Erhalt von reisebezogenen E-Mails einverstanden",
-      "inputPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein"
+      "label": "Mit dem Abonnieren stimmen Sie unserer Datenschutzerklärung zu und erklären sich damit einverstanden, reisebezogene E-Mails zu erhalten",
+      "inputPlaceholder": "Ihre E-Mail-Adresse"
     },
     "featuredDestinations": {
-      "badgeTitle": "Entdecke die Welt",
-      "exploreTheWorld": "Entdecke die Welt",
-      "title": "Empfohlene Reiseziele",
-      "featuredDestinations": "Empfohlene Reiseziele",
-      "description": "Entdecken Sie unsere handverlesene Auswahl atemberaubender Reiseziele auf der ganzen Welt",
+      "badgeTitle": "Erkunde die Welt",
+      "exploreTheWorld": "Erkunde die Welt",
+      "title": "Ausgewählte Reiseziele",
+      "featuredDestinations": "Ausgewählte Reiseziele",
+      "description": "Entdecken Sie unsere handverlesene Auswahl atemberaubender Reiseziele weltweit",
       "explore": "Entdecken"
     },
     "parallexBanner": {
-      "title": "Schließen Sie sich Tausenden zufriedener Reisender an, die unsere sorgfältig gestalteten Touren erlebt haben",
+      "title": "Schließen Sie sich tausenden zufriedenen Reisenden an, die unsere sorgfältig geplanten Touren erlebt haben",
       "subtitle": "Bereit für Ihr nächstes Abenteuer?",
-      "button": "Planen Sie noch heute"
+      "button": "Jetzt planen"
     },
     "popularTours": {
       "bestSellingTours": "Bestseller-Touren",
-      "popularTourPackages": "Beliebte Tourpakete",
-      "exploreOurMost": "Entdecken Sie unsere beliebtesten Tourpakete, die von Reisenden weltweit geliebt werden"
+      "popularTourPackages": "Beliebte Tour-Pakete",
+      "exploreOurMost": "Entdecken Sie unsere beliebtesten Tour-Pakete, die von Reisenden weltweit geschätzt werden"
     },
     "testimonials": {
-      "title": "Reisegeschichten",
+      "title": "Reiseberichte",
       "subtitle": "Was unsere Kunden sagen",
       "description": "Lesen Sie authentische Bewertungen von Reisenden, die unsere Touren erlebt haben"
     },
     "whyChooseUs": {
       "10YearsExperience": "+10 Jahre Erfahrung",
-      "craftUnforgettable": "Unvergessliche Reiseerlebnisse seit 2009",
+      "craftUnforgettable": "Seit 2009 schaffen wir unvergessliche Reiseerlebnisse",
       "aboutUs": "Über uns",
-      "description": "Bei Going Travel glauben wir, dass Reisen transformativ sein sollte. Unsere fachmännisch gestalteten Touren kombinieren atemberaubende Reiseziele mit authentischen Erlebnissen, die es Ihnen ermöglichen, wirklich mit den Orten in Kontakt zu treten, die Sie besuchen.",
-      "learnMoreAboutUs": "Erfahren Sie mehr über uns"
+      "description": "Bei Going Travel glauben wir, dass Reisen transformativ sein sollte. Unsere von Experten geplanten Touren verbinden atemberaubende Reiseziele mit authentischen Erlebnissen, damit Sie sich wirklich mit den besuchten Orten verbinden können.",
+      "learnMoreAboutUs": "Mehr über uns"
     }
   },
   "hotelsPage": {
     "backToHotels": "Zurück zu Hotels",
-    "starsHotel": "Sterne Hotel",
+    "starsHotel": "Sterne-Hotel",
     "aboutThisHotel": "Über dieses Hotel",
-    "keyAmenities": "Wichtige Annehmlichkeiten",
+    "keyAmenities": "Hauptausstattung",
     "freeWifi": "Kostenloses WLAN",
     "spa": "Spa & Wellnesscenter",
     "fitnessCenter": "Fitnesscenter",
     "gourmetRestaurant": "Gourmet-Restaurant",
     "pools": "Innen- und Außenpools",
     "airConditioner": "Klimaanlage",
-    "flatTvScreen": "Flachbildfernseher",
-    "freeParking": "Kostenloses Parken",
+    "flatTvScreen": "Flachbild-TV",
+    "freeParking": "Kostenloser Parkplatz",
     "frontDesk": "24-Stunden-Rezeption",
     "bookYourStay": "Buchen Sie Ihren Aufenthalt",
-    "bestRateGuarantied": "Bestpreisgarantie",
+    "bestRateGuarantied": "Bester Preis garantiert",
     "averageRoomRate": "Durchschnittlicher Zimmerpreis",
     "night": "Nacht",
     "bookNow": "Jetzt buchen",
-    "noPaymentNeeded": "Keine Vorauszahlung erforderlich – Zahlung vor Ort",
+    "noPaymentNeeded": "Keine Vorauszahlung nötig – zahlen Sie vor Ort",
     "hotelPolicies": "Hotelrichtlinien",
     "needHelp": "Brauchen Sie Hilfe?",
-    "ourTravel": "Unsere Reiseexperten stehen Ihnen bei Ihrer Buchung zur Seite.",
-    "contactUs": "Kontaktieren Sie uns",
+    "ourTravel": "Unsere Reiseexperten helfen Ihnen gerne bei Ihrer Buchung.",
+    "contactUs": "Kontakt",
     "availableHotels": "Verfügbare Hotels",
     "sortBy": "Sortieren nach:",
     "recommended": "Empfohlen",
-    "priceLowToHigh": "Preis: Niedrig bis Hoch",
-    "priceHighToLow": "Preis: Hoch bis Niedrig",
+    "priceLowToHigh": "Preis: Niedrig zu Hoch",
+    "priceHighToLow": "Preis: Hoch zu Niedrig",
     "rating": "Bewertung",
     "noHotelsFound": "Keine Hotels gefunden",
-    "viewDetails": "Details ansehen",
+    "viewDetails": "Details anzeigen",
     "pricePerNight": "Preis pro Nacht"
   },
   "homePageTitle": "Unsere Dienstleistungen",
@@ -153,8 +154,8 @@
   "homePageLandingButton": "Jetzt entdecken",
   "services": {
     "tour_packages": {
-      "title": "Reisepakete",
-      "description": "Entdecken Sie unsere kuratierten Reisepakete, die die besten Reiseziele der Welt präsentieren."
+      "title": "Tour-Pakete",
+      "description": "Entdecken Sie unsere sorgfältig zusammengestellten Tour-Pakete, die die besten Reiseziele weltweit präsentieren."
     },
     "hotel_booking": {
       "title": "Hotelbuchung",
@@ -169,26 +170,26 @@
   "about_us_title": "Über uns",
   "about_us_subtitle": "Entdecken Sie unsere Geschichte, unsere Mission und das Team hinter Ihren unvergesslichen Reiseerlebnissen.",
   "our_story_title": "Unsere Geschichte",
-  "our_story_paragraph_1": "Gegründet im Jahr 2009, hat sich unser Reiseunternehmen der Bereitstellung außergewöhnlicher Reiseerlebnisse für unsere Kunden verschrieben. Was als kleines Team leidenschaftlicher Reisender begann, hat sich zu einem vertrauenswürdigen Namen in der Reisebranche entwickelt.",
-  "our_story_paragraph_2": "Wir sind auf die Erstellung personalisierter Reisepläne spezialisiert, die auf die einzigartigen Vorlieben und Bedürfnisse unserer Kunden zugeschnitten sind. Von Luxustouren bis hin zu budgetfreundlichen Abenteuern sorgen wir dafür, dass jede Reise unvergesslich und stressfrei ist.",
-  "our_story_paragraph_3": "Unsere Expertise in Haddsch- und Umrah-Dienstleistungen hat uns zur bevorzugten Wahl für Pilger gemacht, die eine spirituelle Reise suchen. Wir verstehen die Bedeutung dieser heiligen Pilgerreisen und bemühen uns, sie für unsere Kunden komfortabel und bedeutungsvoll zu gestalten.",
+  "our_story_paragraph_1": "Gegründet im Jahr 2009, hat sich unser Reiseunternehmen darauf spezialisiert, außergewöhnliche Reiseerlebnisse für unsere Kunden zu schaffen. Was als kleines Team leidenschaftlicher Reisender begann, ist zu einem vertrauenswürdigen Namen in der Reisebranche geworden.",
+  "our_story_paragraph_2": "Wir spezialisieren uns auf die Erstellung persönlicher Reisepläne, die auf die einzigartigen Vorlieben und Bedürfnisse unserer Kunden zugeschnitten sind. Von Luxusreisen bis hin zu budgetfreundlichen Abenteuern - wir sorgen dafür, dass jede Reise unvergesslich und reibungslos verläuft.",
+  "our_story_paragraph_3": "Unsere Expertise im Haddsch- und Umrah-Service hat uns zur bevorzugten Wahl für Pilger gemacht, die eine spirituelle Reise suchen. Wir verstehen die Bedeutung dieser heiligen Pilgerfahrten und bemühen uns, sie für unsere Kunden komfortabel und bedeutungsvoll zu gestalten.",
   "about_company_image_alt": "Über unser Unternehmen",
   "our_mission_title": "Unsere Mission",
-  "our_mission_description": "Außergewöhnliche Reiseerlebnisse zu bieten, die bleibende Erinnerungen schaffen, und dabei höchste Service-, Sicherheits- und Zufriedenheitsstandards für unsere Kunden zu gewährleisten. Wir möchten Reisen für alle zugänglich, angenehm und bereichernd machen.",
+  "our_mission_description": "Außergewöhnliche Reiseerlebnisse zu bieten, die bleibende Erinnerungen schaffen, während wir höchste Service-, Sicherheits- und Zufriedenheitsstandards für unsere Kunden gewährleisten. Unser Ziel ist es, Reisen für jeden zugänglich, angenehm und bereichernd zu machen.",
   "our_vision_title": "Unsere Vision",
-  "our_vision_description": "Das führende Reiseunternehmen zu werden, das für Innovation, Exzellenz und einen kundenorientierten Ansatz bekannt ist. Wir stellen uns eine Welt vor, in der Reisen Barrieren abbaut, Verbindungen schafft und das Verständnis zwischen Kulturen fördert.",
+  "our_vision_description": "Das führende Reiseunternehmen zu werden, das für Innovation, Exzellenz und kundenorientierten Ansatz bekannt ist. Wir stellen uns eine Welt vor, in der Reisen Barrieren durchbricht, Verbindungen schafft und das Verständnis zwischen Kulturen fördert.",
   "our_values_title": "Unsere Werte",
   "value_passion_title": "Leidenschaft",
-  "value_passion_description": "Wir sind leidenschaftlich über Reisen und engagiert, diese Begeisterung mit unseren Kunden zu teilen.",
+  "value_passion_description": "Wir sind leidenschaftliche Reisende und engagieren uns, diese Begeisterung mit unseren Kunden zu teilen.",
   "value_integrity_title": "Integrität",
-  "value_integrity_description": "Wir handeln in allen unseren Geschäften mit Ehrlichkeit, Transparenz und ethischen Standards.",
+  "value_integrity_description": "Wir handeln mit Ehrlichkeit, Transparenz und ethischen Standards in all unseren Geschäften.",
   "value_excellence_title": "Exzellenz",
-  "value_excellence_description": "Wir streben in jedem Aspekt unseres Services nach Exzellenz, von der Planung bis zur Ausführung.",
-  "meet_our_team_title": "Lernen Sie unser Team kennen",
+  "value_excellence_description": "Wir streben nach Exzellenz in jedem Aspekt unseres Services, von der Planung bis zur Ausführung.",
+  "meet_our_team_title": "Unser Team",
   "team_member_image_alt": "Teammitglied {index}",
   "team_member_name": "Teammitglied {index}",
-  "team_member_position": "Positionstitel",
-  "team_member_description": "Kurze Beschreibung des Teammitglieds und seiner Expertise in der Reisebranche.",
+  "team_member_position": "Position",
+  "team_member_description": "Kurzbeschreibung über das Teammitglied und seine Erfahrung in der Reisebranche.",
   "our_achievements_title": "Unsere Erfolge",
   "years_of_experience": "10+",
   "years_of_experience_label": "Jahre Erfahrung",
@@ -196,19 +197,19 @@
   "happy_travelers_label": "Zufriedene Reisende",
   "destinations_label": "Reiseziele",
   "hajj_and_umrah_groups": "100+",
-  "hajj_and_umrah_groups_label": "Haddsch- & Umrah-Gruppen",
+  "hajj_and_umrah_groups_label": "Haddsch- und Umrah-Gruppen",
   "testimonials_title": "Was unsere Kunden sagen",
   "testimonial": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.\"",
   "client_image_alt": "Kunde {index}",
   "client_name": "Kundenname",
   "client_description": "Haddsch-Pilger, 2023",
 
-  "contact_us_title": "Kontaktieren Sie uns",
+  "contact_us_title": "Kontakt",
   "contact_us_subtitle": "Wir sind hier, um Ihnen bei all Ihren Reisebedürfnissen zu helfen. Wenden Sie sich an unser Team für Unterstützung.",
   "get_in_touch_title": "Kontakt aufnehmen",
   "location_title": "Unser Standort",
   "location_address": "9 Rd. 257 Maadi",
-  "email_us_title": "E-Mail an uns",
+  "email_us_title": "Schreiben Sie uns",
   "email_primary": "info@travelcompany.com",
   "email_support": "support@travelcompany.com",
   "call_us_title": "Rufen Sie uns an",
@@ -218,16 +219,133 @@
   "working_hours_weekdays": "Montag - Freitag: 9:00 - 18:00 Uhr",
   "working_hours_saturday": "Samstag: 10:00 - 16:00 Uhr",
   "working_hours_sunday": "Sonntag: Geschlossen",
-  "send_message_title": "Senden Sie uns eine Nachricht",
+  "send_message_title": "Nachricht senden",
   "form_name_label": "Ihr Name",
-  "form_name_placeholder": "Geben Sie Ihren Namen ein",
+  "form_name_placeholder": "Ihren Namen eingeben",
   "form_email_label": "Ihre E-Mail",
-  "form_email_placeholder": "Geben Sie Ihre E-Mail ein",
+  "form_email_placeholder": "Ihre E-Mail-Adresse eingeben",
   "form_subject_label": "Betreff",
   "form_subject_placeholder": "Betreff eingeben",
   "form_message_label": "Nachricht",
-  "form_message_placeholder": "Geben Sie Ihre Nachricht ein",
+  "form_message_placeholder": "Ihre Nachricht eingeben",
   "form_submit_button": "Nachricht senden",
   "map_section_title": "Unser Standort",
-  "map_iframe_title": "Unternehmensstandort"
+  "map_iframe_title": "Firmenstandort",
+
+  "availableVehicles": "Verfügbare Fahrzeuge",
+  "vehicles": "Fahrzeuge",
+  "of": "von",
+  "showing": "Angezeigt",
+
+  "testimonials": {
+    "badge": "Kundenbewertungen",
+    "title": "Was unsere Kunden sagen",
+    "subtitle": "Lesen Sie, was unsere zufriedenen Kunden über ihren Limousinenservice berichten",
+    "0": {
+      "comment": "Der Flughafentransfer-Service war außergewöhnlich. Der Fahrer hat trotz unserer Flugverspätung auf uns gewartet und der Mercedes S-Class war makellos. Werde den Service definitiv wieder nutzen!",
+      "service": "Flughafentransfer"
+    },
+    "1": {
+      "comment": "Wir haben eine Limousine für unseren Hochzeitstag gemietet und konnten nicht glücklicher sein. Der Chauffeur war professionell, das Auto wunderschön dekoriert und es hat unseren besonderen Tag noch unvergesslicher gemacht.",
+      "service": "Hochzeitsservice"
+    },
+    "2": {
+      "comment": "Der stundenweise Miet-Service war perfekt für unsere Geschäftstreffen. Der Fahrer kannte sich in der Stadt aus und war sehr entgegenkommend bei unseren Terminänderungen. Sehr zu empfehlen!",
+      "service": "Stundenweise Anmietung"
+    }
+  },
+  "cta": {
+    "title": "Bereit für luxuriösen Transport?",
+    "subtitle": "Buchen Sie noch heute unseren Premium-Limousinenservice und reisen Sie stilvoll und komfortabel"
+  },
+  "Recommended": "Empfohlen",
+  "Price: Low to High": "Preis: Niedrig zu Hoch",
+  "Price: High to Low": "Preis: Hoch zu Niedrig",
+  "Passenger Capacity": "Passagierkapazität",
+  "Reset Filters": "Filter zurücksetzen",
+
+  "No vehicles found": "Keine Fahrzeuge gefunden",
+  "Try adjusting your search criteria": "Versuchen Sie, Ihre Suchkriterien anzupassen",
+  "Per hour": "Pro Stunde",
+
+  "Passengers": "Passagiere",
+  "View Details": "Details anzeigen",
+  "ourServices": "unsereDienstleistungen",
+
+  "Premium Transportation Services": "Premium-Transportdienstleistungen",
+  "Discover our range of luxury transportation options for every occasion": "Entdecken Sie unsere Auswahl an Luxus-Transportmöglichkeiten für jeden Anlass",
+
+  "hotelsHero01": "Luxusunterkünfte im Paradies",
+  "hotelsHero02": "Städtische Rückzugsorte",
+  "hotelsHero03": "Berglodges",
+
+  "hotelsHero01Description": "Entdecken Sie unsere handverlesene Kollektion erstklassiger Hotels",
+  "hotelsHero02Description": "Finden Sie Ihren perfekten Stadtfluchtort",
+  "hotelsHero03Description": "Erwachen Sie zu atemberaubenden Aussichten",
+
+  "limousineServicesHero01": "Flughafentransfers",
+  "limousineServicesHero02": "Stundenweise Anmietung",
+  "limousineServicesHero03": "Besondere Anlässe",
+
+  "limousineServicesHero01Description": "Beginnen und beenden Sie Ihre Reise komfortabel mit unserem zuverlässigen Flughafentransfer-Service. Unsere professionellen Fahrer überwachen Ihren Flug und passen sich etwaigen Verspätungen an.",
+  "limousineServices02Description": "Mieten Sie ein Luxusfahrzeug mit professionellem Fahrer stundenweise für Geschäftstreffen, Sightseeing, Einkäufe oder andere Anlässe, die mehrere Stopps erfordern.",
+  "limousineServices03Description": "Machen Sie Ihren besonderen Tag noch unvergesslicher mit unseren Luxus-Transportdienstleistungen für Hochzeiten, Jubiläen, Bälle und andere wichtige Feierlichkeiten.",
+
+  "limousinesHero01": "Luxusunterkünfte im Paradies",
+  "limousinesHero02": "Städtische Rückzugsorte",
+  "limousinesHero03": "Berglodges",
+
+  "limousinesHero01Description": "Entdecken Sie unsere handverlesene Kollektion erstklassiger Limousinen",
+  "limousinesHero02Description": "Finden Sie Ihren perfekten Stadtfluchtort",
+  "limousinesHero03Description": "Erwachen Sie zu atemberaubenden Aussichten",
+
+  "toursHeroSlides": {
+    "0": {
+      "title": "Entdecken Sie Hurghada",
+      "subtitle": "Tauchen Sie ein in das kristallklare Wasser des Roten Meeres"
+    },
+    "1": {
+      "title": "Erkunden Sie die zeitlose Schönheit von Assuan",
+      "subtitle": "Reisen Sie durch antike Geschichte und lebendige Kultur"
+    },
+    "2": {
+      "title": "Mystische Abenteuer in Kairo",
+      "subtitle": "Entdecken Sie die Geheimnisse der Pyramiden und lebhaften Basare"
+    },
+    "3": {
+      "title": "Ruhige Rückzugsorte in Hurghada",
+      "subtitle": "Segeln Sie über die ruhigen Gewässer des Roten Meeres"
+    },
+    "4": {
+      "title": "Zeitreise ins Pharaonendorf",
+      "subtitle": "Reisen Sie zurück in die Zeit der Pharaonen"
+    },
+    "5": {
+      "title": "Alexandrias legendäres Erbe",
+      "subtitle": "Erkunden Sie die legendäre Stadt Alexander des Großen"
+    }
+  },
+  "whyChooseUs": {
+    "0": {
+      "title": "Experten vor Ort",
+      "description": "Unsere Guides sind leidenschaftliche Einheimische mit tiefem Wissen über jedes Reiseziel"
+    },
+    "1": {
+      "title": "Kleine Gruppengrößen",
+      "description": "Maximal 12 Reisende für ein persönlicheres Erlebnis"
+    },
+    "2": {
+      "title": "Nachhaltiges Reisen",
+      "description": "Verpflichtet zu verantwortungsvollem Tourismus, der lokale Gemeinschaften respektiert"
+    },
+    "3": {
+      "title": "24/7 Unterstützung",
+      "description": "Unser engagiertes Support-Team steht Ihnen während Ihrer gesamten Reise zur Verfügung"
+    }
+  },
+  "type": "Typ",
+  "public": "Öffentlich",
+  "private": "Privat",
+  "distanceDescription": "Entfernungsbeschreibung",
+  "pickupLocation": "Abholort"
 }

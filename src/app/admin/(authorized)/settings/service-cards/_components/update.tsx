@@ -59,7 +59,7 @@ export const UpdateServiceCard = ({ card }: Props) => {
         <FileField label='Image' onChange={setFile} />
         <InputField name='key' label='Key' control={form.control} />
         <InputField name='url' label='URL' control={form.control} />
-        <SelectField name='enabled' control={form.control} label='enabled'>
+        <SelectField name='enabled' control={form.control} label='enabled' defaultValue={card.enabled ? "yes" : "no"}>
           <SelectItem value='yes'>Yes</SelectItem>
           <SelectItem value='no'>No</SelectItem>
         </SelectField>

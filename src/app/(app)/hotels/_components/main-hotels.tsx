@@ -37,7 +37,7 @@ export function MainHotelsList({ hotels }: { hotels: UIHotel[] }) {
     {
       image: "/hotel.jpg",
       title: "Mountain Lodges",
-      subtitle: "Wake up to breathtaking alpine views"
+      subtitle: "Wake up to breathtaking  views"
     }
   ]
 

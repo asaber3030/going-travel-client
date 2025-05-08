@@ -5,6 +5,7 @@ import { PaginationLinks } from "@/components/common/pagination"
 
 export default async function HotelsPage() {
   const hotels = await getUIHotels()
+  console.log(hotels)
   return (
     <div>
       <HotelHeroSlides />
