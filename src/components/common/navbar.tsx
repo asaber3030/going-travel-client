@@ -191,6 +191,7 @@ export default function TourismNavbar() {
           <DropdownMenuContent align='center' className='w-[200px] cursor-pointer'>
             {Languages.map((lang) => (
               <DropdownMenuItem className='hover:cursor-pointer cursor-pointer' onClick={() => handleLanguage(lang.code)} key={`lang-${lang.code}`}>
+                <Image src={lang.flag} alt={lang.name} width={20} height={20} />
                 {lang.name}
               </DropdownMenuItem>
             ))}

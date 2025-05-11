@@ -67,7 +67,7 @@ export const UpdateHotelDetailsForm = ({ hotel }: { hotel: any }) => {
           <FileField onChange={setThumbnail} label='Thumbnail' />
 
           <UpdateDetailsForm form={form} />
-          {/* <UpdateAmenityForm form={form} amenity={hotel.amenity} /> */}
+          <UpdateAmenityForm form={form} amenity={hotel.amenity} />
           <UpdateRelationsForm categoryName={hotel.category.name} locationName={hotel.location.name} form={form} />
           <UpdateTranslationsForm form={form} />
 

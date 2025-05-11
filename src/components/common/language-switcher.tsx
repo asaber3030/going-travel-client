@@ -1,6 +1,7 @@
 "use client"
 
 import Cookies from "js-cookie"
+import Image from "next/image"
 
 import { useTranslations } from "next-intl"
 import { useRouter } from "next/navigation"
@@ -30,7 +31,8 @@ export default function LanguageSwitcher() {
         <DropdownMenuLabel>{t("changeLanguage")}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         {Languages.map((lang) => (
-          <DropdownMenuItem className='cursor-pointer' onClick={() => changeLanguage(lang.code)} key={lang.code}>
+          <DropdownMenuItem className='cursor-pointer flex gap-2 items-center' onClick={() => changeLanguage(lang.code)} key={lang.code}>
+            <Image src={lang.flag} alt={lang.name} width={20} height={20} />
             {lang.name}
           </DropdownMenuItem>
         ))}

@@ -5,6 +5,7 @@ import Link from "next/link"
 
 import { useTranslations } from "next-intl"
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 
 import { motion } from "framer-motion"
 
@@ -14,6 +15,7 @@ import { Badge } from "@/components/ui/badge"
 import { UILocation } from "@/types/ui"
 
 export default function ToursFeaturedDestinations({ locations }: { locations: UILocation[] }) {
+  const router = useRouter()
   const t = useTranslations()
 
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
@@ -34,9 +36,10 @@ export default function ToursFeaturedDestinations({ locations }: { locations: UI
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className='relative group rounded-xl overflow-hidden h-[300px]'
+              className='relative group rounded-xl overflow-hidden h-[300px] cursor-pointer'
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
+              onClick={() => router.push(`/destinations/${destination.id}`)}
             >
               <Image src={destination.image || "/placeholder.svg"} alt={destination.name} fill className='object-cover transition-transform duration-500 group-hover:scale-110' />
               <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent'>

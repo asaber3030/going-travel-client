@@ -102,15 +102,15 @@ export async function createHotel(thumbnail: File | null, banner: File | null, d
       formData.append(`translations[${index}][address]`, translation.address)
       formData.append(`translations[${index}][slug]`, translation.slug)
     })
-    formData.append("amenity.free_wifi", data.amenity.free_wifi!)
-    formData.append("amenity.spa_wellness_center", data.amenity.spa_wellness_center!)
-    formData.append("amenity.fitness_center", data.amenity.fitness_center!)
-    formData.append("amenity.gourmet_restaurant", data.amenity.gourmet_restaurant!)
-    formData.append("amenity.indoor_outdoor_pools", data.amenity.indoor_outdoor_pools!)
-    formData.append("amenity.air_conditioning", data.amenity.air_conditioning!)
-    formData.append("amenity.flat_screen_tv", data.amenity.flat_screen_tv!)
-    formData.append("amenity.free_parking", data.amenity.free_parking!)
-    formData.append("amenity.front_desk_24h", data.amenity.front_desk_24h!)
+    formData.append("amenity[free_wifi]", data.amenity.free_wifi!)
+    formData.append("amenity[spa_wellness_center]", data.amenity.spa_wellness_center!)
+    formData.append("amenity[fitness_center]", data.amenity.fitness_center!)
+    formData.append("amenity[gourmet_restaurant]", data.amenity.gourmet_restaurant!)
+    formData.append("amenity[indoor_outdoor_pools]", data.amenity.indoor_outdoor_pools!)
+    formData.append("amenity[air_conditioning]", data.amenity.air_conditioning!)
+    formData.append("amenity[flat_screen_tv]", data.amenity.flat_screen_tv!)
+    formData.append("amenity[free_parking]", data.amenity.free_parking!)
+    formData.append("amenity[front_desk_24h]", data.amenity.front_desk_24h!)
 
     const response = await postRequest<any>(
       "/admin/hotels",
@@ -152,6 +152,16 @@ export async function updateHotel(id: number, thumbnail: File | null, banner: Fi
       formData.append(`translations[${index}][address]`, translation.address)
       formData.append(`translations[${index}][slug]`, translation.slug)
     })
+
+    formData.append("amenity[free_wifi]", data.amenity.free_wifi!)
+    formData.append("amenity[spa_wellness_center]", data.amenity.spa_wellness_center!)
+    formData.append("amenity[fitness_center]", data.amenity.fitness_center!)
+    formData.append("amenity[gourmet_restaurant]", data.amenity.gourmet_restaurant!)
+    formData.append("amenity[indoor_outdoor_pools]", data.amenity.indoor_outdoor_pools!)
+    formData.append("amenity[air_conditioning]", data.amenity.air_conditioning!)
+    formData.append("amenity[flat_screen_tv]", data.amenity.flat_screen_tv!)
+    formData.append("amenity[free_parking]", data.amenity.free_parking!)
+    formData.append("amenity[front_desk_24h]", data.amenity.front_desk_24h!)
 
     const response = await postRequest<any>(
       `/admin/hotels/${id}`,
