@@ -32,7 +32,10 @@ export const UpdateServiceCard = ({ card }: Props) => {
 
   const form = useForm({
     resolver: zodResolver(ServiceCardSchema.Create),
-    defaultValues: card as any
+    defaultValues: {
+      ...card,
+      enabled: card.enabled ? "yes" : "no"
+    }
   })
 
   const mutation = useMutation({
@@ -42,6 +45,7 @@ export const UpdateServiceCard = ({ card }: Props) => {
   })
 
   const onSubmit = () => {
+    console.log(form.getValues())
     mutation.mutate({ file, data: form.getValues() })
   }
 

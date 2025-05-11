@@ -160,13 +160,13 @@ export const ServiceCardTranslationSchema = z.object({
 
 export const ServiceCardSchema = {
   Create: z.object({
-    enabled: z.any(),
+    enabled: z.string(),
     title: z.string().min(1, "Title is required"),
     description: z.string().min(1, "Description is required"),
     translations: z.array(ServiceCardTranslationSchema) // Array of translations
   }),
   Update: z.object({
-    enabled: z.any(),
+    enabled: z.string(),
     title: z.string().min(1, "Title is required"),
     description: z.string().min(1, "Description is required"),
     translations: z.array(ServiceCardTranslationSchema) // Array of translations
@@ -219,7 +219,18 @@ export const UpdateHotelSchema = z.object({
       policy: z.string(),
       slug: z.string()
     })
-  )
+  ),
+  amenity: z.object({
+    free_wifi: z.any().optional(),
+    spa_wellness_center: z.any().optional(),
+    fitness_center: z.any().optional(),
+    gourmet_restaurant: z.any().optional(),
+    indoor_outdoor_pools: z.any().optional(),
+    air_conditioning: z.any().optional(),
+    flat_screen_tv: z.any().optional(),
+    free_parking: z.any().optional(),
+    front_desk_24h: z.any().optional()
+  })
 })
 
 export const HajSchema = z.object({

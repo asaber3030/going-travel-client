@@ -1,14 +1,14 @@
 export const LANGUAGE_COOKIE = "language"
-export const AvailableLanguages = ["en", "ar", "fr", "pt", "it", "dt", "sp"]
+export const AvailableLanguages = ["en", "ar", "fr", "pt", "it", "dt", "sp", "ch"]
 export const Languages = [
-  { code: "en", name: "English" },
-  { code: "ar", name: "Arabic" },
-  { code: "fr", name: "French" },
-  { code: "pt", name: "Portuguese" },
-  { code: "it", name: "Italian" },
-  { code: "dt", name: "Germany" },
-  { code: "sp", name: "Spanish" },
-  { code: "ch", name: "Chinese" }
+  { code: "en", name: "English", flag: "/langs/en.webp" },
+  { code: "ar", name: "Arabic", flag: "/langs/ar.webp" },
+  { code: "fr", name: "French", flag: "/langs/fr.png" },
+  { code: "pt", name: "Portuguese", flag: "/langs/pt.png" },
+  { code: "it", name: "Italian", flag: "/langs/it.webp" },
+  { code: "dt", name: "Germany", flag: "/langs/dt.webp" },
+  { code: "sp", name: "Spanish", flag: "/langs/sp.png" },
+  { code: "ch", name: "Chinese", flag: "/langs/ch.webp" }
 ]
 export const LOGO_PATH = "/images/logo/main.png"
 export const API_URL = process.env.NEXT_PUBLIC_API_URL

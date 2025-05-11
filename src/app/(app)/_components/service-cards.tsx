@@ -42,7 +42,7 @@ export default function ServiceCards({ services }: Props) {
         .map((service) => (
           <motion.div key={service.id} variants={item} whileHover={{ y: -10, transition: { duration: 0.3 } }} className='bg-white rounded-xl overflow-hidden shadow-lg group'>
             <Link href={service.url} className='block'>
-              <div className='h-48 bg-teal-100 relative overflow-hidden'>
+              <div className='h-48  relative overflow-hidden'>
                 <div className='absolute inset-0 '></div>
                 <Image alt='image' width={1000} height={1000} src={service.image} className='absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110' />
               </div>
