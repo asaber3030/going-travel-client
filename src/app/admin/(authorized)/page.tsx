@@ -3,8 +3,6 @@ import { getStats } from "@/actions/auth"
 export default async function AdminDashboard() {
   const data = await getStats()
 
-  console.log(data)
-
   return (
     <div className='space-y-6'>
       {/* Welcome Section */}
