@@ -7,6 +7,6 @@ export async function getServiceCards(): Promise<UIServiceCard[]> {
     return response.data
   } catch (error) {
     console.error(error)
-    throw new Error("Failed to fetch limousines")
+    throw new Error("Failed to fetch service cards")
   }
 }
