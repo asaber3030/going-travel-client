@@ -12,6 +12,7 @@ export async function getUIHotels(sp: Record<string, string | number> = { take: 
     const response = await getRequest<PaginatedData<UIHotel>>(`/ui/hotels?${params}`)
     return response.data
   } catch (error) {
+    console.error(error)
     throw new Error("Failed to fetch limousines")
   }
 }
