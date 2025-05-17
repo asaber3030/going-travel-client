@@ -20,7 +20,6 @@ export default async function Home() {
 
         <ServiceCards services={services} />
       </section>
-
       <LandingFooter />
     </main>
   )

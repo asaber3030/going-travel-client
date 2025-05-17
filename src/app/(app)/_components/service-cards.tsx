@@ -44,7 +44,7 @@ export default function ServiceCards({ services }: Props) {
             <Link href={service.url} className='block'>
               <div className='h-48  relative overflow-hidden'>
                 <div className='absolute inset-0 '></div>
-                <Image alt='image' width={1000} height={1000} src={service.image} className='absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110' />
+                {/* <Image alt='image' width={1000} height={1000} src={service.image} className='absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110' /> */}
               </div>
 
               <div className='p-6'>
