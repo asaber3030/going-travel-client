@@ -24,7 +24,7 @@ export async function login(credentials: z.infer<typeof loginSchema>): Promise<A
         expires: new Date(Date.now() + (credentials.rememeberMe ? 7 : 1) * 24 * 60 * 60 * 1000)
       })
     }
-
+    console.log("response", response)
     return response
   } catch (error) {
     const e = error as ApiError<any>

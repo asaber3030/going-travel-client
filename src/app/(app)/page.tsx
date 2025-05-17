@@ -1,16 +1,16 @@
-import { getTranslations } from "next-intl/server"
+/* import { getTranslations } from "next-intl/server"
 import LandingFooter from "./_components/landing-footer"
 import LandingHeroSection from "./_components/landing-hero-section"
 import ServiceCards from "./_components/service-cards"
 import { getServiceCards } from "@/actions/services"
-
+ */
 export default async function Home() {
-  const t = await getTranslations()
-  const services = await getServiceCards()
+  /*   const t = await getTranslations()
+  const services = await getServiceCards() */
 
   return (
     <main className='min-h-screen bg-white'>
-      <LandingHeroSection />
+      {/* <LandingHeroSection />
 
       <section className='container mx-auto px-4 py-16'>
         <div className='mb-12 text-center'>
@@ -20,7 +20,10 @@ export default async function Home() {
 
         <ServiceCards services={services} />
       </section>
-      <LandingFooter />
+
+
+      <LandingFooter /> */}
+      MYAPP
     </main>
   )
 }
