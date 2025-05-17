@@ -10,7 +10,7 @@ import { useQuery } from "@tanstack/react-query"
 import { getUILocations } from "@/app/(app)/destinations/_actions/data"
 import { setCookie } from "cookies-next"
 
-import { LANGUAGE_COOKIE, Languages, PHONE, WHATSAPP } from "@/lib/constants"
+import { EMAIL, LANGUAGE_COOKIE, Languages, PHONE, WHATSAPP } from "@/lib/constants"
 
 import { Menu, MapPin, ChevronDown, Phone, MailIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -46,7 +46,7 @@ export default function TourismNavbar() {
             </div>
             <div className='flex items-center gap-1'>
               <MailIcon className='h-3 w-3' />
-              <span>{}</span>
+              <span>{EMAIL}</span>
             </div>
           </div>
           <div className='flex items-center gap-4'>

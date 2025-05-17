@@ -6,6 +6,18 @@ export const loginSchema = z.object({
   rememeberMe: z.boolean().optional()
 })
 
+export const UserSchema = z.object({
+  name: z.string().nonempty("Name is required"),
+  email: z.string().email("Invalid email").nonempty("Email is required"),
+  password: z.string().nonempty("Password is required")
+})
+
+export const UserUpdateSchema = z.object({
+  name: z.string().nonempty("Name is required"),
+  email: z.string().email("Invalid email").nonempty("Email is required"),
+  password: z.string().optional()
+})
+
 export const CategorySchema = {
   Create: z.object({
     translations: z.array(

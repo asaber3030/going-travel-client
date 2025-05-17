@@ -2,7 +2,7 @@
 
 import React from "react"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
-import { Wifi, Coffee, Dumbbell, Utensils, Snowflake, Tv, ParkingCircle, Clock, MessageCircle, PocketIcon as Pool } from "lucide-react"
+import { Wifi, Coffee, Dumbbell, Utensils, Snowflake, Tv, ParkingCircle, Clock, MessageCircle, PocketIcon as Pool, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useTranslations } from "next-intl"
 import { UIHotel } from "@/types/ui"
@@ -60,74 +60,137 @@ export function HotelDetailsMainContent({ hotel }: Props) {
                   <h2 className='text-2xl font-bold mb-4 text-start'> {t("hotelsPage.keyAmenities")}</h2>
                   {hotel.amenity ? (
                     <div className='grid grid-cols-2 md:grid-cols-3 gap-4'>
-                      {hotel.amenity.free_wifi && (
+                      {hotel.amenity.free_wifi == true ? (
                         <div className='flex items-center gap-2'>
                           <div className='bg-primary/10 rounded-full p-2'>
                             <Wifi className='h-5 w-5 text-primary' />
                           </div>
                           <span> {t("hotelsPage.freeWifi")}</span>
                         </div>
+                      ) : (
+                        <div className='flex items-center gap-2'>
+                          <div className='bg-red-500/10 rounded-full p-2'>
+                            <X className='h-5 w-5 text-red-500' />
+                          </div>
+                          <span> {t("hotelsPage.freeWifi")}</span>
+                        </div>
                       )}
-                      {hotel.amenity.spa_wellness_center && (
+                      {hotel.amenity.spa_wellness_center == true ? (
                         <div className='flex items-center gap-2'>
                           <div className='bg-primary/10 rounded-full p-2'>
                             <Coffee className='h-5 w-5 text-primary' />
                           </div>
                           <span>{t("hotelsPage.spa")}</span>
                         </div>
+                      ) : (
+                        <div className='flex items-center gap-2'>
+                          <div className='bg-red-500/10 rounded-full p-2'>
+                            <X className='h-5 w-5 text-red-500' />
+                          </div>
+                          <span>{t("hotelsPage.spa")}</span>
+                        </div>
                       )}
-                      {hotel.amenity.fitness_center && (
+                      {hotel.amenity.fitness_center == true ? (
                         <div className='flex items-center gap-2'>
                           <div className='bg-primary/10 rounded-full p-2'>
                             <Dumbbell className='h-5 w-5 text-primary' />
                           </div>
                           <span>{t("hotelsPage.fitnessCenter")}</span>
                         </div>
+                      ) : (
+                        <div className='flex items-center gap-2'>
+                          <div className='bg-red-500/10 rounded-full p-2'>
+                            <X className='h-5 w-5 text-red-500' />
+                          </div>
+                          <span>{t("hotelsPage.fitnessCenter")}</span>
+                        </div>
                       )}
-                      {hotel.amenity.gourmet_restaurant && (
+                      {hotel.amenity.gourmet_restaurant == true ? (
                         <div className='flex items-center gap-2'>
                           <div className='bg-primary/10 rounded-full p-2'>
                             <Utensils className='h-5 w-5 text-primary' />
                           </div>
                           <span>{t("hotelsPage.gourmetRestaurant")}</span>
                         </div>
+                      ) : (
+                        <div className='flex items-center gap-2'>
+                          <div className='bg-red-500/10 rounded-full p-2'>
+                            <X className='h-5 w-5 text-red-500' />
+                          </div>
+                          <span>{t("hotelsPage.gourmetRestaurant")}</span>
+                        </div>
                       )}
-                      {hotel.amenity.indoor_outdoor_pools && (
+                      {hotel.amenity.indoor_outdoor_pools == true ? (
                         <div className='flex items-center gap-2'>
                           <div className='bg-primary/10 rounded-full p-2'>
                             <Pool className='h-5 w-5 text-primary' />
                           </div>
                           <span>{t("hotelsPage.pools")}</span>
                         </div>
+                      ) : (
+                        <div className='flex items-center gap-2'>
+                          <div className='bg-red-500/10 rounded-full p-2'>
+                            <X className='h-5 w-5 text-red-500' />
+                          </div>
+                          <span>{t("hotelsPage.pools")}</span>
+                        </div>
                       )}
-                      {hotel.amenity.air_conditioning && (
+                      {hotel.amenity.air_conditioning == true ? (
                         <div className='flex items-center gap-2'>
                           <div className='bg-primary/10 rounded-full p-2'>
                             <Snowflake className='h-5 w-5 text-primary' />
                           </div>
                           <span>{t("hotelsPage.airConditioner")}</span>
                         </div>
+                      ) : (
+                        <div className='flex items-center gap-2'>
+                          <div className='bg-red-500/10 rounded-full p-2'>
+                            <X className='h-5 w-5 text-red-500' />
+                          </div>
+                          <span>{t("hotelsPage.airConditioner")}</span>
+                        </div>
                       )}
-                      {hotel.amenity.flat_screen_tv && (
+                      {hotel.amenity.flat_screen_tv == true ? (
                         <div className='flex items-center gap-2'>
                           <div className='bg-primary/10 rounded-full p-2'>
                             <Tv className='h-5 w-5 text-primary' />
                           </div>
                           <span>{t("hotelsPage.flatTvScreen")}</span>
                         </div>
+                      ) : (
+                        <div className='flex items-center gap-2'>
+                          <div className='bg-red-500/10 rounded-full p-2'>
+                            <X className='h-5 w-5 text-red-500' />
+                          </div>
+                          <span>{t("hotelsPage.flatTvScreen")}</span>
+                        </div>
                       )}
-                      {hotel.amenity.free_parking && (
+                      {hotel.amenity.free_parking == true ? (
                         <div className='flex items-center gap-2'>
                           <div className='bg-primary/10 rounded-full p-2'>
                             <ParkingCircle className='h-5 w-5 text-primary' />
                           </div>
                           <span>{t("hotelsPage.freeParking")}</span>
                         </div>
+                      ) : (
+                        <div className='flex items-center gap-2'>
+                          <div className='bg-red-500/10 rounded-full p-2'>
+                            <X className='h-5 w-5 text-red-500' />
+                          </div>
+                          <span>{t("hotelsPage.freeParking")}</span>
+                        </div>
                       )}
-                      {hotel.amenity.front_desk_24h && (
+                      {hotel.amenity.front_desk_24h == true ? (
                         <div className='flex items-center gap-2'>
                           <div className='bg-primary/10 rounded-full p-2'>
                             <Clock className='h-5 w-5 text-primary' />
+                          </div>
+                          <span>{t("hotelsPage.frontDesk")}</span>
+                        </div>
+                      ) : (
+                        <div className='flex items-center gap-2'>
+                          <div className='bg-red-500/10 rounded-full p-2'>
+                            <X className='h-5 w-5 text-red-500' />
                           </div>
                           <span>{t("hotelsPage.frontDesk")}</span>
                         </div>

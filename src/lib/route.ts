@@ -35,6 +35,13 @@ export const routes = {
     edit: (id: number) => `/admin/hotels/${id}/update`,
     show: (id: number) => `/admin/hotels/${id}`
   },
+  users: {
+    index: "/admin/users",
+    create: "/admin/users/create",
+    trash: "/admin/users/trashed",
+    edit: (id: number) => `/admin/users/${id}/update`,
+    show: (id: number) => `/admin/users/${id}`
+  },
   tours: {
     index: "/admin/tours",
     create: "/admin/tours/create",

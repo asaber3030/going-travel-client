@@ -9,18 +9,23 @@ import { Button } from "@/components/ui/button"
 import { Star, MapPin, Check } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { UIHotel } from "@/types/ui"
+import { UIHotel, UILocation } from "@/types/ui"
 import Link from "next/link"
 import { useTranslations } from "next-intl"
+import { useRouter } from "next/navigation"
 
 type Props = {
   hotels: UIHotel[]
+  locations: UILocation[]
 }
 
-export function SortAndHotelsSection({ hotels }: Props) {
+export function SortAndHotelsSection({ hotels, locations }: Props) {
   const [sortOption, setSortOption] = useState("recommended")
+  const [selectedLocation, setSelectedLocation] = useState("")
+
   const t = useTranslations()
-  // Sort hotels based on selected option
+  const router = useRouter()
+
   const sortedHotels = [...hotels].sort((a, b) => {
     switch (sortOption) {
       case "price-low":
@@ -50,19 +55,34 @@ export function SortAndHotelsSection({ hotels }: Props) {
           <div>
             <h2 className='text-2xl font-bold'>{t("hotelsPage.availableHotels")}</h2>
           </div>
-          <div className='flex items-center gap-2'>
-            <span className='text-sm whitespace-nowrap'>{t("hotelsPage.sortBy")}</span>
-            <Select value={sortOption} onValueChange={setSortOption}>
-              <SelectTrigger className='w-[180px]'>
-                <SelectValue placeholder='Sort by' />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value='recommended'>{t("hotelsPage.recommended")}</SelectItem>
-                <SelectItem value='price-low'>{t("hotelsPage.priceLowToHigh")}</SelectItem>
-                <SelectItem value='price-high'>{t("hotelsPage.priceHighToLow")}</SelectItem>
-                <SelectItem value='rating'>{t("hotelsPage.rating")}</SelectItem>
-              </SelectContent>
-            </Select>
+          <div className='flex gap-4'>
+            <div className='flex flex-col gap-2'>
+              <span className='text-sm whitespace-nowrap'>{t("hotelsPage.sortBy")}</span>
+              <Select value={sortOption} onValueChange={setSortOption}>
+                <SelectTrigger className='w-[180px]'>
+                  <SelectValue placeholder='Sort by' />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value='recommended'>{t("hotelsPage.recommended")}</SelectItem>
+                  <SelectItem value='price-low'>{t("hotelsPage.priceLowToHigh")}</SelectItem>
+                  <SelectItem value='price-high'>{t("hotelsPage.priceHighToLow")}</SelectItem>
+                  <SelectItem value='rating'>{t("hotelsPage.rating")}</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div className='flex flex-col gap-2'>
+              <span className='text-sm whitespace-nowrap'>{t("locations")}</span>
+              <Select onValueChange={(val) => router.push(`?location_id=${val}`)}>
+                <SelectTrigger className='w-[180px]'>
+                  <SelectValue placeholder='Location' />
+                </SelectTrigger>
+                <SelectContent>
+                  {locations.map((location) => (
+                    <SelectItem value={location.id.toString()}>{location.name}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
           </div>
         </div>
 

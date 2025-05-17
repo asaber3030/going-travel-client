@@ -4,6 +4,8 @@ export type APIResponse<T> = {
   status: number
 }
 
+export type TSearchParams = Record<string, string>
+
 export type ApiResponse<T> = {
   data: T
   message: string
@@ -67,13 +69,14 @@ type Category = Timestamps &
     translations?: CategoryTranslation[]
   }
 
-type User = Timestamps &
-  Creator & {
-    id: number
-    name: string
-    email: string
-    email_verified_at: string | null
-  }
+type User = {
+  id: number
+  name: string
+  email: string
+  email_verified_at: string | null
+  created_at: Date
+  updated_at: Date
+}
 
 type CategoryTranslation = Timestamps &
   Creator & {

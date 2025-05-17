@@ -1,22 +1,15 @@
-"use client";
+"use client"
 
-import { useLogout, useUser } from "@/hooks/use-auth";
+import { useLogout, useUser } from "@/hooks/use-auth"
 
-import { LogOut, ChevronDown } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { SidebarFooter } from "@/components/ui/sidebar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu";
+import { LogOut, ChevronDown } from "lucide-react"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { SidebarFooter } from "@/components/ui/sidebar"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 export const AdminSidebarFooter = () => {
-  const user = useUser();
-  const logout = useLogout();
+  const user = useUser()
+  const logout = useLogout()
 
   return (
     <SidebarFooter className='border-t border-border/40 p-4'>
@@ -39,9 +32,6 @@ export const AdminSidebarFooter = () => {
           <DropdownMenuContent align='end'>
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Settings</DropdownMenuItem>
-            <DropdownMenuSeparator />
             <DropdownMenuItem onClick={() => logout.mutate()} disabled={logout.isPending}>
               <LogOut className='mr-2 h-4 w-4' />
               <span>Log out</span>
@@ -50,5 +40,5 @@ export const AdminSidebarFooter = () => {
         </DropdownMenu>
       </div>
     </SidebarFooter>
-  );
-};
+  )
+}

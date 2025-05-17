@@ -1,3 +1,5 @@
+"use client"
+
 import { Mail, Phone, MapPin, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -5,9 +7,44 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
 import { useTranslations } from "next-intl"
 import { EMAIL, PHONE } from "@/lib/constants"
+import { InputField } from "@/components/common/input-field"
+import { Form } from "@/components/ui/form"
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { z } from "zod"
+import { useMutation } from "@tanstack/react-query"
+import { sendMail } from "@/actions/app"
+import { toast } from "react-toastify"
+import { LoadingButton } from "@/components/common/loading-button"
 
 export default function ContactPage() {
   const t = useTranslations()
+  const form = useForm({
+    resolver: zodResolver(
+      z.object({
+        name: z.string().min(1),
+        email: z.string().email(),
+        subject: z.string().min(1),
+        message: z.string().min(1)
+      })
+    )
+  })
+
+  const mut = useMutation({
+    mutationFn: (data: any) => sendMail(data),
+    onSuccess: () => {
+      toast.success("Message sent successfully!")
+      form.reset()
+    },
+    onError: (error: any) => {
+      toast.error(error.message || "Failed to send message")
+    }
+  })
+
+  const onSubmit = () => {
+    mut.mutate(form.getValues())
+  }
+
   return (
     <div className='container mx-auto px-4 py-12'>
       {/* Hero Section */}
@@ -79,40 +116,19 @@ export default function ContactPage() {
           <Card>
             <CardContent className='p-8'>
               <h2 className='text-2xl font-bold mb-6 text-gray-800'>{t("send_message_title")}</h2>
-              <form className='space-y-6'>
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-                  <div className='space-y-2'>
-                    <label htmlFor='name' className='text-sm font-medium text-gray-700'>
-                      {t("form_name_label")}
-                    </label>
-                    <Input id='name' placeholder={t("form_name_placeholder")} />
+              <Form {...form}>
+                <form className='space-y-6' onSubmit={form.handleSubmit(onSubmit)}>
+                  <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                    <InputField name='name' label={t("form_name_label")} placeholder={t("form_name_placeholder")} type='text' control={form.control} />
+                    <InputField name='email' label={t("form_email_label")} placeholder={t("form_email_placeholder")} type='email' control={form.control} />
                   </div>
-                  <div className='space-y-2'>
-                    <label htmlFor='email' className='text-sm font-medium text-gray-700'>
-                      {t("form_email_label")}
-                    </label>
-                    <Input id='email' type='email' placeholder={t("form_email_placeholder")} />
-                  </div>
-                </div>
-
-                <div className='space-y-2'>
-                  <label htmlFor='subject' className='text-sm font-medium text-gray-700'>
-                    {t("form_subject_label")}
-                  </label>
-                  <Input id='subject' placeholder={t("form_subject_placeholder")} />
-                </div>
-
-                <div className='space-y-2'>
-                  <label htmlFor='message' className='text-sm font-medium text-gray-700'>
-                    {t("form_message_label")}
-                  </label>
-                  <Textarea id='message' placeholder={t("form_message_placeholder")} rows={6} />
-                </div>
-
-                <Button type='submit' className='w-full bg-emerald-600 hover:bg-emerald-700'>
-                  {t("form_submit_button")}
-                </Button>
-              </form>
+                  <InputField label={t("form_subject_label")} name='subject' placeholder={t("form_subject_placeholder")} control={form.control} />
+                  <InputField label={t("form_message_label")} name='message' placeholder={t("form_message_placeholder")} control={form.control} />
+                  <LoadingButton loading={mut.isPending} type='submit' className='w-full bg-emerald-600 hover:bg-emerald-700'>
+                    {t("form_submit_button")}
+                  </LoadingButton>
+                </form>
+              </Form>
             </CardContent>
           </Card>
         </div>

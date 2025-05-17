@@ -1,4 +1,4 @@
-import { LayoutDashboard, Users, Globe, Compass, CarIcon, CogIcon, CheckCheck, Building, CuboidIcon, Plane } from "lucide-react"
+import { LayoutDashboard, Users, Globe, Compass, CarIcon, CogIcon, CheckCheck, Building, CuboidIcon, Plane, Users2 } from "lucide-react"
 
 export const navigation = [
   {
@@ -23,6 +23,12 @@ export const navigation = [
     href: "/admin/locations",
     icon: Globe,
     current: (pathname: string) => pathname === "/admin/locations" || pathname.startsWith("/admin/locations/")
+  },
+  {
+    name: "Users",
+    href: "/admin/users",
+    icon: Users2,
+    current: (pathname: string) => pathname === "/admin/users" || pathname.startsWith("/admin/users/")
   },
   {
     name: "Limousines",
