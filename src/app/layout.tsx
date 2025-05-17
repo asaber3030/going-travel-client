@@ -1,21 +1,23 @@
-import "./globals.css";
+import "./globals.css"
 
-import { loadFont, loadPageDirection } from "@/lib/fonts";
+import { loadFont, loadPageDirection } from "@/lib/fonts"
 
-import { ReactQueryClientProvider, StoreProvider } from "@/providers";
-import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getMessages } from "next-intl/server";
-import { Toaster } from "@/components/ui/toaster";
-import { ToastContainer } from "react-toastify";
-import { Metadata } from "next";
+import { ReactQueryClientProvider, StoreProvider } from "@/providers"
+import { NextIntlClientProvider } from "next-intl"
+import { getLocale, getMessages } from "next-intl/server"
+import { Toaster } from "@/components/ui/toaster"
+import { ToastContainer } from "react-toastify"
+import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Going Travel"
-};
+  title: "Going Travel",
+  description: "Going Travel",
+  keywords: ["Travel", "Tourism", "Adventure", "going travel"]
+}
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const locale = await getLocale();
-  const messages = await getMessages();
+  const locale = await getLocale()
+  const messages = await getMessages()
 
   return (
     <html lang={locale} dir={loadPageDirection(locale)}>
@@ -29,5 +31,5 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         </NextIntlClientProvider>
       </body>
     </html>
-  );
+  )
 }

@@ -14,6 +14,10 @@ export const LOGO_PATH = "/images/logo/main.png"
 export const API_URL = process.env.NEXT_PUBLIC_API_URL
 export const TOKEN_EXPIRATION_DATE = Date.now() + 24 * 60 * 60 * 1000 * 30
 
+export const PHONE = "+201113030166"
+export const WHATSAPP = "https://wa.me/201113030166"
+export const EMAIL = "info@goingtravel.net"
+
 export const DummyPaginationData = {
   current_page: 0,
   data: [],

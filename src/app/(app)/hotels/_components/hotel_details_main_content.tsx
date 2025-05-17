@@ -14,6 +14,7 @@ import { Badge } from "@/components/ui/badge"
 import { Star, ThumbsUp, Flag, ChevronDown, ChevronUp } from "lucide-react"
 import { NoDataLabel } from "@/components/common/no-data-label"
 import { diffForHumans } from "@/lib/utils"
+import { WHATSAPP } from "@/lib/constants"
 
 type Props = {
   hotel: UIHotel
@@ -57,80 +58,84 @@ export function HotelDetailsMainContent({ hotel }: Props) {
                 {/* Key Amenities */}
                 <section>
                   <h2 className='text-2xl font-bold mb-4 text-start'> {t("hotelsPage.keyAmenities")}</h2>
-                  <div className='grid grid-cols-2 md:grid-cols-3 gap-4'>
-                    {hotel.amenity.free_wifi && (
-                      <div className='flex items-center gap-2'>
-                        <div className='bg-primary/10 rounded-full p-2'>
-                          <Wifi className='h-5 w-5 text-primary' />
+                  {hotel.amenity ? (
+                    <div className='grid grid-cols-2 md:grid-cols-3 gap-4'>
+                      {hotel.amenity.free_wifi && (
+                        <div className='flex items-center gap-2'>
+                          <div className='bg-primary/10 rounded-full p-2'>
+                            <Wifi className='h-5 w-5 text-primary' />
+                          </div>
+                          <span> {t("hotelsPage.freeWifi")}</span>
                         </div>
-                        <span> {t("hotelsPage.freeWifi")}</span>
-                      </div>
-                    )}
-                    {hotel.amenity.spa_wellness_center && (
-                      <div className='flex items-center gap-2'>
-                        <div className='bg-primary/10 rounded-full p-2'>
-                          <Coffee className='h-5 w-5 text-primary' />
+                      )}
+                      {hotel.amenity.spa_wellness_center && (
+                        <div className='flex items-center gap-2'>
+                          <div className='bg-primary/10 rounded-full p-2'>
+                            <Coffee className='h-5 w-5 text-primary' />
+                          </div>
+                          <span>{t("hotelsPage.spa")}</span>
                         </div>
-                        <span>{t("hotelsPage.spa")}</span>
-                      </div>
-                    )}
-                    {hotel.amenity.fitness_center && (
-                      <div className='flex items-center gap-2'>
-                        <div className='bg-primary/10 rounded-full p-2'>
-                          <Dumbbell className='h-5 w-5 text-primary' />
+                      )}
+                      {hotel.amenity.fitness_center && (
+                        <div className='flex items-center gap-2'>
+                          <div className='bg-primary/10 rounded-full p-2'>
+                            <Dumbbell className='h-5 w-5 text-primary' />
+                          </div>
+                          <span>{t("hotelsPage.fitnessCenter")}</span>
                         </div>
-                        <span>{t("hotelsPage.fitnessCenter")}</span>
-                      </div>
-                    )}
-                    {hotel.amenity.gourmet_restaurant && (
-                      <div className='flex items-center gap-2'>
-                        <div className='bg-primary/10 rounded-full p-2'>
-                          <Utensils className='h-5 w-5 text-primary' />
+                      )}
+                      {hotel.amenity.gourmet_restaurant && (
+                        <div className='flex items-center gap-2'>
+                          <div className='bg-primary/10 rounded-full p-2'>
+                            <Utensils className='h-5 w-5 text-primary' />
+                          </div>
+                          <span>{t("hotelsPage.gourmetRestaurant")}</span>
                         </div>
-                        <span>{t("hotelsPage.gourmetRestaurant")}</span>
-                      </div>
-                    )}
-                    {hotel.amenity.indoor_outdoor_pools && (
-                      <div className='flex items-center gap-2'>
-                        <div className='bg-primary/10 rounded-full p-2'>
-                          <Pool className='h-5 w-5 text-primary' />
+                      )}
+                      {hotel.amenity.indoor_outdoor_pools && (
+                        <div className='flex items-center gap-2'>
+                          <div className='bg-primary/10 rounded-full p-2'>
+                            <Pool className='h-5 w-5 text-primary' />
+                          </div>
+                          <span>{t("hotelsPage.pools")}</span>
                         </div>
-                        <span>{t("hotelsPage.pools")}</span>
-                      </div>
-                    )}
-                    {hotel.amenity.air_conditioning && (
-                      <div className='flex items-center gap-2'>
-                        <div className='bg-primary/10 rounded-full p-2'>
-                          <Snowflake className='h-5 w-5 text-primary' />
+                      )}
+                      {hotel.amenity.air_conditioning && (
+                        <div className='flex items-center gap-2'>
+                          <div className='bg-primary/10 rounded-full p-2'>
+                            <Snowflake className='h-5 w-5 text-primary' />
+                          </div>
+                          <span>{t("hotelsPage.airConditioner")}</span>
                         </div>
-                        <span>{t("hotelsPage.airConditioner")}</span>
-                      </div>
-                    )}
-                    {hotel.amenity.flat_screen_tv && (
-                      <div className='flex items-center gap-2'>
-                        <div className='bg-primary/10 rounded-full p-2'>
-                          <Tv className='h-5 w-5 text-primary' />
+                      )}
+                      {hotel.amenity.flat_screen_tv && (
+                        <div className='flex items-center gap-2'>
+                          <div className='bg-primary/10 rounded-full p-2'>
+                            <Tv className='h-5 w-5 text-primary' />
+                          </div>
+                          <span>{t("hotelsPage.flatTvScreen")}</span>
                         </div>
-                        <span>{t("hotelsPage.flatTvScreen")}</span>
-                      </div>
-                    )}
-                    {hotel.amenity.free_parking && (
-                      <div className='flex items-center gap-2'>
-                        <div className='bg-primary/10 rounded-full p-2'>
-                          <ParkingCircle className='h-5 w-5 text-primary' />
+                      )}
+                      {hotel.amenity.free_parking && (
+                        <div className='flex items-center gap-2'>
+                          <div className='bg-primary/10 rounded-full p-2'>
+                            <ParkingCircle className='h-5 w-5 text-primary' />
+                          </div>
+                          <span>{t("hotelsPage.freeParking")}</span>
                         </div>
-                        <span>{t("hotelsPage.freeParking")}</span>
-                      </div>
-                    )}
-                    {hotel.amenity.front_desk_24h && (
-                      <div className='flex items-center gap-2'>
-                        <div className='bg-primary/10 rounded-full p-2'>
-                          <Clock className='h-5 w-5 text-primary' />
+                      )}
+                      {hotel.amenity.front_desk_24h && (
+                        <div className='flex items-center gap-2'>
+                          <div className='bg-primary/10 rounded-full p-2'>
+                            <Clock className='h-5 w-5 text-primary' />
+                          </div>
+                          <span>{t("hotelsPage.frontDesk")}</span>
                         </div>
-                        <span>{t("hotelsPage.frontDesk")}</span>
-                      </div>
-                    )}
-                  </div>
+                      )}
+                    </div>
+                  ) : (
+                    <p className='text-muted-foreground'>N/A</p>
+                  )}
                 </section>
               </div>
             </div>
@@ -153,7 +158,9 @@ export function HotelDetailsMainContent({ hotel }: Props) {
                       </div>
                     </div>
 
-                    <Button className='w-full'>{t("hotelsPage.bookNow")}</Button>
+                    <a href={WHATSAPP} className='w-full' target='_blank'>
+                      <Button className='w-full'>{t("hotelsPage.bookNow")}</Button>
+                    </a>
                     <p className='text-xs text-center text-muted-foreground'>{t("hotelsPage.noPaymentNeeded")}</p>
                   </CardContent>
                 </Card>
@@ -173,10 +180,12 @@ export function HotelDetailsMainContent({ hotel }: Props) {
                   <CardContent className='p-4'>
                     <h3 className='font-bold mb-2'>{t("hotelsPage.needHelp")}</h3>
                     <p className='text-sm text-muted-foreground mb-4'>{t("hotelsPage.ourTravel")}</p>
-                    <Button variant='outline' className='w-full'>
-                      <MessageCircle className='mr-2 h-4 w-4' />
-                      {t("hotelsPage.contactUs")}
-                    </Button>
+                    <a href={WHATSAPP} className='w-full' target='_blank'>
+                      <Button variant='outline' className='w-full'>
+                        <MessageCircle className='mr-2 h-4 w-4' />
+                        {t("hotelsPage.contactUs")}
+                      </Button>
+                    </a>
                   </CardContent>
                 </Card>
               </div>

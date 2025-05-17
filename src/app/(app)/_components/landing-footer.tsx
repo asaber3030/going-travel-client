@@ -1,3 +1,4 @@
+import { EMAIL, PHONE } from "@/lib/constants"
 import Image from "next/image"
 
 export default function Footer() {
@@ -15,11 +16,11 @@ export default function Footer() {
           <div className='flex flex-col md:flex-row gap-8'>
             <div>
               <h3 className='text-gray-800 font-bold mb-3'>Contact</h3>
-              <p className='text-gray-600'>+1 (555) 123-4567</p>
-              <p className='text-gray-600'>info@goingtravel.com</p>
+              <p className='text-gray-600'>{PHONE}</p>
+              <p className='text-gray-600'>{EMAIL}</p>
             </div>
 
-            <div>
+            {/* <div>
               <h3 className='text-gray-800 font-bold mb-3'>Follow Us</h3>
               <div className='flex gap-4'>
                 <a href='#' className='text-gray-600 hover:text-teal-600 transition-colors'>
@@ -38,7 +39,7 @@ export default function Footer() {
                   </svg>
                 </a>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

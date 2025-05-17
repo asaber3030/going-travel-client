@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl"
 
 import { UIFullTour } from "@/types/ui"
 import { Button } from "@/components/ui/button"
+import { WHATSAPP } from "@/lib/constants"
 
 export default function TourStickyBar({ tour }: { tour: UIFullTour }) {
   const t = useTranslations()
@@ -15,9 +16,9 @@ export default function TourStickyBar({ tour }: { tour: UIFullTour }) {
           <h2 className='font-bold text-lg'>{tour.title}</h2>
           <p className='text-primary font-bold'>${tour.price_start}</p>
         </div>
-        <div className='flex gap-2'>
+        <a href={WHATSAPP} target='_blank' className='flex gap-2'>
           <Button size='sm'>{t("bookNow")}</Button>
-        </div>
+        </a>
       </div>
     </div>
   )

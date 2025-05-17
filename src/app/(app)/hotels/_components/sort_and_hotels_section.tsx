@@ -94,16 +94,18 @@ export function SortAndHotelsSection({ hotels }: Props) {
                             <span>{hotel.location?.name ?? "N/A"}</span>
                           </div>
                           <p className='text-muted-foreground mb-4'>{hotel.description}</p>
-                          <div className='flex flex-wrap gap-2 mb-4'>
-                            {Object.entries(hotel.amenity)
-                              .filter(([key, value]) => value === 1 && key !== "id" && key !== "hotel_id")
-                              .map(([key]) => (
-                                <Badge key={key} variant='outline' className='flex items-center gap-1'>
-                                  <Check className='h-4 w-4 text-primary' />
-                                  <span className='capitalize'>{key.replace(/_/g, " ")}</span>
-                                </Badge>
-                              ))}
-                          </div>
+                          {hotel.amenity && (
+                            <div className='flex flex-wrap gap-2 mb-4'>
+                              {Object.entries(hotel.amenity)
+                                .filter(([key, value]) => value === 1 && key !== "id" && key !== "hotel_id")
+                                .map(([key]) => (
+                                  <Badge key={key} variant='outline' className='flex items-center gap-1'>
+                                    <Check className='h-4 w-4 text-primary' />
+                                    <span className='capitalize'>{key.replace(/_/g, " ")}</span>
+                                  </Badge>
+                                ))}
+                            </div>
+                          )}
                         </div>
                         <div className='flex items-center justify-between mt-4'>
                           <div>

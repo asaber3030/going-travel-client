@@ -10,9 +10,9 @@ import { useQuery } from "@tanstack/react-query"
 import { getUILocations } from "@/app/(app)/destinations/_actions/data"
 import { setCookie } from "cookies-next"
 
-import { LANGUAGE_COOKIE, Languages } from "@/lib/constants"
+import { LANGUAGE_COOKIE, Languages, PHONE, WHATSAPP } from "@/lib/constants"
 
-import { Menu, MapPin, ChevronDown, Phone } from "lucide-react"
+import { Menu, MapPin, ChevronDown, Phone, MailIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { AvailableLanguages } from "@/lib/lists"
@@ -42,20 +42,20 @@ export default function TourismNavbar() {
           <div className='flex items-center gap-4 text-sm'>
             <div className='flex items-center gap-1'>
               <Phone className='h-3 w-3' />
-              <span>+1 (555) 123-4567</span>
+              <span>{PHONE}</span>
             </div>
             <div className='flex items-center gap-1'>
-              <MapPin className='h-3 w-3' />
-              <span>123 Adventure St, Travel City</span>
+              <MailIcon className='h-3 w-3' />
+              <span>{}</span>
             </div>
           </div>
           <div className='flex items-center gap-4'>
-            <Link href='#' className='text-sm hover:underline'>
-              {t("faq")}
+            <Link href='/about' className='text-sm hover:underline'>
+              {t("about")}
             </Link>
-            <Link href='#' className='text-sm hover:underline'>
-              {t("support")}
-            </Link>
+            <a href={WHATSAPP} target='_blank' className='text-sm hover:underline'>
+              {t("contact")}
+            </a>
           </div>
         </div>
       </div>

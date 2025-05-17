@@ -18,6 +18,7 @@ import TourTabsList from "./tabs-list"
 import TourItineraryTab from "./itinerary-tab"
 import TourGalleryTab from "./gallery"
 import TourReviewsTab from "./reviews"
+import { WHATSAPP } from "@/lib/constants"
 
 export default function TourDetails({ tour, relatedTours }: { tour: UIFullTour; relatedTours: UITour[] }) {
   const t = useTranslations()
@@ -81,10 +82,12 @@ export default function TourDetails({ tour, relatedTours }: { tour: UIFullTour; 
                   </div>
 
                   <div className='space-y-3'>
-                    <Button variant='outline' className='w-full'>
-                      <MessageCircle className='mr-2 h-4 w-4' />
-                      {t("bookNow")}
-                    </Button>
+                    <a href={WHATSAPP} target='_blank'>
+                      <Button variant='outline' className='w-full'>
+                        <MessageCircle className='mr-2 h-4 w-4' />
+                        {t("bookNow")}
+                      </Button>
+                    </a>
                   </div>
                 </CardContent>
               </Card>
@@ -98,13 +101,17 @@ export default function TourDetails({ tour, relatedTours }: { tour: UIFullTour; 
                       <p className='text-sm text-muted-foreground'>{t("ourTravelExpertsAreHereToAssist")}</p>
                     </div>
                     <div className='flex gap-2'>
-                      <Button variant='outline' size='sm' className='flex-1'>
-                        <MessageCircle className='mr-2 h-4 w-4' />
-                        {t("chat")}
-                      </Button>
-                      <Button variant='outline' size='sm' className='flex-1'>
-                        {t("callUs")}
-                      </Button>
+                      <a href={WHATSAPP} target='_blank' className='flex-1'>
+                        <Button variant='outline' size='sm' className='w-full'>
+                          <MessageCircle className='mr-2 h-4 w-4' />
+                          {t("chat")}
+                        </Button>
+                      </a>
+                      <a href={WHATSAPP} target='_blank' className='flex-1'>
+                        <Button variant='outline' size='sm' className='w-full'>
+                          {t("callUs")}
+                        </Button>
+                      </a>
                     </div>
                   </div>
                 </CardContent>
