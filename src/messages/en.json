@@ -347,5 +347,8 @@
   "public": "Public",
   "private": "Private",
   "distanceDescription": "Distance Description",
-  "pickupLocation": "Pickup Location"
+  "pickupLocation": "Pickup Location",
+  "directHaj": "Direct Hajj",
+  "luckHajj": "Luck Hajj",
+  "omrah": "Omrah"
 }

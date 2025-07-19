@@ -347,5 +347,8 @@
   "public": "Öffentlich",
   "private": "Privat",
   "distanceDescription": "Entfernungsbeschreibung",
-  "pickupLocation": "Abholort"
+  "pickupLocation": "Abholort",
+  "directHaj": "Direkter Haddsch",
+  "luckHajj": "Glückshaddsch",
+  "omrah": "Umrah"
 }

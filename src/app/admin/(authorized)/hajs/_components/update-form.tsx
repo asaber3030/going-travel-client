@@ -18,6 +18,8 @@ import { LoadingButton } from "@/components/common/loading-button"
 import { Category, CategoryTranslation } from "@/types"
 import { LanguagesForm } from "../../_components/languages-form"
 import { InputField } from "@/components/common/input-field"
+import { SelectField } from "@/components/common/select-field"
+import { SelectItem } from "@/components/ui/select"
 
 type Data = z.infer<typeof HajSchema>
 
@@ -75,7 +77,11 @@ export const UpdateCategoryForm = ({ haj, id }: Props) => {
           <InputField name='depature_date' label='Departure Date' control={form.control} type='date' />
           <InputField name='return_date' label='Return Date' control={form.control} type='date' />
           <InputField name='notes' label='Notes' control={form.control} />
-          <InputField name='meals' label='Meals' control={form.control} />
+          <SelectField name='type' label='Type' control={form.control} defaultValue={haj?.type}>
+            <SelectItem value='direct'>حج مباشر</SelectItem>
+            <SelectItem value='luck'>حج قرعة</SelectItem>
+            <SelectItem value='omrah'>عمرة</SelectItem>
+          </SelectField>
           <InputField name='transportation_type' label='Transportation Type' control={form.control} />
           <InputField name='hotel' label='Hotel' control={form.control} />
 

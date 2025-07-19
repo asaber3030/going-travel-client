@@ -40,10 +40,10 @@ export const DetailsPriceSection = ({ hajData }: Props) => {
               <span className='text-gray-600'>الإقامة:</span>
               <span className='font-medium text-gray-800'>{hajData.hotel}</span>
             </div>
-            <div className='flex justify-between py-2 border-b border-gray-100'>
+            {/*             <div className='flex justify-between py-2 border-b border-gray-100'>
               <span className='text-gray-600'>الوجبات:</span>
               <span className='font-medium text-gray-800'>{hajData.meals}</span>
-            </div>
+            </div> */}
             <div className='flex justify-between py-2'>
               <span className='text-gray-600'>وسائل النقل:</span>
               <span className='font-medium text-gray-800'>{hajData.transportation_type}</span>

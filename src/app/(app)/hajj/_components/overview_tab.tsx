@@ -35,7 +35,7 @@ export const OverviewTab = ({ hajData }: Props) => {
                 <p className='text-gray-600'>{hajData.hotel}</p>
               </div>
             </div>
-            <div className='flex items-start'>
+            {/*             <div className='flex items-start'>
               <div className='bg-emerald-100 p-2 rounded-full mr-3'>
                 <Utensils className='h-5 w-5 text-emerald-600' />
               </div>
@@ -43,7 +43,7 @@ export const OverviewTab = ({ hajData }: Props) => {
                 <h3 className='font-medium text-gray-800'>الوجبات</h3>
                 <p className='text-gray-600'>{hajData.meals}</p>
               </div>
-            </div>
+            </div> */}
             <div className='flex items-start'>
               <div className='bg-emerald-100 p-2 rounded-full mr-3'>
                 <Bus className='h-5 w-5 text-emerald-600' />

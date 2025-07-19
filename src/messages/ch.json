@@ -347,5 +347,8 @@
   "public": "公共",
   "private": "私人",
   "distanceDescription": "距离描述",
-  "pickupLocation": "接载地点"
+  "pickupLocation": "接载地点",
+  "directHaj": "直接朝觐",
+  "luckHajj": "幸运朝觐",
+  "omrah": "副朝"
 }

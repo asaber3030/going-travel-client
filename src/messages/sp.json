@@ -347,5 +347,8 @@
   "public": "Público",
   "private": "Privado",
   "distanceDescription": "Descripción de la distancia",
-  "pickupLocation": "Lugar de recogida"
+  "pickupLocation": "Lugar de recogida",
+  "directHaj": "Hajj directo",
+  "luckHajj": "Hajj por sorteo",
+  "omrah": "Umrah"
 }

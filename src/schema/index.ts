@@ -254,7 +254,7 @@ export const HajSchema = z.object({
   depature_date: z.coerce.date(),
   return_date: z.coerce.date(),
   notes: z.string(),
-  meals: z.string(),
+  type: z.string(),
   transportation_type: z.string(),
   hotel: z.string()
 })

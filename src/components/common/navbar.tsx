@@ -12,7 +12,7 @@ import { setCookie } from "cookies-next"
 
 import { EMAIL, LANGUAGE_COOKIE, Languages, PHONE, WHATSAPP } from "@/lib/constants"
 
-import { Menu, MapPin, ChevronDown, Phone, MailIcon } from "lucide-react"
+import { Menu, MapPin, ChevronDown, Phone, MailIcon, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { AvailableLanguages } from "@/lib/lists"
@@ -110,10 +110,22 @@ export default function TourismNavbar() {
                     </Link>
                   </>
                 )}
-
-                <Link href='/hajj' className='group flex h-8 w-full items-center rounded-md px-3 hover:bg-teal-50'>
-                  {t("hajj")}
-                </Link>
+                <DropdownMenu>
+                  <DropdownMenuTrigger>{t("hajj")}</DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <DropdownMenuItem>
+                      <Link href='/hajj' className='group flex h-8 w-full items-center rounded-md px-3 hover:bg-teal-50'>
+                        حج مباشر
+                      </Link>
+                      <Link href='/hajj' className='group flex h-8 w-full items-center rounded-md px-3 hover:bg-teal-50'>
+                        حج قرعة
+                      </Link>
+                      <Link href='/hajj' className='group flex h-8 w-full items-center rounded-md px-3 hover:bg-teal-50'>
+                        عمره
+                      </Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </nav>
             </SheetContent>
           </Sheet>
@@ -175,9 +187,30 @@ export default function TourismNavbar() {
             {t("contact")}
           </Link>
 
-          <Link href='/hajj' className='text-sm font-medium transition-colors hover:text-teal-600'>
-            {t("hajj")}
-          </Link>
+          <DropdownMenu>
+            <DropdownMenuTrigger className='flex items-center gap-1 p-0 text-sm font-medium transition-colors hover:text-teal-600'>
+              {t("hajj")}
+
+              <ChevronDown className='h-4 w-4' />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>
+                <Link href='/hajj?type=direct' className='w-full items-center rounded-md px-3 hover:bg-teal-50'>
+                  {t("directHaj")}
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href='/hajj?type=luck' className='w-full items-center rounded-md px-3 hover:bg-teal-50'>
+                  {t("luckHajj")}
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href='/hajj?type=omrah' className='w-full items-center rounded-md px-3 hover:bg-teal-50'>
+                  {t("omrah")}
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </nav>
 
         <DropdownMenu>

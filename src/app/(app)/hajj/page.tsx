@@ -6,13 +6,20 @@ import { getUIHajjPackages } from "./_actions/data"
 import { HajjPackagesSection } from "./_components/hajj_packages_section"
 import { CTASection } from "./_components/cta_section"
 import { Cairo } from "next/font/google"
+import { TSearchParams } from "@/types"
 
 const font = Cairo({ subsets: ["arabic"] })
-export default async function HajjPage() {
-  const hajjPackages = await getUIHajjPackages()
+
+type Props = {
+  searchParams: Promise<TSearchParams>
+}
+
+export default async function HajjPage({ searchParams }: Props) {
+  const sp = await searchParams
+  const hajjPackages = await getUIHajjPackages(sp)
 
   return (
-    <div className={`container mx-auto px-4 py-12  rtl ${font.className}`} dir="rtl">
+    <div className={`container mx-auto px-4 py-12  rtl ${font.className}`} dir='rtl'>
       {/* قسم الترحيب */}
       <HajjWelcomeSection />
 
