@@ -263,6 +263,7 @@ type UIHajjPackage = {
   long_description: string
   price: string
   banner: string
+  type: "direct" | "luck" | "omrah"
   thumbnail: string
   hotel: string
   meals: string

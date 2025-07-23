@@ -56,10 +56,10 @@ export default function ToursFooter() {
           <div>
             <h3 className='text-lg font-bold mb-4'>{t("contactUs")}</h3>
             <ul className='space-y-3 text-gray-400'>
-              <li>123 Street, Zurich, Switzerland</li>
-              <li>{t("phone")}: +41 123 456 789</li>
-              <li>{t("email")}: info@adventures.com</li>
-              <li>{t("workingHours")}: Mon-Fri 9am-6pm CET</li>
+              <li>Cairo , Egypt</li>
+              <li>{t("phone")}: +201113030166</li>
+              <li>{t("email")}: info@goingtravel.net</li>
+              <li>{t("workingHours")}: Sat-Fri 9am-6pm</li>
             </ul>
           </div>
         </div>
