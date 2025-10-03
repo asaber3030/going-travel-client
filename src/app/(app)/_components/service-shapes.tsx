@@ -43,8 +43,8 @@ export default function ServiceShapes() {
       description:
         "Explore our curated tour packages designed to showcase the best destinations around the world. From cultural experiences to adventure trips, we have something for everyone.",
       icon: <Map className="h-10 w-10" />,
-      gradient: "bg-gradient-to-br from-emerald-500 to-teal-600",
-      hoverGradient: "bg-gradient-to-br from-emerald-400 to-teal-500",
+      gradient: "bg-gradient-to-br from-emerald-500 to-goldish",
+      hoverGradient: "bg-gradient-to-br from-emerald-400 to-goldish",
       shape: "rounded-tl-[60px] rounded-br-[60px]",
       features: [
         "Guided tours",

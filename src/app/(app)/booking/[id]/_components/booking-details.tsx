@@ -254,7 +254,7 @@ export function BookingDetails({ id }: BookingDetailsProps) {
             <ul className="grid gap-2 sm:grid-cols-2">
               {booking.features.map((feature: string) => (
                 <li key={feature} className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-teal-500"></div>
+                  <div className="h-2 w-2 rounded-full bg-goldish"></div>
                   <span className="text-sm">{feature}</span>
                 </li>
               ))}

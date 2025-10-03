@@ -10,9 +10,9 @@ import { ToastContainer } from "react-toastify"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Going Travel",
-  description: "Going Travel",
-  keywords: ["Travel", "Tourism", "Adventure", "going travel"]
+  title: "Kaza Travel",
+  description: "Kaza Travel",
+  keywords: ["Travel", "Tourism", "Adventure", "Kaza Travel"]
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {

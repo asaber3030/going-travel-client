@@ -48,10 +48,10 @@ export default function ServiceCards({ services }: Props) {
               </div>
 
               <div className='p-6'>
-                <h3 className='text-2xl font-bold text-gray-800 mb-2 group-hover:text-teal-600 transition-colors'>{service?.translations?.find((i) => i?.locale == language)?.title || service?.title}</h3>
+                <h3 className='text-2xl font-bold text-gray-800 mb-2 group-hover:text-goldish transition-colors'>{service?.translations?.find((i) => i?.locale == language)?.title || service?.title}</h3>
                 <p className='text-gray-600 mb-4'>{service?.translations?.find((i) => i?.locale == language)?.description || service?.description}</p>
 
-                <div className='flex items-center text-teal-600 font-medium'>
+                <div className='flex items-center text-goldish font-medium'>
                   {t("services.explore")}
                   {language === "ar" ? <MoveLeft className='h-5 w-5 mr-2 group-hover:-translate-x-2 transition-transform' /> : <MoveRight className='h-5 w-5 ml-2 group-hover:translate-x-2 transition-transform' />}
                 </div>

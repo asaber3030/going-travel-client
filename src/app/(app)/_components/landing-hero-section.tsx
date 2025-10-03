@@ -33,8 +33,8 @@ export default function LandingHeroSection() {
   }, [])
 
   return (
-    <div className='relative bg-teal-600 h-20 px-16  overflow-hidden flex justify-between items-center'>
-      <img src='/logo.svg' alt='Logo' className='w-16 h-16' />
+    <div className='relative bg-goldish h-20 px-16  overflow-hidden flex justify-between items-center'>
+      <img src='/logo.png' alt='Logo' className='w-32 h-26' />
       <LanguageSwitcher />
     </div>
   )

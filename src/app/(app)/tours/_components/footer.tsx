@@ -19,7 +19,7 @@ export default function ToursFooter() {
       <div className='container mx-auto px-4'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12'>
           <div>
-            <h3 className='text-xl font-bold mb-4'>Going Travel</h3>
+            <h3 className='text-xl font-bold mb-4'>Kaza Travel</h3>
             <p className='text-gray-400 mb-4'>{t("toursFooterTitle")}</p>
           </div>
 
@@ -66,7 +66,7 @@ export default function ToursFooter() {
 
         <div className='border-t border-gray-800 pt-8 mt-8 text-gray-400 text-sm flex flex-col md:flex-row justify-between items-center'>
           <p>
-            © {new Date().getFullYear()} Going Travel. {t("allRightsReserved")}.
+            © {new Date().getFullYear()} Kaza Travel. {t("allRightsReserved")}.
           </p>
         </div>
       </div>

@@ -49,7 +49,7 @@ export function BookingForm({ id }: BookingFormProps) {
           <div className='flex items-center gap-2'>
             <div
               className={`flex h-8 w-8 items-center justify-center rounded-full ${
-                step >= 1 ? "bg-teal-500 text-white" : "bg-gray-200"
+                step >= 1 ? "bg-goldish text-white" : "bg-gray-200"
               }`}
             >
               1
@@ -61,7 +61,7 @@ export function BookingForm({ id }: BookingFormProps) {
           <div className='flex items-center gap-2'>
             <div
               className={`flex h-8 w-8 items-center justify-center rounded-full ${
-                step >= 2 ? "bg-teal-500 text-white" : "bg-gray-200"
+                step >= 2 ? "bg-goldish text-white" : "bg-gray-200"
               }`}
             >
               2

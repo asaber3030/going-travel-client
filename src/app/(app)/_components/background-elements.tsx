@@ -42,7 +42,7 @@ export default function BackgroundElements() {
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="parallax-element absolute rounded-full bg-gradient-to-br from-teal-400/10 to-cyan-400/10 backdrop-blur-3xl"
+            className="parallax-element absolute rounded-full bg-gradient-to-br from-goldish-400/10 to-cyan-400/10 backdrop-blur-3xl"
             initial={{
               x: Math.random() * 100 - 50 + "%",
               y: Math.random() * 100 - 50 + "%",
@@ -78,7 +78,7 @@ export default function BackgroundElements() {
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl parallax-element"></div>
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl parallax-element"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl parallax-element"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-goldish/10 rounded-full blur-3xl parallax-element"></div>
 
       {/* Grid pattern */}
       <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-repeat opacity-5"></div>

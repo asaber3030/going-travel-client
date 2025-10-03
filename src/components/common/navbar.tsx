@@ -37,11 +37,11 @@ export default function TourismNavbar() {
 
   // Define common mobile nav link classes for consistency
   const mobileNavLinkClasses =
-    'group flex h-10 w-full items-center rounded-md px-3 hover:bg-teal-50 text-lg font-medium';
+    'group flex h-10 w-full items-center rounded-md px-3 hover:bg-goldish-50 text-lg font-medium';
 
   return (
     <header className='sticky top-0 z-50 w-full border-b bg-white'>
-      <div className='hidden border-b bg-teal-600 text-white lg:block px-6'>
+      <div className='hidden border-b bg-goldish text-white lg:block px-6'>
         <div className='container flex h-10 items-center mx-auto justify-between'>
           <div className='flex items-center gap-4 text-sm'>
             <div className='flex items-center gap-1'>
@@ -75,8 +75,8 @@ export default function TourismNavbar() {
             <SheetContent side='left' className='w-[300px] sm:w-[350px]'>
               <nav className='grid gap-6 text-lg font-medium p-6'>
                 <Link href='#' className='flex items-center gap-2 text-lg font-semibold'>
-                  <Image src='/logo.svg' width={30} height={30} alt='Logo' />
-                  <span className='mt-1'>GoingTravel</span>
+                  <Image src='/logo.png' width={200} height={200} alt='Logo' />
+                 
                 </Link>
 
                 <Link href='/' className={mobileNavLinkClasses}>
@@ -120,7 +120,7 @@ export default function TourismNavbar() {
                           data?.map((location) => (
                             <Link href={`/destinations/${location.id}`} key={`navbar-destination-${location.id}`}>
                               {/* Apply consistency to DropdownMenuItem */}
-                              <DropdownMenuItem className='flex h-8 items-center rounded-md px-3 text-sm hover:bg-teal-50 cursor-pointer'>
+                              <DropdownMenuItem className='flex h-8 items-center rounded-md px-3 text-sm hover:bg-goldish-50 cursor-pointer'>
                                 {location.name}
                               </DropdownMenuItem>
                             </Link>
@@ -151,14 +151,14 @@ export default function TourismNavbar() {
             </SheetContent>
           </Sheet>
           <Link href='/' className='flex items-center gap-2 font-bold'>
-            <Image src='/logo.svg' width={30} height={30} alt='Logo' />
-            <span className='mt-1'>GoingTravel</span>
+            <Image src='/logo.png' width={100} height={100} alt='Logo' />
+           
           </Link>
         </div>
 
         {/* Regular desktop navigation (no changes needed here based on the issue) */}
         <nav className='mx-6 hidden items-center gap-4 lg:flex lg:space-x-6'>
-          <Link href='/' className='text-sm font-medium transition-colors hover:text-teal-600'>
+          <Link href='/' className='text-sm font-medium transition-colors hover:text-goldish'>
             {t("home")}
           </Link>
 
@@ -166,7 +166,7 @@ export default function TourismNavbar() {
             <>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant='link' className='flex items-center gap-1 px-0 text-sm font-medium transition-colors hover:text-teal-600'>
+                  <Button variant='link' className='flex items-center gap-1 px-0 text-sm font-medium transition-colors hover:text-goldish'>
                     {t("destinations")}
                     <ChevronDown className='h-4 w-4 ' />
                   </Button>
@@ -183,40 +183,40 @@ export default function TourismNavbar() {
                   )}
                 </DropdownMenuContent>
               </DropdownMenu>
-              <Link href='/tours' className='text-sm font-medium transition-colors hover:text-teal-600'>
+              <Link href='/tours' className='text-sm font-medium transition-colors hover:text-goldish'>
                 {t("tours")}
               </Link>
 
-              <Link href='/categories' className='text-sm font-medium transition-colors hover:text-teal-600'>
+              <Link href='/categories' className='text-sm font-medium transition-colors hover:text-goldish'>
                 {t("categories")}
               </Link>
 
-              <Link href='/hotels' className='text-sm font-medium transition-colors hover:text-teal-600'>
+              <Link href='/hotels' className='text-sm font-medium transition-colors hover:text-goldish'>
                 {t("hotels")}
               </Link>
 
-              <Link href='/limousines' className='text-sm font-medium transition-colors hover:text-teal-600'>
+              <Link href='/limousines' className='text-sm font-medium transition-colors hover:text-goldish'>
                 {t("limousines")}
               </Link>
             </>
           )}
 
-          <Link href='/about' className='text-sm font-medium transition-colors hover:text-teal-600'>
+          <Link href='/about' className='text-sm font-medium transition-colors hover:text-goldish'>
             {t("about")}
           </Link>
 
-          <Link href='/contact' className='text-sm font-medium transition-colors hover:text-teal-600'>
+          <Link href='/contact' className='text-sm font-medium transition-colors hover:text-goldish'>
             {t("contact")}
           </Link>
 
-          <Link href='/hajj' className='text-sm font-medium transition-colors hover:text-teal-600'>
+          <Link href='/hajj' className='text-sm font-medium transition-colors hover:text-goldish'>
             {t("Hajj")}
           </Link>
         </nav>
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant='link' className='flex items-center gap-1 p-0 text-sm font-medium transition-colors hover:text-teal-600'>
+            <Button variant='link' className='flex items-center gap-1 p-0 text-sm font-medium transition-colors hover:text-goldish'>
               {t("language")}
               <ChevronDown className='h-4 w-4' />
             </Button>
