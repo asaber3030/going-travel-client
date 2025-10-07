@@ -124,7 +124,7 @@ export default function ContactPage() {
                   </div>
                   <InputField label={t("form_subject_label")} name='subject' placeholder={t("form_subject_placeholder")} control={form.control} />
                   <InputField label={t("form_message_label")} name='message' placeholder={t("form_message_placeholder")} control={form.control} />
-                  <LoadingButton loading={mut.isPending} type='submit' className='w-full bg-goldish hover:bg-lightgoldish text-white py-3 rounded-md'>
+                  <LoadingButton loading={mut.isPending} type='submit' className='w-full text-white bg-goldish hover:bg-lightgoldish hover:text-black py-3 rounded-md'>
                     {t("form_submit_button")}
                   </LoadingButton>
                 </form>

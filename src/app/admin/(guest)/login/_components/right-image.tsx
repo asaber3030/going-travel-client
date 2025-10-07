@@ -8,10 +8,10 @@ export const LoginImage = () => {
         <div className='absolute -bottom-10 -right-10 h-60 w-60 rounded-full bg-white/10 blur-xl' />
         <div className='relative z-10 p-8'>
           <Image
-            src='/logo.png'
+            src='/logo-white.png'
             alt='Login illustration'
-            width={300}
-            height={300}
+            width={900}
+            height={900}
             className='drop-shadow-2xl'
             priority
           />
